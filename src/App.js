@@ -25,6 +25,21 @@ function App() {
 //inputting check of login status 
 FB.getLoginStatus(function(response) {
   statusChangeCallback(response);
+  //inputting response object field 
+  {
+    status: 'connected',
+    authResponse: {
+        accessToken: '...',
+        expiresIn:'...',
+        signedRequest:'...',
+        userID:'...'
+    }
+  }
 });
+
+
+
+
+
 
 export default App;
