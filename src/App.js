@@ -22,6 +22,8 @@ function App() {
     </div>
   );
 }
+
+
 //inputting check of login status 
 FB.getLoginStatus(function(response) {
   statusChangeCallback(response);
@@ -37,6 +39,12 @@ FB.getLoginStatus(function(response) {
   }
 });
 
+//call to get most recent login state
+function checkLoginState() {
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+}
 
 
 
