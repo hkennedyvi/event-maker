@@ -40,7 +40,11 @@
     -->
     //inputting fb login button 
     <div class="fb-login-button" data-width="" data-size="large" data-button-type="login_with" data-layout="default" data-auto-logout-link="true" data-use-continue-as="true"></div>
-
+    //on login attribute to set up call back 
+    <fb:login-button 
+    scope="public_profile,email"
+    onlogin="checkLoginState();">
+  </fb:login-button>
 </body>
 //inputting js SDK for login button // 
 <div id="fb-root"></div>
