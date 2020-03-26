@@ -29,7 +29,7 @@ FB.getLoginStatus(function(response) {
   {
     status: 'connected',
     authResponse: {
-        accessToken: '...',
+        accessToken: '...', //fields will be subbed with actual tokens etc. in a sec 
         expiresIn:'...',
         signedRequest:'...',
         userID:'...'
