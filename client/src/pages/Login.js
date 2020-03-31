@@ -1,8 +1,9 @@
 import React from 'react';
+import FacebookBtn from '../components/FacebookBtn';
 
 function Login() {
     return (
-        <h1>LoginTest Page</h1>
+        <FacebookBtn />
     )
 }
 
