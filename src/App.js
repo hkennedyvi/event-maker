@@ -31,10 +31,10 @@ FB.getLoginStatus(function(response) {
   {
     status: 'connected',
     authResponse: {
-        accessToken: 'c8f9b414808dd791506cfe0efe517b46', //fields will be subbed with actual tokens etc. in a sec 
-        expiresIn:'...',
+        accessToken: 'EAADCnmetEcABAInzZARwG9vEiUCJr3cfgMukkyg97qb93jeY9c6AbcnLHEL2dJeK7SfHBZBLIRE3S9oEqOvdz9F', //fields will be subbed with actual tokens etc. in a sec 
+        expiresIn:'	1585267200',
         signedRequest:'...',
-        userID:'...'
+        userID:'3443546028994214'
     }
   }
 });

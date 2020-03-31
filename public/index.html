@@ -8,72 +8,87 @@
   <meta name="theme-color" content="#000000" />
   <meta name="description" content="Web site created using create-react-app" />
   <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-  <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-  <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
   <title>React App</title>
 </head>
-
 <body>
-  <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="root"></div>
-  <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-    //inputting fb login button 
-    <div class="fb-login-button" data-width="" data-size="large" data-button-type="login_with" data-layout="default" data-auto-logout-link="true" data-use-continue-as="true"></div>
-    //on login attribute to set up call back 
-    <fb:login-button 
-    scope="public_profile,email"
-    onlogin="checkLoginState();">
-  </fb:login-button>
-</body>
-//inputting js SDK for login button // 
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous"
-  src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0&appId=213985600016832&autoLogAppEvents=1"></script>
-
-
-//inputting setup for facebook SDK for js//
 <script>
-  window.fbAsyncInit = function () {
+  function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
+    console.log('statusChangeCallback');
+    console.log(response);                   // The current login status of the person.
+    if (response.status === 'connected') {   // Logged into your webpage and Facebook.
+      testAPI();  
+    } else {                                 // Not logged into your webpage or we are unable to tell.
+    }
+  }
+
+
+  function checkLoginState() {               // Called when a person is finished with the Login Button.
+    FB.getLoginStatus(function(response) {   // See the onlogin handler
+      statusChangeCallback(response);
+    });
+  }
+
+
+  window.fbAsyncInit = function() {
     FB.init({
-      appId: '213985600016832',
-      cookie: true,
-      xfbml: true,
-      version: 'v6.0'
+      appId      : '844404872733655',
+      cookie     : true,                     // Enable cookies to allow the server to access the session.
+      xfbml      : true,                     // Parse social plugins on this webpage.
+      version    : 'v6.0'           // Use this Graph API version for this call.
     });
 
-    FB.AppEvents.logPageView();
 
+    FB.getLoginStatus(function(response) {   // Called after the JS SDK has been initialized.
+      statusChangeCallback(response);        // Returns the login status.
+    });
   };
 
-  (function (d, s, id) {
+  
+  (function(d, s, id) {                      // Load the SDK asynchronously
     var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) { return; }
+    if (d.getElementById(id)) return;
     js = d.createElement(s); js.id = id;
     js.src = "https://connect.facebook.net/en_US/sdk.js";
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
+
+ 
+  function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+      	console.log('Successful login for: ' + response.name);
+      	document.getElementById('status').innerHTML =
+        'Thanks for logging in, ' + response.name + '!<br />go to success <a href="/success">success page</a>';
+    	document.getElementById('logoutButton').style.display = 'block';
+    	document.getElementById('loginButton').style.dipslay = 'none';
+    });
+  }
+
+  function logoutFb() {
+	FB.logout(function(response) {
+	   // Person is now logged out
+	   self.location.href = self.location.href;
+	});  	
+  }
+
 </script>
-<script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+
+<fb:login-button id="loginButton" scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
+
+&nbsp;&nbsp;<button style='display:none;' onClick="logoutFb();" id="logoutButton">Logout</button>
+
+<div id="status">
+</div>
+
+
+	<div>HOME PAGE CONTENT GOES HERE</div>
+
+</body>
+
+<!-- <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script> -->
 
 </html>
