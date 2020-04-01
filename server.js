@@ -1,7 +1,9 @@
 const express = require("express");
 const path = require("path");
 
+const mongoose = require("mongoose");
 const PORT = process.env.PORT || 3001;
+const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/cahoots";
 const app = express();
 
 // Define middleware here
@@ -17,6 +19,9 @@ if (process.env.NODE_ENV === "production") {
 app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
+
+mongoose.connect(MONGO_URI, { useNewUrlParser: true })
+.then(console.log(`MongoDB connected at ${MONGO_URI}`));
 
 app.listen(PORT, function() {
     console.log(`🌎 ==> API server now on port ${PORT}!`);
