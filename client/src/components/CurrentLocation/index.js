@@ -22,6 +22,19 @@ export class CurrentLocation extends React.Component {
             this.recenterMap();
         }
     }
+
+    recenterMap() {
+        const map = this.map;
+        const current = this.state.currentLocation;
+
+        const google = this.props.google;
+        const maps = google.maps;
+
+        if (map) {
+            let center = new maps.LatLng(current.lat, current.lng);
+            map.panTo(center);
+        }
+    }
 };
 
 export default CurrentLocation;
