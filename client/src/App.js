@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from './pages/Home';
 import Login from './pages/Login';
 import NavBar from './components/NavBar';
-import Slide from './components/Carousel'; 
+import Carousel from './components/Carousel'; 
 import './App.css';
 
 function App() {
