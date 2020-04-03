@@ -1,0 +1,10 @@
+.event-btn {
+    text-align: center;
+    z-index: 99;
+    position: relative;
+}
+
+.event-btn button {
+    padding: 10px;
+    margin: 10px;
+}

@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import EventButton from '../EventButton';
+import "./style.css";
 
 const mapStyles = {
     map: {
         position: 'absolute',
         width: '100%',
-        height: '100%',
+        height: '90%',
         zIndex: 0
     },
 };
@@ -40,7 +42,7 @@ export class CurrentLocation extends React.Component {
         const maps = google.maps;
 
         if (map) {
-            let center = new maps.LatLng(current.lat, current.lng);
+            let center = new maps.LatLng(current.lat, current.lng + .03);
             map.panTo(center);
         }
     }
@@ -107,10 +109,10 @@ export class CurrentLocation extends React.Component {
     render() {
         const style = Object.assign({}, mapStyles.map);
         return (
-            <div>
+            <div className="map">
                 <div style={style} ref="map">
                     Loading map...
-           </div>
+                </div>
                 {this.renderChildren()}
             </div>
         );
