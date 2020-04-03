@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import SignUpForm from '../components/SignUpForm';
+import axios from 'axios';
 
 function Login() {
 
@@ -13,9 +14,17 @@ function Login() {
             email: e.target.email.value,
             password: e.target.password.value
         };
-        console.log("hi, worked")
-        console.log(userData)
-        console.log(e.target.email.value, e.target.password.value)
+        console.log("BEFORE POST", userData)
+        axios
+            .post("/api/auth/register_login", userData)
+            .then(res => {
+                console.log("RESULT DATA", res.config.data);
+                console.log("AFTER POST", userData);
+            })
+            .catch(err => {
+                console.log(err);
+                console.log(err.response);
+            });
     };
 
     return (
