@@ -4,6 +4,7 @@ import CurrentLocation from "../CurrentLocation";
 import EventButton from "../EventButton";
 import EventCard from "../EventCard";
 
+
 export class MapContainer extends Component {
     state = {
         showingInfoWindow: false,
