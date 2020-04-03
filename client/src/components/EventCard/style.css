@@ -1,0 +1,8 @@
+.event-card {
+    z-index: 99;
+    position: relative;
+    background: rgba(255, 255, 255, 0.7);
+    width: 30%;
+    margin-left: 60%;
+    padding: 20px;
+}
