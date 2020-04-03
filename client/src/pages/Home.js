@@ -1,8 +1,9 @@
 import React from 'react';
+import MapContainer from "../components/MapContainer";
 
 function Home() {
     return (
-        <h1>Homepage Test</h1>
+        <MapContainer />
     )
 }
 
