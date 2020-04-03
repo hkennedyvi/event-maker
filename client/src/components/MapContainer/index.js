@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 import CurrentLocation from "../CurrentLocation";
+import EventButton from "../EventButton";
 
 export class MapContainer extends Component {
     state = {
@@ -43,6 +44,7 @@ export class MapContainer extends Component {
                         </div>
                     </InfoWindow>
                 </CurrentLocation>
+                <EventButton />
             </div>
         );
     }
