@@ -1,22 +1,18 @@
 import React from 'react';
 import MapContainer from "../components/MapContainer";
-import { MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem } from "mdbreact";
-<div>
-    <MDBCarousel>
-        <MDBCarouselCaption>
-            <MDBCarouselInner>
-                <MDBCarouselItem>
-                    
-                </MDBCarouselItem>
-            </MDBCarouselInner>
-        </MDBCarouselCaption>
-    </MDBCarousel>
+import CarouselPage from "../components/Carousel";
 
-</div>
+
+
 function Home() {
     return (
+        <div>
+        <CarouselPage/> 
         <MapContainer />
+       </div>
     )
+
 }
+
 
 export default Home;
