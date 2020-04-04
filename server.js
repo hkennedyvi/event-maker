@@ -7,7 +7,7 @@ const passport = require("./passport/setup");
 const auth = require("./routes/auth");
 
 const mongoose = require("mongoose");
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/cahoots";
 const app = express();
 
@@ -29,7 +29,7 @@ app.use("/api/auth", auth);
 // Express Session
 app.use(
   session({
-      secret: "",
+      secret: "cahoots-",
       resave: false,
       saveUninitialized: true,
       store: new MongoStore({ mongooseConnection: mongoose.connection })

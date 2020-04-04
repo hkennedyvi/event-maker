@@ -11,18 +11,23 @@ import AdjustOutlinedIcon from '@material-ui/icons/AdjustOutlined';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-      flexGrow: 1,
+      flexGrow: 1, 
     },
     title: {
       flexGrow: 1,
-      color: '#009688'
+      color: 'rgba(46, 34, 68, 1)'
     },
     text: {
-        color: '#009688',
+        color: 'rgba(46, 34, 68, 1)',
     },
     list: {
         width: 250,
+        background: 'transparent',
       },
+
+    // drawer: {
+    //     background: 'linear-gradient(to top, #fecb24, #005c71)',
+    // },
   }));
 
 function NavBar() {
@@ -107,12 +112,15 @@ function NavBar() {
                     <Typography variant="h6" className={classes.title}>
                         Logo Here
                     </Typography>
+                    {/* <Typography variant="h6" className={classes.title}>
+                        You're in Cahoots!
+                    </Typography> */}
                     {['right'].map(anchor => (
                     <React.Fragment key={anchor}>
                     <IconButton edge="start" className={classes.menuButton} onClick={toggleDrawer(anchor, true)} aria-label="menu">
                         <MenuIcon color={classes.title} />
                     </IconButton>
-                    <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
+                    <Drawer className={classes.drawer} anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
                                 {list(anchor)}
                             </Drawer>
                     </React.Fragment>
