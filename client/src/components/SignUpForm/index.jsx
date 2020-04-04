@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 import FacebookBtn from '../FacebookBtn';
 import { makeStyles } from '@material-ui/core/styles';
 import { TextField, FormHelperText, Card, CardActions, CardContent, Typography, Box } from '@material-ui/core';
@@ -23,6 +24,9 @@ const useStyles = makeStyles((theme) => ({
 
     
 }));
+=======
+// import FacebookBtn from '../FacebookBtn';
+>>>>>>> master
 
 function SignUpForm(props) {
     const classes = useStyles();
@@ -58,10 +62,12 @@ function SignUpForm(props) {
             </Card>
             </Box>
             <form onSubmit={(e) => { props.handleSubmit(e) }} action="POST">
-                <label for="email">EMAIL:</label><br />
+                <label htmlFor="email">EMAIL:</label><br />
                 <input type="email" id="email" name="email" placeholder="Email here" /><br />
-                <label for="password">PASSWORD:</label><br />
-                <input type="password" id="password" name="password" placeholder="Password here" /><br /><br />
+                <label htmlFor="password">PASSWORD:</label><br />
+                <input type="password" id="password" name="password" placeholder="Password here" /><br />
+                <label htmlFor="password">CONFIRM PASSWORD:</label><br />
+                <input type="password" id="confirm" name="confirm" placeholder="Confirm password here" /><br /><br />
                 <input type="submit" value="Submit" />
             </form>
             {/* <FacebookBtn /> */}
