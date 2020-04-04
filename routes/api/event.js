@@ -5,4 +5,8 @@ router.route("/home")
     .get(controller.findAll)
     .put(controller.create);
 
+router.route("/:id")
+    .get(controller.findByID)
+    .delete(controller.remove);
+
 module.exports = router;
