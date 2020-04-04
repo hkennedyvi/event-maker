@@ -24,3 +24,25 @@ db.User
     console.error(err);
     process.exit(1);
   });
+
+  const eventSeed = [
+    {
+      category: "sports",
+      subgategory: "tennis",
+      participants: 4,
+      location: "Laurelhurst",
+      duration: 2
+    }
+  ];
+  
+  db.Event
+    .remove({})
+    .then(() => db.Event.collection.insertMany(eventSeed))
+    .then(data => {
+      console.log(data.result.n + " records inserted!");
+      process.exit(0);
+    })
+    .catch(err => {
+      console.error(err);
+      process.exit(1);
+    });
