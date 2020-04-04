@@ -29,3 +29,8 @@ const CarouselPage = () => {
         </MDBCarouselItem>
         <MDBCarouselItem itemId="2">
           <MDBView></MDBView>
+          <img
+              className="d-block w-100"
+              src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg"
+              alt="Second slide"
+            />
