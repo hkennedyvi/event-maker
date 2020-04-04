@@ -1,25 +1,26 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 import CurrentLocation from "../CurrentLocation";
 import EventDialog from "../EventDialog";
 import EventCard from "../EventCard";
 
 
-export class MapContainer extends Component {
-    state = {
+function MapContainer(props) {
+
+    const [mapSettings, setMapSettings] = useState({
         showingInfoWindow: false,
         activeMarker: {},
         selectedPlace: {}
-    };
+    });
 
-    onMarkerClick = (props, marker, e) =>
+    const onMarkerClick = (props, marker, e) =>
         this.setState({
             selectedPlace: props,
             activeMarker: marker,
             showingInfoWindow: true
         });
 
-    onClose = props => {
+    const onClose = props => {
         if (this.state.showingInfoWindow) {
             this.setState({
                 showingInfoWindow: false,
@@ -28,29 +29,28 @@ export class MapContainer extends Component {
         }
     };
 
-    render() {
-        return (
-            <div>
-                <CurrentLocation
-                    centerAroundCurrentLocation
-                    google={this.props.google}
+    return (
+        <div>
+            <CurrentLocation
+                centerAroundCurrentLocation
+                google={props.google}
+            >
+                <Marker onClick={onMarkerClick} name={'current location'} />
+                <InfoWindow
+                    marker={mapSettings.activeMarker}
+                    visible={mapSettings.showingInfoWindow}
+                    onClose={onClose}
                 >
-                    <Marker onClick={this.onMarkerClick} name={'current location'} />
-                    <InfoWindow
-                        marker={this.state.activeMarker}
-                        visible={this.state.showingInfoWindow}
-                        onClose={this.onClose}
-                    >
-                        <div>
-                            <h4>{this.state.selectedPlace.name}</h4>
-                        </div>
-                    </InfoWindow>
-                </CurrentLocation>
-                <EventDialog />
-                <EventCard />
-            </div>
-        );
-    }
+                    <div>
+                        <h4>{mapSettings.selectedPlace.name}</h4>
+                    </div>
+                </InfoWindow>
+            </CurrentLocation>
+            <EventDialog handlePost={props.handlePost}/>
+            <EventCard />
+        </div>
+    );
+
 };
 
 export default GoogleApiWrapper({

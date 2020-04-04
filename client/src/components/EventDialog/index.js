@@ -37,6 +37,7 @@ function SimpleDialog(props) {
     onClose(selectedValue);
   };
 
+  console.log(props);
   return (
     <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={open}>
       <DialogTitle id="simple-dialog-title">What's the haps?</DialogTitle>
@@ -100,7 +101,7 @@ function SimpleDialog(props) {
          <input className="event-title" type="text"></input>
         </ListItem>
         <ListItem>
-        <Button className={classes.root1}>Post</Button>
+        <Button className={classes.root1} onClick={(event) => {props.handlePost(event)}}>Post</Button>
         </ListItem>
         <ListItem>
         <h4>Your Event Will Start NOW</h4>
@@ -115,7 +116,7 @@ SimpleDialog.propTypes = {
   open: PropTypes.bool.isRequired,
 };
 
-export default function EventDialog() {
+export default function EventDialog(props) {
   const [open, setOpen] = React.useState(false);
   const classes = useStyles();
 
@@ -131,7 +132,7 @@ export default function EventDialog() {
     <div className="event-btn-div">
       <br />
       <Button className={classes.root} onClick={handleClickOpen}>Curate Event</Button>
-      <SimpleDialog open={open} onClose={handleClose} />
+      <SimpleDialog open={open} onClose={handleClose} handlePost={props.handlePost}/>
     </div>
   );
 }
