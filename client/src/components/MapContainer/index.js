@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 import CurrentLocation from "../CurrentLocation";
-import EventModal from "../EventModal";
+import EventDialog from "../EventDialog";
 import EventCard from "../EventCard";
 
 
@@ -46,7 +46,7 @@ export class MapContainer extends Component {
                         </div>
                     </InfoWindow>
                 </CurrentLocation>
-                <EventModal />
+                <EventDialog />
                 <EventCard />
             </div>
         );
