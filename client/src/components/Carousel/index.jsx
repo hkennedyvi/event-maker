@@ -34,3 +34,12 @@ const CarouselPage = () => {
               src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg"
               alt="Second slide"
             />
+            <MDBMask overlay="black-strong" />
+          </MDBView>
+          <MDBCarouselCaption>
+            <h3 className="h3-responsive">Strong mask</h3>
+            <p>Second text</p>
+          </MDBCarouselCaption>
+        </MDBCarouselItem>
+        <MDBCarouselItem itemId="3">
+          <MDBView></MDBView>
