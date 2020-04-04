@@ -28,9 +28,11 @@
     "express-session": "^1.17.0",
     "google-maps-react": "^2.0.2",
     "if-env": "^1.0.4",
+    "material-auto-rotating-carousel": "^3.0.2",
     "mongoose": "^5.8.11",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "react-swipeable-views": "^0.13.9"
   }
 }
