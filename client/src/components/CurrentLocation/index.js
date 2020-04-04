@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import EventButton from '../EventButton';
 import "./style.css";
 
 const mapStyles = {
