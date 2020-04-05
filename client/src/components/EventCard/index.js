@@ -11,6 +11,7 @@ function EventCard() {
             <h5>starts NOW</h5>
             <h5>ends 8PM</h5>
             <button className="join-btn">join</button>
+            <button className="next-btn">next event</button>
         </div>
     )
 };
