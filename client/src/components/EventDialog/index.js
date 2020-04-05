@@ -131,7 +131,7 @@ export default function EventDialog(props) {
   return (
     <div className="event-btn-div">
       <br />
-      <Button className={classes.root} onClick={handleClickOpen}>Curate Event</Button>
+      <Button id="event-btn" className={classes.root} onClick={handleClickOpen}>Curate Event</Button>
       <SimpleDialog open={open} onClose={handleClose} handlePost={props.handlePost}/>
     </div>
   );
