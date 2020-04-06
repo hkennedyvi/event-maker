@@ -17,7 +17,7 @@ const CarouselPage = () => {
           <MDBCarouselItem itemId="1">
             <MDBView>
               <img
-                className="d-block w-100"
+                className="Carousel"
                 src="../Carousel/assets/cahoots-3.jpeg"
                 alt="First slide"
               />
