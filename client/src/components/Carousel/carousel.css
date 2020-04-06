@@ -1,4 +1,10 @@
-.carousel-item .img-fluid {
+/* .carousel-item .img-fluid {
     width:100%;
     height:auto;
+  } */
+
+  .Carousel {
+    width:100%;
+    height:auto;
+    margin: auto;
   }

@@ -18,7 +18,7 @@ const CarouselPage = () => {
           <MDBView>
             <img
               className="d-block w-100"
-              src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg"
+              src="/assets/cahoots-3.jpeg"
               alt="First slide"
             />
           <MDBMask overlay="black-light" />
@@ -59,6 +59,7 @@ const CarouselPage = () => {
       </MDBCarouselInner>
     </MDBCarousel>
     </MDBContainer>
+
   );
 }
 
