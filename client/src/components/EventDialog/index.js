@@ -96,7 +96,7 @@ function SimpleDialog(props) {
         <p>Notes for those who are in cahoots:</p>
          <input className="event-title" type="text" name="notes"></input>
         
-        <Button className={classes.root1} type="submit">Post</Button>
+        <Button className={classes.root1} type="submit" onClick={(event) => {props.handlePost(event)}}>Post</Button>
         </form>
         </ListItem>
         <ListItem>

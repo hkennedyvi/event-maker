@@ -5,23 +5,23 @@ import API from '../utils/API';
 function Home() {
     // const [event, setEvent] = useState([]);
 
-    // function handlePost(event) {
-    //     event.preventDefault();
-    //     API.create({ 
-    //         category: req.body.category,
-    //         name: req.body.name,
-    //         location: req.body.location,
-    //         participants: req.body.participants,
-    //         duration: req.body.duration,
-    //         notes: req.body.notes
-    //     })
-    //     .then(console.log("Event saved to database."))
-    //     .catch(err => console.log(err));
-    //     console.log(event);
-    // };
+    function handlePost(event) {
+        event.preventDefault();
+        API.createEvent({ 
+            category: event.category,
+            name: event.name,
+            location: event.location,
+            participants: event.participants,
+            duration: event.duration,
+            notes: event.notes
+        })
+        .then(console.log("Event saved to database."))
+        .catch(err => console.log(err));
+        console.log(event);
+    };
 
     return (
-        <MapContainer />
+        <MapContainer handlePost={handlePost}/>
     )
 }
 
