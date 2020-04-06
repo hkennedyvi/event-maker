@@ -48,12 +48,15 @@ function SignUpForm(props) {
                         Sign In
                     </Typography>
                     <CardActions>
-            <form className={classes.formRoot} >
+            <form className={classes.formRoot} 
+            // onSubmit={(e) => { props.handleSubmit(e) }} action="POST"
+            >
                 
                 <TextField
                     className={classes.textfield}
                     required
                     id="outlined-required"
+                    type="email"
                     label="Email"
                     variant="outlined"
                 />
@@ -80,7 +83,7 @@ function SignUpForm(props) {
             </CardContent>
             </Card>
             </Box>
-            {/* <form onSubmit={(e) => { props.handleSubmit(e) }} action="POST">
+            {/* <form className={classes.formRoot} onSubmit={(e) => { props.handleSubmit(e) }} action="POST">
                 <label htmlFor="email">EMAIL:</label><br />
                 <input type="email" id="email" name="email" placeholder="Email here" /><br />
                 <label htmlFor="password">PASSWORD:</label><br />
