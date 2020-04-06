@@ -15,10 +15,6 @@ const useStyles = makeStyles((theme) => ({
     },
     title: {
       flexGrow: 1,
-      color: 'rgba(46, 34, 68, 1)'
-    },
-    text: {
-        color: 'rgba(46, 34, 68, 1)',
     },
     list: {
         width: 250,
