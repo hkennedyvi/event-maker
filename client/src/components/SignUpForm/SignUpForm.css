@@ -1,0 +1,21 @@
+.MuiCard-root {
+    
+    align-self: center;
+
+}
+
+.MuiCardContent-root{
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* .MuiInputBase-input {
+    color: #ffffff;
+    background-color: #ffffff;
+} */
+
