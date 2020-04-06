@@ -1,3 +1,15 @@
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: radial-gradient(circle, #49316f, #352c62, #232654, #132046, #051937);
+  /* background-image: radial-gradient(circle, #a1149a, #6a298a, #3a2971, #142250, #04152d); */
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +47,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.loginPage {
+  background-color: red;
 }

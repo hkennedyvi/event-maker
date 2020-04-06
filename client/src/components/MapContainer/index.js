@@ -4,7 +4,6 @@ import CurrentLocation from "../CurrentLocation";
 import EventDialog from "../EventDialog";
 import EventCard from "../EventCard";
 
-
 function MapContainer(props) {
 
     const [mapSettings, setMapSettings] = useState({
