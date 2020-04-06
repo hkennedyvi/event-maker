@@ -12,16 +12,10 @@ const passport = require("./passport/setup");
 
 const Event = require("./models/event");
 
-<<<<<<< HEAD
 const Event = require("./models/event");
 
 mongoose.connect(MONGO_URI, { useNewUrlParser: true })
 .then(console.log(`MongoDB connected at ${MONGO_URI}`));
-=======
-mongoose.connect(MONGO_URI, { useNewUrlParser: true })
-.then(console.log(`MongoDB connected at ${MONGO_URI}`));
-
->>>>>>> 7d113ca10cb02f0672f9379ad5e39df3b9e8272c
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -65,11 +59,6 @@ app.post("/post-event", (req, res) => {
 //   });
 // });
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 7d113ca10cb02f0672f9379ad5e39df3b9e8272c
 // Express Session
 app.use(
   session({
