@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         flexDirection: 'column',
         flexWrap: 'wrap',
+        marginTop: '10%',
     },
 
     textfield: {
@@ -59,6 +60,7 @@ function SignUpForm(props) {
                     type="email"
                     label="Email"
                     variant="outlined"
+                    
                 />
                 <TextField
                     className={classes.textfield}
