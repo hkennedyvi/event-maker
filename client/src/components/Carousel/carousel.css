@@ -10,9 +10,11 @@
   }
 
   .Carousel-inner {
-    max-width: 100%;
+    width: 100%;
+  
+  }
 
-    img {
-      max-width: 100%;
-    }
+  .Carousel-inner img {
+     width: 100%;
+     object-fit: cover;
   }
