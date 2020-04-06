@@ -9,12 +9,10 @@ const mongoose = require("mongoose");
 const MongoStore = require("connect-mongo")(session);
 const passport = require("./passport/setup");
 
-
 const Event = require("./models/event");
 
 mongoose.connect(MONGO_URI, { useNewUrlParser: true })
 .then(console.log(`MongoDB connected at ${MONGO_URI}`));
-
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -24,15 +22,9 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-// Passport middleware
-app.use(passport.initialize());
-app.use(passport.session());
-
-// Routes
-app.use("/api/auth", auth);
-
 app.post("/post-event", (req, res) => {
   var eventData = new Event(req.body);
+  console.log(eventData);
   eventData.save()
       .then(item => {
           res.send("event saved to database");
@@ -58,8 +50,6 @@ app.post("/post-event", (req, res) => {
 //   });
 // });
 
-
-
 // Express Session
 app.use(
   session({
@@ -77,21 +67,6 @@ app.use(passport.session());
 // Declaring app routes
 const routes = require("./routes");
 const auth = require("./routes/auth");
-
-
-const Event = require("./models/event");
-
-app.post("/post-event", (req, res) => {
-  var eventData = new Event(req.body);
-  eventData.save()
-      .then(item => {
-          res.send("event saved to database");
-      })
-      .catch(err => {
-          res.status(400).send("Unable to save to database");
-      });
-});
-
 
 app.use(routes);
 app.use("/api/auth", auth);

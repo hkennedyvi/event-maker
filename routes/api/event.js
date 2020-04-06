@@ -9,4 +9,7 @@ const controller = require("../../controllers/eventsController");
 //     .get(controller.findByID)
 //     .delete(controller.remove);
 
+router.route("/event")
+    .post(controller.create);
+
 module.exports = router;
