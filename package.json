@@ -21,15 +21,19 @@
     "nodemon": "^1.18.7"
   },
   "dependencies": {
+    "@material-ui/core": "^4.9.8",
     "bcryptjs": "^2.4.3",
+    "bootstrap": "^4.4.1",
     "connect-mongo": "^3.2.0",
     "express": "^4.16.3",
-    "google-maps-react": "^2.0.2",
     "express-session": "^1.17.0",
+    "google-maps-react": "^2.0.2",
     "if-env": "^1.0.4",
+    "material-auto-rotating-carousel": "^3.0.2",
     "mongoose": "^5.8.11",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "react-swipeable-views": "^0.13.9"
   }
 }

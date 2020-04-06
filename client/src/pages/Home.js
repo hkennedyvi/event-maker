@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import MapContainer from "../components/MapContainer";
 import API from '../utils/API';
+import CarouselPage from "../components/Carousel";
+
+
+
+// import API from '../utils/API';
+
 
 function Home() {
     // const [event, setEvent] = useState([]);
@@ -21,8 +27,15 @@ function Home() {
     // };
 
     return (
-        <MapContainer />
+
+        <div>
+        <CarouselPage/> 
+        <MapContainer handlePost={handlePost}/>
+       </div>
+
     )
+
 }
+
 
 export default Home;
