@@ -29,8 +29,8 @@ function Home() {
     return (
 
         <div>
-        <CarouselPage/> 
-        <MapContainer handlePost={handlePost}/>
+        <CarouselPage /> 
+        <MapContainer />
        </div>
 
     )

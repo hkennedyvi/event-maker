@@ -11,8 +11,8 @@
 
   .Carousel-inner {
     max-width: 100%;
+  }
 
-    img {
-      max-width: 100%;
-    }
+  .Carousel-inner img {
+    max-width: 100%;
   }
