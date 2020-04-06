@@ -24,12 +24,6 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-// Passport middleware
-app.use(passport.initialize());
-app.use(passport.session());
-
-// Routes
-app.use("/api/auth", auth);
 
 app.post("/post-event", (req, res) => {
   var eventData = new Event(req.body);

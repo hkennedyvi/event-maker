@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 // import { Route, Redirect } from "react-router-dom";
 import LoginForm from '../components/LoginForm';
+import SignUpForm from '../components/SignUpForm';
 import axios from 'axios';
+
 
 function Login() {
 
@@ -30,9 +32,9 @@ function Login() {
             });
     }
     return (
-
+    <div className="signUpForm" >
         <LoginForm handleSubmit={handleSubmit} />
-        <div className="signUpForm" >
+        
             <SignUpForm handleSubmit={handleSubmit} />
         </div>
 
