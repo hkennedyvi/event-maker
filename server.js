@@ -13,6 +13,9 @@ const app = express();
 
 const Event = require("./models/event");
 
+mongoose.connect(MONGO_URI, { useNewUrlParser: true })
+.then(console.log(`MongoDB connected at ${MONGO_URI}`));
+
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -65,14 +68,18 @@ app.use(
   })
 );
 
+// Passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Routes
+app.use("/api/auth", auth);
+
 // Send every request to the React app
 // Define any API routes before this runs
 app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
-
-mongoose.connect(MONGO_URI, { useNewUrlParser: true })
-.then(console.log(`MongoDB connected at ${MONGO_URI}`));
 
 app.listen(PORT, function() {
     console.log(`🌎 ==> API server now on port ${PORT}!`);
