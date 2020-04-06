@@ -1,13 +1,16 @@
-const path = require("path");
-const express = require('express')
+const express = require("express");
 const session = require("express-session");
-
-const PORT = process.env.PORT || 3002;
-const app = express();
-const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/cahoots";
-const mongoose = require("mongoose");
 const MongoStore = require("connect-mongo")(session);
+const path = require("path");
+
 const passport = require("./passport/setup");
+const auth = require("./routes/auth");
+const routes = require("./routes")
+
+const mongoose = require("mongoose");
+const PORT = process.env.PORT || 3002;
+const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/cahoots";
+const app = express();
 
 mongoose.connect(MONGO_URI, { useNewUrlParser: true })
 .then(console.log(`MongoDB connected at ${MONGO_URI}`));
@@ -34,28 +37,16 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Declaring app routes
-const routes = require("./routes");
-const auth = require("./routes/auth");
+// Routes
+// router.use(routes);
+router.use("/api/auth", auth);
 
-
-const Event = require("./models/event");
-
-app.post("/post-event", (req, res) => {
-  var eventData = new Event(req.body);
-  eventData.save()
-      .then(item => {
-          res.send("event saved to database");
-      })
-      .catch(err => {
-          res.status(400).send("Unable to save to database");
-      });
+// Send every request to the React app
+// Define any API routes before this runs
+app.get("*", function(req, res) {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
-
-
-app.use(routes);
-app.use("/api/auth", auth);
 
 app.listen(PORT, function() {
-  console.log(`🌎 ==> API server now on port ${PORT}!`);
-});
+    console.log(`🌎 ==> API server now on port ${PORT}!`);
+  });
