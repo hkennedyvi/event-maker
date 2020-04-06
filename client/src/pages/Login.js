@@ -37,7 +37,9 @@ function Login() {
     };
 
     return (
-        <SignUpForm handleSubmit={handleSubmit} />
+        <div className="signUpForm" >
+            <SignUpForm handleSubmit={handleSubmit} />
+        </div>
     )
 }
 

@@ -1,32 +1,41 @@
 import React from 'react';
-<<<<<<< HEAD
 import FacebookBtn from '../FacebookBtn';
 import { makeStyles } from '@material-ui/core/styles';
 import { TextField, FormHelperText, Card, CardActions, CardContent, Typography, Box } from '@material-ui/core';
 import './SignUpForm.css'
+import { red } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
     root: {
         '& > *': {
             margin: theme.spacing(1),
-            width: '25ch',
+            // width: '25ch',
             display: 'flex',
             flexDirection: 'column',
-
+            
         },
         
+    },
+    cardRoot: {
+        textAlign: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        flexWrap: 'wrap',
     },
 
     textfield: {
         marginBottom: 15,
-    }
+    },
+
+    formRoot: {
+        display: 'flex',
+        flexDirection: 'column',
+        flexWrap: 'wrap',
+    },
 
 
     
 }));
-=======
-// import FacebookBtn from '../FacebookBtn';
->>>>>>> master
 
 function SignUpForm(props) {
     const classes = useStyles();
@@ -39,7 +48,8 @@ function SignUpForm(props) {
                         Sign In
                     </Typography>
                     <CardActions>
-            <form className={classes.formRoot}>
+            <form className={classes.formRoot} >
+                
                 <TextField
                     className={classes.textfield}
                     required
@@ -56,12 +66,21 @@ function SignUpForm(props) {
                     autoComplete="current-password"
                     variant="outlined"
                 />
+                <TextField
+                    className={classes.textfield}
+                    required
+                    id="outlined-password-input"
+                    label="Confirm Password"
+                    type="password"
+                    autoComplete="current-password"
+                    variant="outlined"
+                />
             </form>
             </CardActions>
             </CardContent>
             </Card>
             </Box>
-            <form onSubmit={(e) => { props.handleSubmit(e) }} action="POST">
+            {/* <form onSubmit={(e) => { props.handleSubmit(e) }} action="POST">
                 <label htmlFor="email">EMAIL:</label><br />
                 <input type="email" id="email" name="email" placeholder="Email here" /><br />
                 <label htmlFor="password">PASSWORD:</label><br />
@@ -69,7 +88,7 @@ function SignUpForm(props) {
                 <label htmlFor="password">CONFIRM PASSWORD:</label><br />
                 <input type="password" id="confirm" name="confirm" placeholder="Confirm password here" /><br /><br />
                 <input type="submit" value="Submit" />
-            </form>
+            </form> */}
             {/* <FacebookBtn /> */}
         </div>
     )
