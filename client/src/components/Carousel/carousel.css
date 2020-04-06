@@ -1,10 +1,18 @@
-/* .carousel-item .img-fluid {
+.Carousel-item .img-fluid {
     width:100%;
     height:auto;
-  } */
+  }
 
   .Carousel {
     width:100%;
     height:auto;
     margin: auto;
+  }
+
+  .Carousel-inner {
+    max-width: 100%;
+
+    img {
+      max-width: 100%;
+    }
   }
