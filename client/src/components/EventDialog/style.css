@@ -1,0 +1,21 @@
+.event-btn-div {
+    z-index: 99;
+    position: relative;
+}
+
+#event-btn {
+    margin-top: 40px;
+    margin-left: 10px;
+}
+
+#curate-body {
+    background: linear-gradient(0.85turn,  rgba(19, 34, 119, 0.7), rgba(231, 51, 156, 0.7), rgba(253, 160, 0, 0.7));
+    border: none;
+}
+
+.post-btn {
+    padding: 10px 15px 10px 15px;
+    background: rgba(19, 34, 119, 0.8);
+    color: white;
+    border: none;
+}

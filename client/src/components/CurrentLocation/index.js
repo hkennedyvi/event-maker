@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import EventButton from '../EventButton';
 import "./style.css";
 
 const mapStyles = {
@@ -42,7 +41,7 @@ export class CurrentLocation extends React.Component {
         const maps = google.maps;
 
         if (map) {
-            let center = new maps.LatLng(current.lat, current.lng + .03);
+            let center = new maps.LatLng(current.lat - 0.01, current.lng);
             map.panTo(center);
         }
     }

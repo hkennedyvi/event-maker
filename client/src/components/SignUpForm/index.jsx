@@ -92,7 +92,8 @@ function SignUpForm(props) {
                 <input type="password" id="password" name="password" placeholder="Password here" /><br />
                 <label htmlFor="password">CONFIRM PASSWORD:</label><br />
                 <input type="password" id="confirm" name="confirm" placeholder="Confirm password here" /><br /><br />
-                <input type="submit" value="Submit" />
+
+                <input type="submit" value="Sign Up" />
             </form> */}
             {/* <FacebookBtn /> */}
         </div>
