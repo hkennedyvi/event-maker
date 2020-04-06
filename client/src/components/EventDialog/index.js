@@ -43,8 +43,9 @@ function SimpleDialog(props) {
       <DialogTitle id="simple-dialog-title">What's the haps?</DialogTitle>
       <List>
         <ListItem>
-          <label for="category">Event Category:</label>
-          <select id="category">
+          <form method="POST" action="/post-event">
+          <label htmlFor="category">Event Category:</label>
+          <select id="category" name="category">
             <option value="Sports">Sports</option>
             <option value="Music">Music</option>
             <option value="Entertainment">Entertainment</option>
@@ -52,18 +53,15 @@ function SimpleDialog(props) {
             <option value="Just Hanging">Just Hanging</option>
             <option value="Other">Other</option>
           </select>
-        </ListItem>
-        <ListItem>
+        
         <p>Name of Event:</p>
-        <input className="event-title" type="text"></input>
-        </ListItem>
-        <ListItem>
+        <input className="event-title" type="text" name="name"></input>
+        
         <p>Location:</p>
-         <input className="event-title" type="text"></input>
-        </ListItem>
-        <ListItem>
-        <label for="participants"># Participants Needed:</label>  
-        <select id="participants">
+         <input className="event-title" type="text" name="location"></input>
+        
+        <label htmlFor="participants"># Participants Needed:</label>  
+        <select id="participants" name="participants">
            <option value="1">1</option>
            <option value="2">2</option>
            <option value="3">3</option>
@@ -78,10 +76,9 @@ function SimpleDialog(props) {
            <option value="12">12</option>
            <option value="12+">12+</option>
          </select>
-        </ListItem>
-        <ListItem>
-        <label for="duration">Duration of Event:</label>  
-         <select id="duration">
+        
+        <label htmlFor="duration">Duration of Event:</label>  
+         <select id="duration" name="duration">
            <option value="thirty">30 mins</option>
            <option value="fortyfive">45 mins</option>
            <option value="one">1 hour</option>
@@ -95,13 +92,12 @@ function SimpleDialog(props) {
            <option value="five">5 hours</option>
            <option value="five-plus">5+ hours</option>
          </select>
-        </ListItem>
-        <ListItem>
+       
         <p>Notes for those who are in cahoots:</p>
-         <input className="event-title" type="text"></input>
-        </ListItem>
-        <ListItem>
-        <Button className={classes.root1} onClick={(event) => {props.handlePost(event)}}>Post</Button>
+         <input className="event-title" type="text" name="notes"></input>
+        
+        <Button className={classes.root1} type="submit">Post</Button>
+        </form>
         </ListItem>
         <ListItem>
         <h4>Your Event Will Start NOW</h4>
