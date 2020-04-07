@@ -19,6 +19,6 @@
     background-color: #ffffff;
 } */
 
-.MuiInput-colorSecondary{
-    color: red;
+.MuiButton-label {
+    color: #ffffff;
 }
