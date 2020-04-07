@@ -31,24 +31,6 @@ function Home() {
         });
     }
 
-    // function handlePost(event) {
-    //     event.preventDefault();
-    //     // console.log("Hi from post handler");
-    //     // console.log(this);
-    //     console.log(newEvent);
-    //     API.createEvent({ 
-    //         category: "category",
-    //         name: newEvent.name,
-    //         location: newEvent.location,
-    //         participants: 6,
-    //         duration: 2,
-    //         notes: newEvent.notes,
-    //         creator: "email"
-    //     })
-    //     .then(console.log("Event saved to database."))
-    //     .catch(err => console.log(err));
-    //     // console.log(event);
-    // };
 
     return (
 
