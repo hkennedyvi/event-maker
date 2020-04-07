@@ -3,12 +3,16 @@ import MapContainer from "../components/MapContainer";
 import API from '../utils/API';
 
 function Home() {
-    // const [event, setEvent] = useState([]);
+    const [newEvent, setNewEvent] = useState([]);
+
+    function handleChange(event) {
+        console.log(event.target.value);
+    }
 
     function handlePost(event) {
         event.preventDefault();
-        console.log("Hi from post handler");
-        console.log(this);
+        // console.log("Hi from post handler");
+        // console.log(this);
 
         API.createEvent({ 
             category: "sports",
@@ -20,11 +24,11 @@ function Home() {
         })
         .then(console.log("Event saved to database."))
         .catch(err => console.log(err));
-        console.log(event);
+        // console.log(event);
     };
 
     return (
-        <MapContainer handlePost={handlePost}/>
+        <MapContainer handlePost={handlePost} handleChange={handleChange}/>
     )
 }
 
