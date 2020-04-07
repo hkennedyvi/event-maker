@@ -43,7 +43,7 @@ function SimpleDialog(props) {
       <DialogTitle id="simple-dialog-title">What's the haps?</DialogTitle>
       <List>
         <ListItem>
-          <form method="POST" action="/post-event">
+          <form method="POST" action="">
           <label htmlFor="category">Event Category:</label>
           <select id="category" name="category">
             <option value="Sports">Sports</option>

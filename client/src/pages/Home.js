@@ -9,13 +9,14 @@ function Home() {
         event.preventDefault();
         console.log("Hi from post handler");
         console.log(this);
+
         API.createEvent({ 
-            category: event.category,
-            name: event.name,
-            location: event.location,
-            participants: event.participants,
-            duration: event.duration,
-            notes: event.notes
+            category: "sports",
+            name: "softball",
+            location: "park",
+            participants: 6,
+            duration: 2,
+            notes: "it'll be fun!"
         })
         .then(console.log("Event saved to database."))
         .catch(err => console.log(err));
