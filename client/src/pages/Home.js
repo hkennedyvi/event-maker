@@ -9,13 +9,17 @@ function Home() {
         console.log(event.target.value);
         let category = document.getElementById("category");
         // console.log(category.value);
-        let location = document.getElementById("location");
         let name = document.getElementById("name");
+        let location = document.getElementById("location");
+        let participants = document.getElementById("participants");
+        let duration = document.getElementById("duration");
         let notes = document.getElementById("notes");
         setNewEvent({ 
             category: category.value, 
             name: name.value,
             location: location.value,
+            participants: participants.value,
+            duration: duration.value,
             notes: notes.value
         });
     }
@@ -26,12 +30,12 @@ function Home() {
         // console.log(this);
         console.log(newEvent);
         API.createEvent({ 
-            category: "sports",
-            name: "name.value",
-            location: "location.value",
+            category: "category",
+            name: newEvent.name,
+            location: newEvent.location,
             participants: 6,
             duration: 2,
-            notes: "notes.value",
+            notes: newEvent.notes,
             creator: "email"
         })
         .then(console.log("Event saved to database."))
