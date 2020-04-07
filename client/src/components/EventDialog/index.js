@@ -141,12 +141,8 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
 import { makeStyles } from '@material-ui/core/styles';
+import SimpleSelect from "../SimpleSelect";
 import "./style.css";
 
 const useStyles = makeStyles({
@@ -167,7 +163,7 @@ const useStyles = makeStyles({
       color: 'white',
       height: 48,
       padding: '0 30px',
-    }
+    },
   });
 
 export default function FormDialog(props) {
@@ -191,14 +187,18 @@ export default function FormDialog(props) {
         <DialogTitle id="form-dialog-title">What's the haps?</DialogTitle>
         <DialogContent>
           <DialogContentText>
+            Event Category:
+          </DialogContentText>
+          <SimpleSelect handleChange={props.handleChange}/>
+          <DialogContentText>
             Event Name:
           </DialogContentText>
           <TextField
             autoFocus
             margin="dense"
             id="name"
-            label="Email Address"
-            type="email"
+            label="Name"
+            type="text"
             fullWidth
             onChange={(event) => props.handleChange(event)}
           />
@@ -208,9 +208,9 @@ export default function FormDialog(props) {
           <TextField
             autoFocus
             margin="dense"
-            id="name"
-            label="Email Address"
-            type="email"
+            id="location"
+            label="Location"
+            type="text"
             fullWidth
             onChange={(event) => props.handleChange(event)}
           />
@@ -220,9 +220,9 @@ export default function FormDialog(props) {
           <TextField
             autoFocus
             margin="dense"
-            id="name"
-            label="Email Address"
-            type="email"
+            id="notes"
+            label="Notes"
+            type="text"
             fullWidth
             onChange={(event) => props.handleChange(event)}
           />
