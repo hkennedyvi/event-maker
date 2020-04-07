@@ -10,7 +10,7 @@ module.exports = {
     },
     findByID: function(req, res) {
         db
-        .findById(req.params.id)
+        .findById({ email: req.params.user })
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
@@ -19,12 +19,11 @@ module.exports = {
         .create(req.body)
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
-    },
-    remove: function(req, res) {
-        db
-        .findById({ _id: req.params.id })
-        .then(dbModel => dbModel.remove())
-        .then(dbModel => res.json(dbModel))
-        .catch(err => res.status(422).json(err));
     }
+    // findOneEmail: function(req, res) {
+    //     db
+    //     .findById({ email: req.params.user })
+    //     .then(dbModel => res.json(dbModel))
+    //     .catch(err => res.status(422).json(err));
+    // }
 };
