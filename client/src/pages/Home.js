@@ -7,6 +7,8 @@ function Home() {
 
     function handlePost(event) {
         event.preventDefault();
+        console.log("Hi from post handler");
+        console.log(this);
         API.createEvent({ 
             category: event.category,
             name: event.name,
