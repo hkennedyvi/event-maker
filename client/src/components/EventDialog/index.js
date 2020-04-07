@@ -80,7 +80,7 @@ export default function FormDialog(props) {
                 <InputLabel id="demo-simple-select-outlined-label">Category</InputLabel>
                 <Select
                     labelId="demo-simple-select-outlined-label"
-                    id="category"
+                    name="category"
                     value={age}
                     onChange={(event) => {props.handleChange(event)}}
                     label="Age"
@@ -119,7 +119,7 @@ export default function FormDialog(props) {
                 <InputLabel id="demo-simple-select-outlined-label">Participants</InputLabel>
                 <Select
                     labelId="demo-simple-select-outlined-label"
-                    id="participants"
+                    name="participants"
                     value={age}
                     onChange={(event) => {props.handleChange(event)}}
                     label="Age"
@@ -146,7 +146,7 @@ export default function FormDialog(props) {
                 <InputLabel id="demo-simple-select-outlined-label">Duration</InputLabel>
                 <Select
                     labelId="demo-simple-select-outlined-label"
-                    id="duration"
+                    name="duration"
                     value={age}
                     onChange={(event) => {props.handleChange(event)}}
                     label="Age"
