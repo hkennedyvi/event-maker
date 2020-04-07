@@ -3,9 +3,10 @@ import { MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDB
   "mdbreact";
 import "./carousel.css"
 
+
 const CarouselPage = () => {
   return (
-    <MDBContainer >
+    <MDBContainer>
       <MDBCarousel
         activeItem={1}
         length={3}
@@ -63,6 +64,7 @@ const CarouselPage = () => {
 
   );
 }
+
 
 export default CarouselPage;
 
