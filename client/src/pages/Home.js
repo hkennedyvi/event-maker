@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import MapContainer from "../components/MapContainer";
-<<<<<<< HEAD
+
 import CarouselPage from "../components/Carousel";
 
 
 
 // import API from '../utils/API';
-=======
-import API from '../utils/API';
->>>>>>> d030f2beedcaf21f2b0db0372b93329a8fb69527
+
 
 
 function Home() {
@@ -30,16 +28,13 @@ function Home() {
     // };
 
     return (
-<<<<<<< HEAD
+
 
         <div>
         <CarouselPage/> 
-        <MapContainer handlePost={handlePost}/>
+        <MapContainer/>
        </div>
 
-=======
-        <MapContainer />
->>>>>>> d030f2beedcaf21f2b0db0372b93329a8fb69527
     )
 
 }

@@ -1,20 +1,22 @@
-.Carousel-item .img-fluid {
+/* .Carousel-item .img-fluid {
     width:100%;
     height:auto;
-  }
+  } */
 
   .Carousel {
     width:100%;
-    height:auto;
-    margin: auto;
+    height:100%;
+    margin-left: 0px;
+    margin-right: 0px;
   }
 
-  .Carousel-inner {
+  /* .Carousel-inner {
     width: 100%;
-  
+    height: 50px;
   }
 
   .Carousel-inner img {
      width: 100%;
      object-fit: cover;
-  }
+     height: 50px;
+  } */
