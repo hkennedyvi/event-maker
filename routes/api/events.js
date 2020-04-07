@@ -5,7 +5,7 @@ router.route('/')
     .get(eventsController.findAll)
     .post(eventsController.create);
 
-router.route("/:id")
-    .delete(eventsController.remove);
+router.route("/:user")
+    .get(eventsController.findByID);
 
 module.exports = router;
