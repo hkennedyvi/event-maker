@@ -59,7 +59,7 @@ function NavBar() {
             case "Profile":
                 return {
                     // Future development: need to update file path when available
-                    "redirect": "/home",
+                    "redirect": "/myprofile",
                     "icon": <AccountCircleOutlinedIcon />
                 }
             case "Logout":

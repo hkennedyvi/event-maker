@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 import CurrentLocation from "../CurrentLocation";
-import EventDialog from "../EventDialog";
+import FormDialog from "../EventDialog";
 import EventCard from "../EventCard";
 
 function MapContainer(props) {
@@ -45,7 +45,7 @@ function MapContainer(props) {
                     </div>
                 </InfoWindow>
             </CurrentLocation>
-            <EventDialog handlePost={props.handlePost}/>
+            <FormDialog handlePost={props.handlePost} handleChange={props.handleChange}/>
             <EventCard />
         </div>
     );
