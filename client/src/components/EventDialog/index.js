@@ -55,11 +55,11 @@ function SimpleDialog(props) {
           </select>
         
         <p>Name of Event:</p>
-        <input className="event-title" type="text" name="name"></input>
+        <input className="event-input" type="text" name="name"></input>
         
         <p>Location:</p>
-         <input className="event-title" type="text" name="location"></input>
-        
+         <input className="event-input" type="text" name="location"></input>
+        <br></br><br></br>
         <label htmlFor="participants"># Participants Needed:</label>  
         <select id="participants" name="participants">
            <option value="1">1</option>
@@ -76,7 +76,7 @@ function SimpleDialog(props) {
            <option value="12">12</option>
            <option value="12+">12+</option>
          </select>
-        
+        <br></br><br></br>
         <label htmlFor="duration">Duration of Event:</label>  
          <select id="duration" name="duration">
            <option value="thirty">30 mins</option>
@@ -94,8 +94,8 @@ function SimpleDialog(props) {
          </select>
        
         <p>Notes for those who are in cahoots:</p>
-         <input className="event-title" type="text" name="notes"></input>
-        
+         <input className="event-input" type="text" name="notes"></input>
+        <br></br><br></br>
         <Button className={classes.root1} type="submit" onClick={(event) => {props.handlePost(event)}}>Post</Button>
         </form>
         </ListItem>

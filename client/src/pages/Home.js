@@ -9,7 +9,7 @@ function Home() {
         event.preventDefault();
         console.log("Hi from post handler");
         console.log(this);
-        
+
         API.createEvent({ 
             category: "sports",
             name: "softball",
