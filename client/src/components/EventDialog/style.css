@@ -13,6 +13,10 @@
 }
 
 #event-btn {
-    margin-top: 40px;
+    margin-top: 60px;
     margin-left: 10px;
+}
+
+#select {
+    width: 30%;
 }
