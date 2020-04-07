@@ -24,8 +24,9 @@ const CarouselPage = () => {
               <MDBMask overlay="black-light" />
             </MDBView>
             <MDBCarouselCaption>
-              <h3 className="h3-responsive">Light mask</h3>
-              <p>First text</p>
+              <h3 className="first-slide">You're in Cahoots!</h3>
+              <button className="button">Create A Hoot!</button>
+              <p>Live in the momment and find friends instantly!</p>
             </MDBCarouselCaption>
           </MDBCarouselItem>
           <MDBCarouselItem itemId="2">
