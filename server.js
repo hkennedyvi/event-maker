@@ -9,7 +9,7 @@ const mongoose = require("mongoose");
 const MongoStore = require("connect-mongo")(session);
 const passport = require("./passport/setup");
 
-const Event = require("./models/event");
+// const Event = require("./models/event");
 
 mongoose.connect(MONGO_URI, { useNewUrlParser: true })
 .then(console.log(`MongoDB connected at ${MONGO_URI}`));
@@ -22,10 +22,6 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> master
 app.post("/post-event", (req, res) => {
   var eventData = new Event(req.body);
   console.log(eventData);
@@ -37,6 +33,19 @@ app.post("/post-event", (req, res) => {
           res.status(400).send("Unable to save to database");
       });
 });
+
+// app.post("/post-event", (req, res) => {
+//   var eventData = new Event(req.body);
+//   console.log(eventData);
+//   eventData.save()
+//       .then(item => {
+//           res.send("event saved to database");
+//       })
+//       .catch(err => {
+//           res.status(400).send("Unable to save to database");
+//       });
+// });
+>>>>>>> master
 
 // app.post('/post-feedback', function (req, res) {
 //   MONGO_URI.then(function(db) {

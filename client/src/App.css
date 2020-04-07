@@ -10,6 +10,10 @@ body {
   /* background-image: radial-gradient(circle, #a1149a, #6a298a, #3a2971, #142250, #04152d); */
 }
 
+html, body {
+  font-family: 'Comfortaa', cursive;
+}
+
 .App {
   text-align: center;
 }

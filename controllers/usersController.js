@@ -1,4 +1,4 @@
-const db = require("../models/event");
+const db = require("../models/user");
 
 module.exports = {
     findAll: function(req, res) {
@@ -10,7 +10,7 @@ module.exports = {
     },
     findByID: function(req, res) {
         db
-        .findById({ email: req.params.user })
+        .findById(req.params.id)
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
@@ -19,11 +19,5 @@ module.exports = {
         .create(req.body)
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
-    }
-    // findOneEmail: function(req, res) {
-    //     db
-    //     .findById({ email: req.params.user })
-    //     .then(dbModel => res.json(dbModel))
-    //     .catch(err => res.status(422).json(err));
-    // }
+    },
 };

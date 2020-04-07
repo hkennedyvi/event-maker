@@ -3,25 +3,48 @@ import MapContainer from "../components/MapContainer";
 import API from '../utils/API';
 
 function Home() {
-    // const [event, setEvent] = useState([]);
+    const [newEvent, setNewEvent] = useState({});
+
+    function handleChange(event) {
+        console.log(event.target.value);
+        let category = document.getElementById("category");
+        // console.log(category.value);
+        let name = document.getElementById("name");
+        let location = document.getElementById("location");
+        let participants = document.getElementById("participants");
+        let duration = document.getElementById("duration");
+        let notes = document.getElementById("notes");
+        setNewEvent({ 
+            category: category.value, 
+            name: name.value,
+            location: location.value,
+            participants: participants.value,
+            duration: duration.value,
+            notes: notes.value
+        });
+    }
 
     function handlePost(event) {
         event.preventDefault();
+        // console.log("Hi from post handler");
+        // console.log(this);
+        console.log(newEvent);
         API.createEvent({ 
-            category: event.category,
-            name: event.name,
-            location: event.location,
-            participants: event.participants,
-            duration: event.duration,
-            notes: event.notes
+            category: "category",
+            name: newEvent.name,
+            location: newEvent.location,
+            participants: 6,
+            duration: 2,
+            notes: newEvent.notes,
+            creator: "email"
         })
         .then(console.log("Event saved to database."))
         .catch(err => console.log(err));
-        console.log(event);
+        // console.log(event);
     };
 
     return (
-        <MapContainer handlePost={handlePost}/>
+        <MapContainer handlePost={handlePost} handleChange={handleChange}/>
     )
 }
 

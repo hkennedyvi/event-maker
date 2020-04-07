@@ -28,11 +28,37 @@ db.User
   const eventSeed = [
     {
       category: "sports",
-      subgategory: "tennis",
+      name: "tennis",
       participants: 4,
       location: "Laurelhurst",
-      duration: 2
+      duration: 2,
+      creator: "hkenvi@yahoo.com"
+    },
+    {
+      category: "trivia",
+      name: "history",
+      participants: 2,
+      location: "Pizza Schmizza",
+      duration: 2,
+      creator: "hkenvi@yahoo.com"
+    },
+    {
+      category: "sports",
+      name: "softball",
+      participants: 18,
+      location: "Laurelhurst",
+      duration: 2,
+      creator: "hkenvi@yahoo.com"
+    },
+    {
+      category: "sports",
+      name: "softball",
+      participants: 18,
+      location: "Laurelhurst",
+      duration: 2,
+      creator: "different@yahoo.com"
     }
+
   ];
   
   db.Event
