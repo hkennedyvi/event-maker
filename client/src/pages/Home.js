@@ -4,22 +4,27 @@ import API from '../utils/API';
 
 function Home() {
     const [newEvent, setNewEvent] = useState({});
+    const [category, setCategory] = useState();
+    const [participants, setParticipants] = useState();
+    const [duration, setDuration] = useState();
 
     function handleChange(event) {
         console.log(event.target.value);
-        let category = document.getElementById("category");
-        // console.log(category.value);
+        if (event.target.name == 'category') {
+            setCategory(event.target.value);
+        }
         let name = document.getElementById("name");
         let location = document.getElementById("location");
-        let participants = document.getElementById("participants");
-        let duration = document.getElementById("duration");
+        if (event.target.name == 'participants') {
+            setParticipants(event.target.value);
+        }
+        if (event.target.name == 'duration') {
+            setDuration(event.target.value);
+        }
         let notes = document.getElementById("notes");
-        setNewEvent({ 
-            category: category.value, 
+        setNewEvent({
             name: name.value,
             location: location.value,
-            participants: participants.value,
-            duration: duration.value,
             notes: notes.value
         });
     }
@@ -29,12 +34,22 @@ function Home() {
         // console.log("Hi from post handler");
         // console.log(this);
         console.log(newEvent);
-        API.createEvent({ 
-            category: "category",
+        console.log({ 
+            category: category,
             name: newEvent.name,
             location: newEvent.location,
-            participants: 6,
-            duration: 2,
+            participants: participants,
+            duration: duration,
+            notes: newEvent.notes,
+            creator: "email"
+        });
+        
+        API.createEvent({ 
+            category: category,
+            name: newEvent.name,
+            location: newEvent.location,
+            participants: participants,
+            duration: duration,
             notes: newEvent.notes,
             creator: "email"
         })
@@ -47,5 +62,4 @@ function Home() {
         <MapContainer handlePost={handlePost} handleChange={handleChange}/>
     )
 }
-
 export default Home;
