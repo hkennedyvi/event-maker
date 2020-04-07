@@ -5,7 +5,7 @@ import CarouselPage from "../components/Carousel";
 
 
 
-// import API from '../utils/API';
+import API from '../utils/API';
 
 
 
