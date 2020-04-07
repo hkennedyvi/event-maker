@@ -141,6 +141,11 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 import { makeStyles } from '@material-ui/core/styles';
 import "./style.css";
 
@@ -162,7 +167,7 @@ const useStyles = makeStyles({
       color: 'white',
       height: 48,
       padding: '0 30px',
-    },
+    }
   });
 
 export default function FormDialog(props) {
@@ -186,8 +191,31 @@ export default function FormDialog(props) {
         <DialogTitle id="form-dialog-title">What's the haps?</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            To subscribe to this website, please enter your email address here. We will send updates
-            occasionally.
+            Event Name:
+          </DialogContentText>
+          <TextField
+            autoFocus
+            margin="dense"
+            id="name"
+            label="Email Address"
+            type="email"
+            fullWidth
+            onChange={(event) => props.handleChange(event)}
+          />
+          <DialogContentText>
+            Location:
+          </DialogContentText>
+          <TextField
+            autoFocus
+            margin="dense"
+            id="name"
+            label="Email Address"
+            type="email"
+            fullWidth
+            onChange={(event) => props.handleChange(event)}
+          />
+          <DialogContentText>
+            Notes for those who are in cahoots:
           </DialogContentText>
           <TextField
             autoFocus
