@@ -29,8 +29,6 @@ function EventCard() {
             <h5>notes notes notes</h5>
             <Button id="join-btn" lassName={classes.root} >Join</Button>
             <Button id="next-btn" className={classes.root} >Next Event</Button>
-            {/* <button className="join-btn">join</button>
-            <button className="next-btn">next event</button> */}
         </div>
     )
 };
