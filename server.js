@@ -9,7 +9,11 @@ const mongoose = require("mongoose");
 const MongoStore = require("connect-mongo")(session);
 const passport = require("./passport/setup");
 
+<<<<<<< HEAD
 // const Event = require("./models/event");
+=======
+const Event = require("./models/event");
+>>>>>>> 6adc6622b2bc7c0a6f4432d553e09b355da41b20
 
 mongoose.connect(MONGO_URI, { useNewUrlParser: true })
 .then(console.log(`MongoDB connected at ${MONGO_URI}`));
@@ -50,6 +54,11 @@ if (process.env.NODE_ENV === "production") {
 //   });
 // });
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 6adc6622b2bc7c0a6f4432d553e09b355da41b20
 // Express Session
 app.use(
   session({

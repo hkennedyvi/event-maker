@@ -18,8 +18,18 @@
     height: 50px;
   }
 
+<<<<<<< HEAD
   .Carousel-inner img {
      width: 100%;
      object-fit: cover;
      height: 50px;
   } */
+=======
+  .Carousel-inner {
+    max-width: 100%;
+  }
+
+  .Carousel-inner img {
+    max-width: 100%;
+  }
+>>>>>>> 6adc6622b2bc7c0a6f4432d553e09b355da41b20

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import MapContainer from "../components/MapContainer";
-
 import CarouselPage from "../components/Carousel";
 
 
