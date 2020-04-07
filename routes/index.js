@@ -8,6 +8,8 @@ const isAuthenticated = require("../passport/isAuthenticated");
 // router.use('/api');
 // console.log(router);
 
+router.use("/api", apiRoutes);
+
 router.get("/home", isAuthenticated, function (req, res) {
   res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
