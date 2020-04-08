@@ -14,8 +14,8 @@ function Profile() {
     function loadSavedEvents() {
 
         API.getEventsByCreator(user).then(res => {
-            console.log(user)
-            console.log(res.data);
+            // console.log(user)
+            // console.log(res.data);
 
             setEvents(res.data);
         })

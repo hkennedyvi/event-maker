@@ -9,5 +9,28 @@ export default {
     },
     getEventsByCreator: function (creator) {
         return axios.get("/api/events?creator=" + creator);
-    }
+    },
+    isLoggedIn : function(setLoading) {
+        console.log("is logged in")
+	    axios.get('/api/auth/checkToken')
+	      .then(res => {
+	        if (res.status !== 200) {
+		        this.logout();
+	        }
+	      })
+	      .catch(err => {
+	        this.logout();
+	      });		
+	},
+	logout: function() {
+        console.log("logged out")
+	  axios
+	    .get("/api/auth/logout")
+	    .then(res => {
+	      window.location = '/';
+	    })
+	    .catch(err => {
+	      console.log(err);
+	    })
+	}	
 }

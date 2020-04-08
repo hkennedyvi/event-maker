@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import ReactDOM from 'react-dom';
 import "./style.css";
 
@@ -24,14 +24,13 @@ export class CurrentLocation extends React.Component {
         };
     }
 
-    grabLocation() {
-        const currentLat = this.state.currentLocation.lat;
-        const currentLng = this.state.currentLocation.lng;
-        console.log(currentLat);
-        console.log(currentLng);
-        }
-        
-        
+    // grabLocatiion() {
+
+    //     const currentLat = this.state.currentLocation.lat;
+    //     const currentLng = this.state.currentLocation.lng;
+    //     console.log(currentLat);
+    //     console.log(currentLng);
+    //     }
 
     componentDidUpdate(prevProps, prevState) {
         if (prevProps.google !== this.props.google) {
@@ -125,7 +124,7 @@ export class CurrentLocation extends React.Component {
                 {this.renderChildren()}
             </div>
             <div>
-                <button id="mybtn" onClick={(event)=> this.grabLocation(event)}><h1>click here</h1>
+                <button id="mybtn" onClick={(event)=> this.props.handleLocationGrab(this.state.currentLocation)}><h1>click here</h1>
                 </button>
             </div>
             </div>

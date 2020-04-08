@@ -7,6 +7,8 @@ const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/cahoots";
 const mongoose = require("mongoose");
 const MongoStore = require("connect-mongo")(session);
 const passport = require("./passport/setup");
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 
 mongoose.connect(MONGO_URI, { useNewUrlParser: true })
 .then(console.log(`MongoDB connected at ${MONGO_URI}`));
@@ -32,6 +34,10 @@ app.use(
 // Passport middleware
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(cookieParser());
 
 // Declaring app routes
 const routes = require("./routes");
