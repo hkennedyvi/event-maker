@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import API from '../utils/API';
+import UserCreatedSection from '../components/UserCreatedSection';
 
 function Profile() {
 
-    const [events, setEvents] = useState({});
+    const [events, setEvents] = useState([]);
     const [user, setUser] = useState("hkenvi@yahoo.com");
 
     useEffect(() => {
@@ -12,17 +13,19 @@ function Profile() {
 
     function loadSavedEvents() {
 
-        API.getUserEvents(user).then(res => {
-            console.log(user)
-            console.log(res);
+        API.getUserEvents().then(res => {
+            console.log("HELLO FROM PROFILE")
+            console.log(res.data);
 
-            // setEvents(res.data);
+            setEvents(res.data);
         })
             .catch(err => console.log(err));
     };
 
     return (
-        <h1>MY PROFILE PAGE</h1>
+        <div>
+            <UserCreatedSection events={events} />
+        </div>
     )
 }
 

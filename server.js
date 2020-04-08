@@ -26,6 +26,18 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
+app.post("/post-event", (req, res) => {
+  var eventData = new Event(req.body);
+  console.log(eventData);
+  eventData.save()
+      .then(item => {
+          res.send("event saved to database");
+      })
+      .catch(err => {
+          res.status(400).send("Unable to save to database");
+      });
+});
+
 // app.post("/post-event", (req, res) => {
 //   var eventData = new Event(req.body);
 //   console.log(eventData);
@@ -37,6 +49,7 @@ if (process.env.NODE_ENV === "production") {
 //           res.status(400).send("Unable to save to database");
 //       });
 // });
+>>>>>>> master
 
 // app.post('/post-feedback', function (req, res) {
 //   MONGO_URI.then(function(db) {

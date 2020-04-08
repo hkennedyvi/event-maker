@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import MapContainer from "../components/MapContainer";
 import CarouselPage from "../components/Carousel";
 
@@ -9,36 +9,80 @@ import API from '../utils/API';
 
 
 function Home() {
+    const [allEvents, setAllEvents] = useState([]);
     const [newEvent, setNewEvent] = useState({});
+    const [category, setCategory] = useState();
+    const [participants, setParticipants] = useState();
+    const [duration, setDuration] = useState();
+
+    useEffect(() => {
+        loadNewEvent();
+    }, [])
+
+    function loadNewEvent() {
+        API.getPostedEvents().then(res => {
+            console.log(res);
+            setAllEvents(res.data);
+        })
+            .catch(err => console.log(err));
+    }
 
     function handleChange(event) {
         console.log(event.target.value);
-        let category = document.getElementById("category");
-        // console.log(category.value);
+        if (event.target.name == 'category') {
+            setCategory(event.target.value);
+        }
         let name = document.getElementById("name");
         let location = document.getElementById("location");
-        let participants = document.getElementById("participants");
-        let duration = document.getElementById("duration");
+        if (event.target.name == 'participants') {
+            setParticipants(event.target.value);
+        }
+        if (event.target.name == 'duration') {
+            setDuration(event.target.value);
+        }
         let notes = document.getElementById("notes");
-        setNewEvent({ 
-            category: category.value, 
+        setNewEvent({
             name: name.value,
             location: location.value,
-            participants: participants.value,
-            duration: duration.value,
             notes: notes.value
         });
     }
 
 
+    function handlePost(event) {
+        event.preventDefault();
+        // console.log("Hi from post handler");
+        // console.log(this);
+        console.log(newEvent);
+        console.log({ 
+            category: category,
+            name: newEvent.name,
+            location: newEvent.location,
+            participants: participants,
+            duration: duration,
+            notes: newEvent.notes,
+            creator: "email"
+        });
+        
+        API.createEvent({ 
+            category: category,
+            name: newEvent.name,
+            location: newEvent.location,
+            participants: participants,
+            duration: duration,
+            notes: newEvent.notes,
+            creator: "email"
+        })
+        .then(console.log("Event saved to database."))
+        .catch(err => console.log(err));
+        // console.log(event);
+    };
+
     return (
-
-
         <div>
-        <CarouselPage/> 
-        <MapContainer/>
-       </div>
-
+        <MapContainer handlePost={handlePost} handleChange={handleChange} event={newEvent} allEvents={allEvents}/>
+        <CarouselPage/>
+        </div>
     )
 
 }

@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
+import API from "../../utils/API";
 import "./style.css";
 
 const useStyles = makeStyles({
@@ -16,21 +17,34 @@ const useStyles = makeStyles({
     }
 });
 
-function EventCard() {
+function EventCard(props) {
+    const [event, setEvent] = useState({});
     const classes = useStyles();
+
+    useEffect(() => {
+        loadNewEvent();
+    }, [])
+
+    function loadNewEvent() {
+        API.getPostedEvents().then(res => {
+            console.log(res);
+            setEvent(res.data);
+        })
+            .catch(err => console.log(err));
+    }
+
+    console.log(props.allEvents[0]);
 
     return (
         <div className="event-card">
-            <DialogTitle id="simple-dialog-title">Event Name <i className="fas fa-futbol"></i></DialogTitle>
-            <h4>Location</h4>
-            <h5># participants needed</h5>
+            <DialogTitle id="simple-dialog-title">{props.allEvents[0].name} <i className="fas fa-futbol"></i></DialogTitle>
+            <h4>{props.allEvents[0].location}</h4>
+            <h5># participants needed: {props.allEvents[0].participants}</h5>
             <h5>starts NOW</h5>
             <h5>ends 8PM</h5>
-            <h5>notes notes notes</h5>
+            <h5>{props.allEvents[0].notes}</h5>
             <Button id="join-btn" lassName={classes.root} >Join</Button>
             <Button id="next-btn" className={classes.root} >Next Event</Button>
-            {/* <button className="join-btn">join</button>
-            <button className="next-btn">next event</button> */}
         </div>
     )
 };
