@@ -20,6 +20,9 @@ const useStyles = makeStyles({
 function EventCard(props) {
     const [event, setEvent] = useState({});
     const classes = useStyles();
+    const [eventIndex, setEventIndex] = useState(0);
+
+    
 
     useEffect(() => {
         loadNewEvent();
@@ -33,18 +36,22 @@ function EventCard(props) {
             .catch(err => console.log(err));
     }
 
+    function nextCard() {
+        setEventIndex( (eventIndex === props.allEvents.length-1) ? 0 : eventIndex+1 );
+    }
+
     console.log(props.allEvents[0]);
 
     return (
         <div className="event-card">
-            <DialogTitle id="simple-dialog-title">{props.allEvents[0].name} <i className="fas fa-futbol"></i></DialogTitle>
-            <h4>{props.allEvents[0].location}</h4>
-            <h5># participants needed: {props.allEvents[0].participants}</h5>
-            <h5>starts NOW</h5>
-            <h5>ends 8PM</h5>
-            <h5>{props.allEvents[0].notes}</h5>
+            <DialogTitle id="simple-dialog-title">{props.allEvents[eventIndex].name} <i className="fas fa-futbol"></i></DialogTitle>
+            <h4 id="dialog-location">{props.allEvents[eventIndex].location}</h4>
+            <h5 id="dialog-participants"># participants needed: {props.allEvents[eventIndex].participants}</h5>
+            <h5 id="dialog-starts">starts NOW</h5>
+            <h5 id="dialog-ends"></h5>
+            <h5 id="dialog-notes">{props.allEvents[eventIndex].notes}</h5>
             <Button id="join-btn" lassName={classes.root} >Join</Button>
-            <Button id="next-btn" className={classes.root} >Next Event</Button>
+            <Button id="next-btn" className={classes.root} onClick={nextCard}>Next Event</Button>
         </div>
     )
 };

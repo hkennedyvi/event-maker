@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 import CurrentLocation from "../CurrentLocation";
 import FormDialog from "../EventDialog";
-import EventCard from "../EventCard";
+import EventCard from "../HomeEventCard";
 
 function MapContainer(props) {
 
@@ -12,12 +12,12 @@ function MapContainer(props) {
         selectedPlace: {}
     });
 
-    const onMarkerClick = (props, marker, e) =>
-        this.setState({
-            selectedPlace: props,
-            activeMarker: marker,
-            showingInfoWindow: true
-        });
+    // const onMarkerClick = (props, marker, e) =>
+    //     this.setState({
+    //         selectedPlace: props,
+    //         activeMarker: marker,
+    //         showingInfoWindow: true
+    //     });
 
     const onClose = props => {
         if (this.state.showingInfoWindow) {
@@ -34,7 +34,7 @@ function MapContainer(props) {
                 centerAroundCurrentLocation
                 google={props.google}
             >
-                <Marker onClick={onMarkerClick} name={'current location'} />
+                <Marker name={'current location'} />
                 <InfoWindow
                     marker={mapSettings.activeMarker}
                     visible={mapSettings.showingInfoWindow}
