@@ -1,7 +1,7 @@
 import React from 'react';
 import FacebookBtn from '../FacebookBtn';
 import { makeStyles } from '@material-ui/core/styles';
-import { TextField, FormHelperText, Card, CardActions, CardContent, Typography, Box } from '@material-ui/core';
+import { TextField, FormHelperText, Card, CardActions, CardContent, Typography, Box, Button } from '@material-ui/core';
 import './SignUpForm.css'
 import { red } from '@material-ui/core/colors';
 
@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         flexDirection: 'column',
         flexWrap: 'wrap',
+        marginTop: '15%',
     },
 
     textfield: {
@@ -31,6 +32,10 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         flexDirection: 'column',
         flexWrap: 'wrap',
+    },
+    submitBtn: {
+        backgroundColor: '#051937',
+        color: 'ffffff',
     },
 
 
@@ -49,7 +54,7 @@ function SignUpForm(props) {
                     </Typography>
                     <CardActions>
             <form className={classes.formRoot} 
-            // onSubmit={(e) => { props.handleSubmit(e) }} action="POST"
+                onSubmit={(e) => { props.handleSubmit(e) }} action="POST"
             >
                 
                 <TextField
@@ -58,7 +63,9 @@ function SignUpForm(props) {
                     id="outlined-required"
                     type="email"
                     label="Email"
+                    name="email"
                     variant="outlined"
+                    
                 />
                 <TextField
                     className={classes.textfield}
@@ -66,7 +73,8 @@ function SignUpForm(props) {
                     id="outlined-password-input"
                     label="Password"
                     type="password"
-                    autoComplete="current-password"
+                    name="password"
+                    // autoComplete="current-password"
                     variant="outlined"
                 />
                 <TextField
@@ -75,12 +83,34 @@ function SignUpForm(props) {
                     id="outlined-password-input"
                     label="Confirm Password"
                     type="password"
-                    autoComplete="current-password"
+                    name="confirm"
+                    // autoComplete="current-password"
                     variant="outlined"
                 />
+                <Button 
+                    className={classes.submitBtn}
+                    type="submit"
+                    variant="contained"
+                    color="#051937"
+                >Sign Up
+                </Button>
+
             </form>
             </CardActions>
             </CardContent>
+            <CardActions>
+                <Typography variant="p">
+                    Already a member?
+                </Typography>
+            <Button 
+                    className={classes.submitBtn}
+                    type="submit"
+                    variant="contained"
+                    color="#051937"
+                    href="/login"
+                >Login
+                </Button>
+      </CardActions>
             </Card>
             </Box>
             {/* <form className={classes.formRoot} onSubmit={(e) => { props.handleSubmit(e) }} action="POST">
@@ -90,7 +120,6 @@ function SignUpForm(props) {
                 <input type="password" id="password" name="password" placeholder="Password here" /><br />
                 <label htmlFor="password">CONFIRM PASSWORD:</label><br />
                 <input type="password" id="confirm" name="confirm" placeholder="Confirm password here" /><br /><br />
-
                 <input type="submit" value="Sign Up" />
             </form> */}
             {/* <FacebookBtn /> */}
