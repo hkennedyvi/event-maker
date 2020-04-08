@@ -1,4 +1,3 @@
-const path = require("path");
 const express = require('express')
 const session = require("express-session");
 
@@ -8,8 +7,6 @@ const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/cahoots";
 const mongoose = require("mongoose");
 const MongoStore = require("connect-mongo")(session);
 const passport = require("./passport/setup");
-
-// const Event = require("./models/event");
 
 mongoose.connect(MONGO_URI, { useNewUrlParser: true })
 .then(console.log(`MongoDB connected at ${MONGO_URI}`));
