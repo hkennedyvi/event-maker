@@ -12,13 +12,6 @@ function MapContainer(props) {
         selectedPlace: {}
     });
 
-    const onMarkerClick = (props, marker, e) =>
-        this.setState({
-            selectedPlace: props,
-            activeMarker: marker,
-            showingInfoWindow: true
-        });
-
     const onClose = props => {
         if (this.state.showingInfoWindow) {
             this.setState({
@@ -35,7 +28,7 @@ function MapContainer(props) {
                 centerAroundCurrentLocation
                 google={props.google}
             >
-                <Marker onClick={onMarkerClick} name={'current location'} />
+                <Marker name={'current location'} />
                 <InfoWindow
                     marker={mapSettings.activeMarker}
                     visible={mapSettings.showingInfoWindow}

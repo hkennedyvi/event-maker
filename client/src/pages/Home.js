@@ -22,8 +22,8 @@ function Home() {
     }
 
     function handleLocationGrab() {
-        console.log("Grabbing location");
-    }
+       console.log(this.state);
+        }
 
     function handleChange(event) {
         console.log(event.target.value);
