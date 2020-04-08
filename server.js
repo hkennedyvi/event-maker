@@ -19,18 +19,6 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-app.post("/post-event", (req, res) => {
-  var eventData = new Event(req.body);
-  console.log(eventData);
-  eventData.save()
-      .then(item => {
-          res.send("event saved to database");
-      })
-      .catch(err => {
-          res.status(400).send("Unable to save to database");
-      });
-});
-
 // Express Session
 app.use(
   session({
