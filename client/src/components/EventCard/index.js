@@ -33,7 +33,7 @@ function EventCard(props) {
             .catch(err => console.log(err));
     }
 
-    console.log(props.allEvents[0]);
+    // console.log(props.allEvents[0]);
 
     return (
         <div className="event-card">
