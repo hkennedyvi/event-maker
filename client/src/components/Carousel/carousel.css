@@ -11,6 +11,13 @@
     height:100px;
     margin-left: 0px;
     margin-right: 0px;
+    position: relative;
+  }
+
+  .carousel-inner {
+    position: relative; 
+    width: 100%; 
+    overflow: hidden;
   }
 
   .slide-1 {

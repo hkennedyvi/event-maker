@@ -79,10 +79,8 @@ function Home() {
     };
 
     return (
-        <div>
         <MapContainer handlePost={handlePost} handleChange={handleChange} event={newEvent} allEvents={allEvents}/>
-        <CarouselPage/>
-        </div>
+        
     )
 
 }
