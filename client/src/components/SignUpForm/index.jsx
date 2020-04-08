@@ -94,9 +94,23 @@ function SignUpForm(props) {
                     color="#051937"
                 >Sign Up
                 </Button>
+
             </form>
             </CardActions>
             </CardContent>
+            <CardActions>
+                <Typography variant="p">
+                    Already a member?
+                </Typography>
+            <Button 
+                    className={classes.submitBtn}
+                    type="submit"
+                    variant="contained"
+                    color="#051937"
+                    href="/login"
+                >Login
+                </Button>
+      </CardActions>
             </Card>
             </Box>
             {/* <form className={classes.formRoot} onSubmit={(e) => { props.handleSubmit(e) }} action="POST">
