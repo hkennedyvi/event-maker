@@ -5,7 +5,7 @@
 
   .Carousel {
     width: 100%;
-    height:400px;
+    height:100px;
     margin-left: 0px;
     margin-right: 0px;
   }
@@ -14,13 +14,14 @@
   }
 
   .slides {
-    padding-bottom: 50px;
-    font-size: 50px;
+    /* padding-bottom: 5px; */
+    font-size: 25px;
+    padding-top: 150px;
   }
 
-  .button {
+  /* .button {
    margin-bottom: 75px;
-  }
+  } */
 
   /* .Carousel-inner {
     width: 100%;
