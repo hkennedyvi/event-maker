@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import API from '../utils/API';
-import UserCreatedSection from '../components/UserCreatedSection';
+import HistorySection from '../components/HistorySection';
 
 function Profile() {
 
@@ -24,7 +24,7 @@ function Profile() {
 
     return (
         <div>
-            <UserCreatedSection events={events} />
+            <HistorySection events={events} />
         </div>
     )
 }
