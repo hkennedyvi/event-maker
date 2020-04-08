@@ -108,11 +108,17 @@ export class CurrentLocation extends React.Component {
     render() {
         const style = Object.assign({}, mapStyles.map);
         return (
+            <div>
             <div className="map">
                 <div style={style} ref="map">
                     Loading map...
                 </div>
                 {this.renderChildren()}
+            </div>
+            <div>
+                <button onClick={this.props.handleLocationGrab}><h1>click here</h1>
+                </button>
+            </div>
             </div>
         );
     }

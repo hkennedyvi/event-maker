@@ -7,7 +7,7 @@ export default {
     getPostedEvents: function () {
         return axios.get("/api/events");
     },
-    getUserEvents: function (user) {
-        return axios.get("/api/events?=" + user);
+    getEventsByCreator: function (creator) {
+        return axios.get("/api/events?creator=" + creator);
     }
 }

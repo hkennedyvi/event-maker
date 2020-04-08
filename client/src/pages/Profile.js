@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import API from '../utils/API';
-import UserCreatedSection from '../components/UserCreatedSection';
+import HistorySection from '../components/HistorySection';
 
 function Profile() {
 
@@ -13,8 +13,8 @@ function Profile() {
 
     function loadSavedEvents() {
 
-        API.getUserEvents().then(res => {
-            console.log("HELLO FROM PROFILE")
+        API.getEventsByCreator(user).then(res => {
+            console.log(user)
             console.log(res.data);
 
             setEvents(res.data);
@@ -24,7 +24,7 @@ function Profile() {
 
     return (
         <div>
-            <UserCreatedSection events={events} />
+            <HistorySection events={events} />
         </div>
     )
 }

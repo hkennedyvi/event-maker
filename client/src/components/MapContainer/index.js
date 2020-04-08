@@ -31,6 +31,7 @@ function MapContainer(props) {
     return (
         <div>
             <CurrentLocation
+                handleLocationGrab={props.handleLocationGrab}
                 centerAroundCurrentLocation
                 google={props.google}
             >
@@ -45,8 +46,8 @@ function MapContainer(props) {
                     </div>
                 </InfoWindow>
             </CurrentLocation>
-            <FormDialog handlePost={props.handlePost} handleChange={props.handleChange}/>
-            <EventCard event={props.event} allEvents={props.allEvents}/>
+            <FormDialog handlePost={props.handlePost} handleChange={props.handleChange} />
+            <EventCard event={props.event} allEvents={props.allEvents} />
         </div>
     );
 

@@ -21,6 +21,10 @@ function Home() {
             .catch(err => console.log(err));
     }
 
+    function handleLocationGrab() {
+        console.log("Grabbing location");
+    }
+
     function handleChange(event) {
         console.log(event.target.value);
         if (event.target.name == 'category') {
@@ -72,7 +76,12 @@ function Home() {
     };
 
     return (
-        <MapContainer handlePost={handlePost} handleChange={handleChange} event={newEvent} allEvents={allEvents}/>
+        <MapContainer 
+        handlePost={handlePost} 
+        handleChange={handleChange} 
+        handleLocationGrab={handleLocationGrab}
+        event={newEvent} 
+        allEvents={allEvents}/>
     )
 }
 export default Home;
