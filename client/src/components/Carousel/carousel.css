@@ -1,13 +1,16 @@
+  /* .container {
+   width: 1300px;
+  } 
 
+  .content{
+   width: 100%
+  } */
 
   .Carousel {
     width: 100%;
     height:100px;
     margin-left: 0px;
     margin-right: 0px;
-  }
-  #carousel { 
-    margin-left: 0px; margin-right: 0px
   }
 
   .slide-1 {
@@ -42,13 +45,3 @@
    margin-bottom: 75px;
   } */
 
-  /* .Carousel-inner {
-    width: 100%;
-    height: 50px;
-  }
-
-  .Carousel-inner img {
-     width: 100%;
-     object-fit: cover;
-     height: 50px;
-  } */
