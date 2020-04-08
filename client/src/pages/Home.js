@@ -1,12 +1,25 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import MapContainer from "../components/MapContainer";
 import API from '../utils/API';
 
 function Home() {
+    const [allEvents, setAllEvents] = useState([]);
     const [newEvent, setNewEvent] = useState({});
     const [category, setCategory] = useState();
     const [participants, setParticipants] = useState();
     const [duration, setDuration] = useState();
+
+    useEffect(() => {
+        loadNewEvent();
+    }, [])
+
+    function loadNewEvent() {
+        API.getPostedEvents().then(res => {
+            console.log(res);
+            setAllEvents(res.data);
+        })
+            .catch(err => console.log(err));
+    }
 
     function handleChange(event) {
         console.log(event.target.value);
@@ -59,7 +72,7 @@ function Home() {
     };
 
     return (
-        <MapContainer handlePost={handlePost} handleChange={handleChange}/>
+        <MapContainer handlePost={handlePost} handleChange={handleChange} event={newEvent} allEvents={allEvents}/>
     )
 }
 export default Home;
