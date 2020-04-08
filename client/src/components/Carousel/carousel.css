@@ -13,12 +13,22 @@
     margin-left: 0px; margin-right: 0px
   }
 
-  .slides {
+  .slide-1 {
     /* padding-bottom: 5px; */
     font-size: 25px;
     padding-top: 150px;
   }
-
+  .slide-2 {
+    /* padding-bottom: 5px; */
+    font-size: 23px;
+    padding-top: 150px;
+  }
+  .slide-3 {
+    /* padding-bottom: 5px; */
+    font-size: 19px;
+    padding-top: 150px;
+   
+  }
   /* .button {
    margin-bottom: 75px;
   } */

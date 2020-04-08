@@ -25,7 +25,7 @@ const CarouselPage = () => {
               <MDBMask overlay="black-light" />
             </MDBView>
             <MDBCarouselCaption>
-              <h3 className="slides">You're in Cahoots!</h3>
+              <h3 className="slide-1">You're in Cahoots!</h3>
               {/* <button className="button">Create A Hoot!</button> */}
               {/* <p>Live in the momment and find friends instantly!</p> */}
             </MDBCarouselCaption>
@@ -40,7 +40,7 @@ const CarouselPage = () => {
               <MDBMask overlay="black-strong" />
             </MDBView>
             <MDBCarouselCaption>
-              <h3 className="slides">Strong mask</h3>
+              <h3 className="slide-2">Someone can't make the game, show, or event? create a HOOT! </h3>
               {/* <p>Second text</p> */}
             </MDBCarouselCaption>
           </MDBCarouselItem>
@@ -54,7 +54,8 @@ const CarouselPage = () => {
               <MDBMask overlay="black-slight" />
             </MDBView>
             <MDBCarouselCaption>
-              <h3 className="slides">Slight Mast</h3>
+              <h3 className="slide-3">Find a friend instantly with Cahoots! <br></br>
+              Making it easier to live in the momment!</h3>
               {/* <p>Third text</p> */}
             </MDBCarouselCaption>
           </MDBCarouselItem>
