@@ -1,4 +1,3 @@
-const path = require("path");
 const express = require('express')
 const session = require("express-session");
 
@@ -9,7 +8,6 @@ const mongoose = require("mongoose");
 const MongoStore = require("connect-mongo")(session);
 const passport = require("./passport/setup");
 
-// const Event = require("./models/event");
 mongoose.connect(MONGO_URI, { useNewUrlParser: true })
 .then(console.log(`MongoDB connected at ${MONGO_URI}`));
 
@@ -20,19 +18,6 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-
-app.post("/post-event", (req, res) => {
-  var eventData = new Event(req.body);
-  console.log(eventData);
-  eventData.save()
-      .then(item => {
-          res.send("event saved to database");
-      })
-      .catch(err => {
-          res.status(400).send("Unable to save to database");
-      });
-});
-
 
 // Express Session
 app.use(
