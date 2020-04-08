@@ -10,7 +10,7 @@ module.exports = {
     },
     findByID: function(req, res) {
         db
-        .findById({ email: req.params.user })
+        .findById({ creator: req.params.user })
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },

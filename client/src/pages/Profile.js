@@ -13,8 +13,8 @@ function Profile() {
 
     function loadSavedEvents() {
 
-        API.getUserEvents().then(res => {
-            console.log("HELLO FROM PROFILE")
+        API.getEventsByCreator(user).then(res => {
+            console.log(user)
             console.log(res.data);
 
             setEvents(res.data);
