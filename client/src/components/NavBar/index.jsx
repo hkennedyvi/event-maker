@@ -106,7 +106,7 @@ function NavBar() {
         <div className={classes.root}>
                 <Toolbar>
                     <Typography variant="h6" className={classes.title}>
-                        Logo Here
+                        Cahoots
                     </Typography>
                     {/* <Typography variant="h6" className={classes.title}>
                         You're in Cahoots!

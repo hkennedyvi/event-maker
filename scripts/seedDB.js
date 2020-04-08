@@ -32,6 +32,7 @@ db.User
       participants: 4,
       location: "Laurelhurst",
       duration: 2,
+      notes: "bring your own racket",
       creator: "hkenvi@yahoo.com"
     },
     {
@@ -40,6 +41,7 @@ db.User
       participants: 2,
       location: "Pizza Schmizza",
       duration: 2,
+      notes: "theme tonight is harry potter!",
       creator: "hkenvi@yahoo.com"
     },
     {
@@ -48,6 +50,7 @@ db.User
       participants: 18,
       location: "Laurelhurst",
       duration: 2,
+      notes: "we have balls and bats",
       creator: "hkenvi@yahoo.com"
     },
     {
@@ -56,6 +59,7 @@ db.User
       participants: 18,
       location: "Laurelhurst",
       duration: 2,
+      notes: "we have balls and bats",
       creator: "different@yahoo.com"
     }
 

@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     padding: '0 30px',
   },
   root2: {
-    background: 'rgba(19, 34, 119, 0.7)',
+    background: 'rgba(255, 255, 255, 0.3)',
     border: 0,
     borderRadius: 3,
     boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
@@ -62,7 +62,6 @@ export default function FormDialog(props) {
 
   const handleClose = (event) => {
     setOpen(false);
-    // console.log();
     props.handlePost(event);
   };
 
@@ -80,7 +79,7 @@ export default function FormDialog(props) {
                 <InputLabel id="demo-simple-select-outlined-label">Category</InputLabel>
                 <Select
                     labelId="demo-simple-select-outlined-label"
-                    id="category"
+                    name="category"
                     value={age}
                     onChange={(event) => {props.handleChange(event)}}
                     label="Age"
@@ -107,7 +106,6 @@ export default function FormDialog(props) {
             onChange={(event) => props.handleChange(event)}
           />
           <TextField
-            autoFocus
             margin="dense"
             id="location"
             label="Location"
@@ -119,7 +117,7 @@ export default function FormDialog(props) {
                 <InputLabel id="demo-simple-select-outlined-label">Participants</InputLabel>
                 <Select
                     labelId="demo-simple-select-outlined-label"
-                    id="participants"
+                    name="participants"
                     value={age}
                     onChange={(event) => {props.handleChange(event)}}
                     label="Age"
@@ -146,7 +144,7 @@ export default function FormDialog(props) {
                 <InputLabel id="demo-simple-select-outlined-label">Duration</InputLabel>
                 <Select
                     labelId="demo-simple-select-outlined-label"
-                    id="duration"
+                    name="duration"
                     value={age}
                     onChange={(event) => {props.handleChange(event)}}
                     label="Age"
@@ -169,7 +167,6 @@ export default function FormDialog(props) {
                 </Select>
             </FormControl>
           <TextField
-            autoFocus
             margin="dense"
             id="notes"
             label="Notes"
