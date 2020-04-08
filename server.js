@@ -1,4 +1,3 @@
-const path = require("path");
 const express = require('express')
 const session = require("express-session");
 
@@ -8,8 +7,6 @@ const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/cahoots";
 const mongoose = require("mongoose");
 const MongoStore = require("connect-mongo")(session);
 const passport = require("./passport/setup");
-
-// const Event = require("./models/event");
 
 mongoose.connect(MONGO_URI, { useNewUrlParser: true })
 .then(console.log(`MongoDB connected at ${MONGO_URI}`));
@@ -33,35 +30,6 @@ app.post("/post-event", (req, res) => {
           res.status(400).send("Unable to save to database");
       });
 });
-
-// app.post("/post-event", (req, res) => {
-//   var eventData = new Event(req.body);
-//   console.log(eventData);
-//   eventData.save()
-//       .then(item => {
-//           res.send("event saved to database");
-//       })
-//       .catch(err => {
-//           res.status(400).send("Unable to save to database");
-//       });
-// });
->>>>>>> master
-
-// app.post('/post-feedback', function (req, res) {
-//   MONGO_URI.then(function(db) {
-//       delete req.body._id; // for safety reasons
-//       db.collection('feedbacks').insertOne(req.body);
-//   });    
-//   res.send('Data received:\n' + JSON.stringify(req.body));
-// });
-
-// app.get('/view-feedbacks',  function(req, res) {
-//   MONGO_URI.then(function(db) {
-//       db.collection('feedbacks').find({}).toArray().then(function(feedbacks) {
-//           res.status(200).json(feedbacks);
-//       });
-//   });
-// });
 
 // Express Session
 app.use(
