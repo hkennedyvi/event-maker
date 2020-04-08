@@ -5,7 +5,7 @@ export default {
         return axios.post("/api/events", eventData);
     },
 
-    getUserEvents: function (user) {
-        return axios.get("/api/events?=" + user);
+    getUserEvents: function () {
+        return axios.get("/api/events");
     }
 }
