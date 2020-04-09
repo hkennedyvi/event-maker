@@ -10,19 +10,24 @@ function Home() {
     const [duration, setDuration] = useState();
 
     useEffect(() => {
+        API.isLoggedIn();
         loadNewEvent();
     }, [])
 
     function loadNewEvent() {
         API.getPostedEvents().then(res => {
-            console.log(res);
+            // console.log(res);
             setAllEvents(res.data);
         })
             .catch(err => console.log(err));
     }
 
+    function handleLocationGrab(currentLocation) {
+    //    console.log(currentLocation);
+        }
+
     function handleChange(event) {
-        console.log(event.target.value);
+        // console.log(event.target.value);
         if (event.target.name == 'category') {
             setCategory(event.target.value);
         }
@@ -72,7 +77,12 @@ function Home() {
     };
 
     return (
-        <MapContainer handlePost={handlePost} handleChange={handleChange} event={newEvent} allEvents={allEvents}/>
+        <MapContainer 
+        handlePost={handlePost} 
+        handleChange={handleChange} 
+        handleLocationGrab={handleLocationGrab}
+        event={newEvent} 
+        allEvents={allEvents}/>
     )
 }
 export default Home;

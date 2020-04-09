@@ -51,14 +51,14 @@ function HomeEventCard(props) {
 
     return (
         <div className="event-card">
-            <DialogTitle id="simple-dialog-title">{props.allEvents[eventIndex].name} <i className="fas fa-futbol"></i></DialogTitle>
+            {/* <DialogTitle id="simple-dialog-title">{props.allEvents[0].name} <i className="fas fa-futbol"></i></DialogTitle>
             <h4 id="dialog-location">{props.allEvents[eventIndex].location}</h4>
             <h5 id="dialog-participants"># participants needed: {props.allEvents[eventIndex].participants}</h5>
             <h5 id="dialog-starts">starts NOW</h5>
             <h5 id="dialog-ends">ends in {props.allEvents[eventIndex].duration}</h5>
             <h5 id="dialog-notes">{props.allEvents[eventIndex].notes}</h5>
             <Button id="join-btn" lassName={classes.root} >Join</Button>
-            <Button id="next-btn" className={classes.root} onClick={nextCard}>Next Event</Button>
+            <Button id="next-btn" className={classes.root} onClick={nextCard}>Next Event</Button> */}
         </div>
     )
 };
