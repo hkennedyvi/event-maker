@@ -13,6 +13,7 @@ function HistorySection(props) {
                         name={event.name}
                         location={event.location}
                         duration={event.duration}
+                        creator={event.creator}
                     />
                 )
             })
