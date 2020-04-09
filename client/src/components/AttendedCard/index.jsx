@@ -1,8 +1,7 @@
 import React from "react";
 import DialogTitle from '@material-ui/core/DialogTitle';
-import "./style.css";
 
-function HistoryCard(props) {
+function AttendedCard(props) {
 
     return (
         <div>
@@ -15,4 +14,4 @@ function HistoryCard(props) {
     )
 }
 
-export default HistoryCard;
+export default AttendedCard;

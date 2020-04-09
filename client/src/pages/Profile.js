@@ -4,7 +4,8 @@ import HistorySection from '../components/HistorySection';
 
 function Profile() {
 
-    const [events, setEvents] = useState([]);
+    const [madeEvents, setMadeEvents] = useState([]);
+    const [attendedEvents, setAttendedEvents] = useState([]);
     const [user, setUser] = useState("hkenvi@yahoo.com");
 
     useEffect(() => {
@@ -14,17 +15,20 @@ function Profile() {
     function loadSavedEvents() {
 
         API.getEventsByCreator(user).then(res => {
-            // console.log(user)
-            // console.log(res.data);
 
-            setEvents(res.data);
+            setMadeEvents(res.data);
         })
             .catch(err => console.log(err));
+        API.getEventsByAttendees(user).then(res => {
+            console.log("hello");
+            console.log(res.data);
+            setAttendedEvents(res.data)
+        })
     };
 
     return (
         <div>
-            <HistorySection events={events} />
+            <HistorySection madeEvents={ madeEvents } attendedEvents={ attendedEvents } />
         </div>
     )
 }

@@ -10,6 +10,9 @@ export default {
     getEventsByCreator: function (creator) {
         return axios.get("/api/events?creator=" + creator);
     },
+    getEventsByAttendees: function (attendee) {
+        return axios.get("/api/events?attendees=" + attendee);
+    },
     isLoggedIn : function(setLoading) {
         console.log("is logged in")
 	    axios.get('/api/auth/checkToken')
