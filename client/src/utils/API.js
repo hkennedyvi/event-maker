@@ -30,7 +30,7 @@ export default {
 	  axios
 	    .get("/api/auth/logout")
 	    .then(res => {
-	      window.location = '/';
+	      window.location = '/logout';
 	    })
 	    .catch(err => {
 	      console.log(err);
