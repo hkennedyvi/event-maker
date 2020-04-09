@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Geocode from "react-geocode";
 import MapContainer from "../components/MapContainer";
 import API from '../utils/API';
 
@@ -8,6 +9,7 @@ function Home() {
     const [category, setCategory] = useState();
     const [participants, setParticipants] = useState();
     const [duration, setDuration] = useState();
+    const [userLocation, setUserLocation] = useState();
 
     useEffect(() => {
         API.isLoggedIn();
@@ -23,8 +25,33 @@ function Home() {
     }
 
     function handleLocationGrab(currentLocation) {
-    //    console.log(currentLocation);
-        }
+        let eventLat = currentLocation.lat;
+        let eventLng = currentLocation.lng;
+        console.log(currentLocation.lat);
+        console.log(currentLocation.lng);
+        // set Google Maps Geocoding API for purposes of quota management. Its optional but recommended.
+        Geocode.setApiKey("AIzaSyCRTz31ipS9i5nHfyWIs-mcSIQmWRxXTec");
+
+        // set response language. Defaults to english.
+        Geocode.setLanguage("en");
+
+        // set response region. Its optional.
+        // A Geocoding request with region=es (Spain) will return the Spanish city.
+        Geocode.setRegion("es");
+
+        // Enable or disable logs. Its optional.
+        Geocode.enableDebug();
+        // {lat: 45.472815000000004, lng: -122.7741112}
+        Geocode.fromLatLng(eventLat, eventLng).then(
+            response => {
+                const address = response.results[0].formatted_address;
+                console.log(address);
+            },
+            error => {
+                console.error(error);
+            }
+        );
+    }
 
     function handleChange(event) {
         // console.log(event.target.value);
@@ -52,7 +79,7 @@ function Home() {
         // console.log("Hi from post handler");
         // console.log(this);
         console.log(newEvent);
-        console.log({ 
+        console.log({
             category: category,
             name: newEvent.name,
             location: newEvent.location,
@@ -61,28 +88,28 @@ function Home() {
             notes: newEvent.notes,
             creator: "email"
         });
-        
-        API.createEvent({ 
+
+        API.createEvent({
             category: category,
             name: newEvent.name,
-            location: newEvent.location,
+            location: userLocation,
             participants: participants,
             duration: duration,
             notes: newEvent.notes,
             creator: "email"
         })
-        .then(console.log("Event saved to database."))
-        .catch(err => console.log(err));
+            .then(console.log("Event saved to database."))
+            .catch(err => console.log(err));
         // console.log(event);
     };
 
     return (
-        <MapContainer 
-        handlePost={handlePost} 
-        handleChange={handleChange} 
-        handleLocationGrab={handleLocationGrab}
-        event={newEvent} 
-        allEvents={allEvents}/>
+        <MapContainer
+            handlePost={handlePost}
+            handleChange={handleChange}
+            handleLocationGrab={handleLocationGrab}
+            event={newEvent}
+            allEvents={allEvents} />
     )
 }
 export default Home;
