@@ -9,6 +9,7 @@ function Profile() {
     const [user, setUser] = useState("hkenvi@yahoo.com");
 
     useEffect(() => {
+        API.isLoggedIn();
         loadSavedEvents()
     }, [])
 
