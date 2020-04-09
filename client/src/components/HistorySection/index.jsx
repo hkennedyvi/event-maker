@@ -1,14 +1,27 @@
 import React from 'react';
-import HistoryCard from '../HistoryCard';
+import MadeHistoryCard from '../MadeHistoryCard';
+import AttendedCard from '../AttendedCard';
 
 function HistorySection(props) {
     
     return (
         <div>
-            <h1>YOUR EVENT HISTORY</h1>
-            {props.events.map(event => {
+            <h1>EVENTS YOU MADE</h1>
+            {props.madeEvents.map(event => {
                 return (
-                    <HistoryCard
+                    <MadeHistoryCard
+                        category={event.category}
+                        name={event.name}
+                        location={event.location}
+                        duration={event.duration}
+                    />
+                )
+            })
+            }
+            <h1>EVENTS YOU ATTENDED</h1>
+            {props.attendedEvents.map(event => {
+                return (
+                    <AttendedCard
                         category={event.category}
                         name={event.name}
                         location={event.location}

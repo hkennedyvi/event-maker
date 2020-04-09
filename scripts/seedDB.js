@@ -33,7 +33,8 @@ db.User
       location: "Laurelhurst",
       duration: 2,
       notes: "bring your own racket",
-      creator: "hkenvi@yahoo.com"
+      creator: "hkenvi@yahoo.com",
+      attendees: ["sarah@email.com", "howard@email.com", "jenni@email.com", "laurie@email.com"]
     },
     {
       category: "trivia",
@@ -42,7 +43,8 @@ db.User
       location: "Pizza Schmizza",
       duration: 2,
       notes: "theme tonight is harry potter!",
-      creator: "hkenvi@yahoo.com"
+      creator: "hkenvi@yahoo.com",
+      attendees: ["sarah@email.com", "howard@email.com", "jenni@email.com", "laurie@email.com"]
     },
     {
       category: "sports",
@@ -51,7 +53,8 @@ db.User
       location: "Laurelhurst",
       duration: 2,
       notes: "we have balls and bats",
-      creator: "hkenvi@yahoo.com"
+      creator: "hkenvi@yahoo.com",
+      attendees: ["jenni@email.com", "laurie@email.com"]
     },
     {
       category: "sports",
@@ -60,7 +63,8 @@ db.User
       location: "Laurelhurst",
       duration: 2,
       notes: "we have balls and bats",
-      creator: "different@yahoo.com"
+      creator: "different@yahoo.com",
+      attendees: ["sarah@email.com", "hkenvi@yahoo.com"]
     }
 
   ];
