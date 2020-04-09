@@ -17,12 +17,11 @@ const useStyles = makeStyles({
     }
 });
 
-function EventCard(props) {
+function HomeEventCard(props) {
     const [event, setEvent] = useState({});
     const classes = useStyles();
     const [eventIndex, setEventIndex] = useState(0);
-
-    
+    // const [participants, setParticipants] = useState(props.allEvents[eventIndex].participants);
 
     useEffect(() => {
         loadNewEvent();
@@ -40,6 +39,14 @@ function EventCard(props) {
         setEventIndex( (eventIndex === props.allEvents.length-1) ? 0 : eventIndex+1 );
     }
 
+    // function joinCount() {
+    //     const participantCount = parseFloat(participants);
+    //     setParticipants( participantCount === 0 ? 0 : participantCount-1 );
+    //     if (participantCount <= 0) {
+    //         document.getElementById("join-btn").disabled = true;
+    //     }
+    // }
+
     console.log(props.allEvents[0]);
 
     return (
@@ -48,7 +55,7 @@ function EventCard(props) {
             <h4 id="dialog-location">{props.allEvents[eventIndex].location}</h4>
             <h5 id="dialog-participants"># participants needed: {props.allEvents[eventIndex].participants}</h5>
             <h5 id="dialog-starts">starts NOW</h5>
-            <h5 id="dialog-ends"></h5>
+            <h5 id="dialog-ends">ends in {props.allEvents[eventIndex].duration}</h5>
             <h5 id="dialog-notes">{props.allEvents[eventIndex].notes}</h5>
             <Button id="join-btn" lassName={classes.root} >Join</Button>
             <Button id="next-btn" className={classes.root} onClick={nextCard}>Next Event</Button>
@@ -56,4 +63,4 @@ function EventCard(props) {
     )
 };
 
-export default EventCard;
+export default HomeEventCard;

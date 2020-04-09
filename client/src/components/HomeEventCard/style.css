@@ -27,6 +27,14 @@
     border: none;
 }
 
+#join-btn:disabled{
+    padding: 10px 15px 10px 15px;
+    background: rgba(78, 78, 78, 0.404);
+    border-radius: 8%;
+    color: white;
+    border: none;
+}
+
 #next-btn {
     margin-left: 10px;
     padding: 10px 15px 10px 15px;
