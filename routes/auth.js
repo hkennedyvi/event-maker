@@ -55,8 +55,8 @@ router.post("/login", (req, res, next) => {
         const token = jwt.sign(payload, secret, {
             expiresIn: '1h'
         });
-        res.cookie('token', token, { httpOnly: true })
-            .sendStatus(200);
+        return res.cookie('token', token, { httpOnly: true })
+            .status(200).json({ success: true });
         // console.log("LOGIN TEST");
         // if (err) {
         //     return res.status(400).json({ errors: err });
