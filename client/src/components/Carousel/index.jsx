@@ -50,7 +50,7 @@ const CarouselPage = () => {
                 <MDBView>
                   <img
                     className="d-block w-100"
-                    src="https://i.imgur.com/ZvHyOkG.png"
+                    src="https://i.imgur.com/dzYcrMV.png"
                     alt="Third slide"
                   />
                   <MDBMask overlay="black-slight" />
