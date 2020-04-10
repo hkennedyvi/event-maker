@@ -4,6 +4,7 @@ import API from '../utils/API';
 import HistorySection from '../components/HistorySection';
 import UserInfo from '../components/UserInfo';
 
+
 const useStyles = makeStyles({
     rootProfile: {
         flexGrow: 1,
@@ -23,6 +24,7 @@ function Profile() {
     const [user, setUser] = useState("hkenvi@yahoo.com");
 
     useEffect(() => {
+        API.isLoggedIn();
         loadSavedEvents()
     }, [])
 
@@ -44,6 +46,7 @@ function Profile() {
         <div className={classes.rootProfile}>
             <UserInfo />
             <HistorySection madeEvents={ madeEvents } attendedEvents={ attendedEvents } />
+            <GeocodeTest />
         </div>
     )
 }
