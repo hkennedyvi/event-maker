@@ -104,7 +104,7 @@ function NavBar() {
 
     return (
         <div className={classes.root}>
-                <Toolbar>
+                <Toolbar id='NavBar'>
                     <Typography variant="h6" className={classes.title}>
                         Cahoots
                     </Typography>
