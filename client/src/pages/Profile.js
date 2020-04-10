@@ -13,6 +13,7 @@ const useStyles = makeStyles( (theme) => ({
         margin: '2% 12%',
         [theme.breakpoints.down('sm')]: {
             flexWrap: 'wrap',
+            margin: '2%'
         },
         // flexWrap: 'wrap',
         // If we want the background to not be same height as events, uncomment align-items
