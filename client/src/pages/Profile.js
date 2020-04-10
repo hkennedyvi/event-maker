@@ -46,7 +46,7 @@ function Profile() {
         <div className={classes.rootProfile}>
             <UserInfo />
             <HistorySection madeEvents={ madeEvents } attendedEvents={ attendedEvents } />
-            <GeocodeTest />
+            /* <GeocodeTest /> */
         </div>
     )
 }
