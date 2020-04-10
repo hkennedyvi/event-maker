@@ -21,23 +21,24 @@ function Profile() {
     const classes = useStyles();
     const [madeEvents, setMadeEvents] = useState([]);
     const [attendedEvents, setAttendedEvents] = useState([]);
-    const [user, setUser] = useState("hkenvi@yahoo.com");
+    
+    //This variable is a string value of the email for the logged in user
+    const loggedInUser = unescape(document.cookie.split("=")[1]);
 
     useEffect(() => {
         API.isLoggedIn();
-        loadSavedEvents()
+        loadSavedEvents();
     }, [])
 
     function loadSavedEvents() {
 
-        API.getEventsByCreator(user).then(res => {
+        API.getEventsByCreator(loggedInUser).then(res => {
 
             setMadeEvents(res.data);
         })
             .catch(err => console.log(err));
-        API.getEventsByAttendees(user).then(res => {
-            console.log("hello");
-            console.log(res.data);
+        API.getEventsByAttendees(loggedInUser).then(res => {
+            
             setAttendedEvents(res.data)
         })
     };

@@ -33,6 +33,8 @@ export class CurrentLocation extends React.Component {
         }
     }
 
+
+
     recenterMap() {
         const map = this.map;
         const current = this.state.currentLocation;
@@ -50,13 +52,15 @@ export class CurrentLocation extends React.Component {
         if (this.props.centerAroundCurrentLocation) {
             if (navigator && navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(pos => {
-                    const coords = pos.coords;
-                    this.setState({
-                        currentLocation: {
-                            lat: coords.latitude,
-                            lng: coords.longitude
-                        }
-                    });
+                    this.props.handleLocationGrab({lat: pos.coords.latitude, lng: pos.coords.longitude});
+
+                    // const coords = pos.coords;
+                    // this.setState({
+                    //     currentLocation: {
+                    //         lat: coords.latitude,
+                    //         lng: coords.longitude
+                    //     }
+                    // });
                 });
             }
         }
@@ -105,27 +109,27 @@ export class CurrentLocation extends React.Component {
         });
     }
 
-    handleLocationGrab() {
-        const currentLat = this.state.currentLocation.lat;
-        const currentLng = this.state.currentLocation.lng;
-        console.log(currentLat);
-        console.log(currentLng);
-    }
+    // handleLocationGrab() {
+    //     const currentLat = this.state.currentLocation.lat;
+    //     const currentLng = this.state.currentLocation.lng;
+    //     console.log(currentLat);
+    //     console.log(currentLng);
+    // }
 
     render() {
         const style = Object.assign({}, mapStyles.map);
         return (
             <div>
                 <div>
-                <button id="mybtn" onClick={(event)=> this.props.handleLocationGrab(this.state.currentLocation)}><h1>click here</h1>
-                </button>
-            </div>
-            <div className="map">
-                <div style={style} ref="map">
-                    Loading map...
+                    {/* <button id="mybtn" onClick={(event) => this.props.handleLocationGrab(this.state.currentLocation)}><h1>click here</h1>
+                    </button> */}
                 </div>
-                {this.renderChildren()}
-            </div>
+                <div className="map">
+                    <div style={style} ref="map">
+                        Loading map...
+                </div>
+                    {this.renderChildren()}
+                </div>
             </div>
         );
     }

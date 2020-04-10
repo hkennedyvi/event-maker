@@ -18,34 +18,44 @@ function Home() {
 
     function loadNewEvent() {
         API.getPostedEvents().then(res => {
-            // console.log(res);
+           
             setAllEvents(res.data);
         })
             .catch(err => console.log(err));
     }
 
+
     function handleLocationGrab(currentLocation) {
-        let eventLat = currentLocation.lat;
-        let eventLng = currentLocation.lng;
+       
+            console.log(currentLocation);
+            let eventLat = currentLocation.lat;
+            let eventLng = currentLocation.lng;
 
-        Geocode.setApiKey("AIzaSyCRTz31ipS9i5nHfyWIs-mcSIQmWRxXTec");
+            Geocode.setApiKey("AIzaSyCRTz31ipS9i5nHfyWIs-mcSIQmWRxXTec");
 
-        Geocode.setLanguage("en");
+            Geocode.setLanguage("en");
 
-        Geocode.setRegion("es");
+            Geocode.setRegion("es");
 
-        Geocode.enableDebug();
-        
-        Geocode.fromLatLng(eventLat, eventLng).then(
-            response => {
-                const address = response.results[0].formatted_address;
-                console.log(address);
-                setUserLocation(address);
-            },
-            error => {
-                console.error(error);
-            }
-        );
+            Geocode.enableDebug();
+
+            Geocode.fromLatLng(eventLat, eventLng).then(
+                response => {
+                    const address = response.results[0].formatted_address;
+                    console.log(address);
+                    setUserLocation(address);
+                },
+                error => {
+                    console.error(error);
+                }
+            );
+ 
+    }
+
+    function handleEventJoin(event) {
+        console.log("EVENT JOINED")
+        console.log(event.target.value)
+
     }
 
     function handleChange(event) {
@@ -103,6 +113,7 @@ function Home() {
             handlePost={handlePost}
             handleChange={handleChange}
             handleLocationGrab={handleLocationGrab}
+            handleEventJoin={handleEventJoin}
             event={newEvent}
             allEvents={allEvents} />
     )
