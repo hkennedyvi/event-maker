@@ -84,17 +84,12 @@ function Home() {
     };
 
     return (
-<<<<<<< HEAD
-        <MapContainer handlePost={handlePost} handleChange={handleChange} event={newEvent} allEvents={allEvents}/>
-        
-=======
         <MapContainer 
         handlePost={handlePost} 
         handleChange={handleChange} 
         handleLocationGrab={handleLocationGrab}
         event={newEvent} 
         allEvents={allEvents}/>
->>>>>>> master
     )
 
 }

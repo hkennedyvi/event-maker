@@ -23,23 +23,17 @@
   "dependencies": {
     "@material-ui/core": "^4.9.8",
     "bcryptjs": "^2.4.3",
-<<<<<<< HEAD
     "bootstrap": "^4.4.1",
-=======
     "body-parser": "^1.19.0",
->>>>>>> master
     "connect-mongo": "^3.2.0",
     "cookie-parser": "^1.4.5",
     "express": "^4.16.3",
     "express-session": "^1.17.0",
     "google-maps-react": "^2.0.2",
     "if-env": "^1.0.4",
-<<<<<<< HEAD
     "material-auto-rotating-carousel": "^3.0.2",
     "mdbreact": "^4.25.5",
-=======
     "jsonwebtoken": "^8.5.1",
->>>>>>> master
     "mongoose": "^5.8.11",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
