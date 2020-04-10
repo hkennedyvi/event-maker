@@ -7,6 +7,7 @@ import HistoryIcon from '@material-ui/icons/History';
 import PeopleOutlineIcon from '@material-ui/icons/PeopleOutline';
 import MadeHistoryCard from '../MadeHistoryCard';
 import AttendedCard from '../AttendedCard';
+import CurrentEventCard from '../CurrentEventCard';
 import './style.css';
 
 function TabPanel(props) {
@@ -53,7 +54,7 @@ const useStyles = makeStyles({
     // },
     tabPanel: {
         // backgroundColor: 'red',
-        
+
     },
 
 });
@@ -68,9 +69,10 @@ function HistorySection(props) {
 
 
     return (
+        
         <div className={classes.section}>
             {/* <Grid container spacing={5}> */}
-            <Paper square 
+            <Paper square
             // className={classes.root}
             >
                 <Tabs
@@ -87,9 +89,12 @@ function HistorySection(props) {
                 </Tabs>
             </Paper>
             <TabPanel className={classes.tabPanel} value={value} index={0}>
-                Current event (made or attending)
+            {console.log("props", props)}
+                <CurrentEventCard
+                currentEvent={props.currentEvent}
+                />
             </TabPanel>
-            <TabPanel className={classes.tabPanel} value={value} index={1} madeEvents={ props.madeEvents } >
+            <TabPanel className={classes.tabPanel} value={value} index={1} madeEvents={props.madeEvents} >
                 {props.madeEvents.map(event => {
                     return (
                         <MadeHistoryCard
@@ -102,7 +107,7 @@ function HistorySection(props) {
                 })
                 }
             </TabPanel>
-            <TabPanel className={classes.tabPanel} value={value} index={2} attendedEvents={ props.attendedEvents }>
+            <TabPanel className={classes.tabPanel} value={value} index={2} attendedEvents={props.attendedEvents}>
                 {props.attendedEvents.map(event => {
                     return (
                         <AttendedCard

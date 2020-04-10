@@ -5,7 +5,7 @@ import HistorySection from '../components/HistorySection';
 import UserInfo from '../components/UserInfo';
 
 
-const useStyles = makeStyles( (theme) => ({
+const useStyles = makeStyles((theme) => ({
     rootProfile: {
         flexGrow: 1,
         display: 'flex',
@@ -25,6 +25,7 @@ function Profile() {
     const classes = useStyles();
     const [madeEvents, setMadeEvents] = useState([]);
     const [attendedEvents, setAttendedEvents] = useState([]);
+    const [currentEvent, setCurrentEvent] = useState([]);
     const [user, setUser] = useState("hkenvi@yahoo.com");
 
     useEffect(() => {
@@ -44,12 +45,26 @@ function Profile() {
             console.log(res.data);
             setAttendedEvents(res.data)
         })
+        API.getPostedEvents(user).then( res => {
+            console.log("got events");
+            console.log("res", res);
+            const attendedOrCreated = async () => {
+                let filteredArr = await res.data.filter( event => {
+                    return event.creator === user || event.attendees.includes(user);
+                })
+                console.log('filteredArr', filteredArr);
+                console.log('last index', filteredArr[filteredArr.length - 1]);
+                setCurrentEvent(filteredArr[filteredArr.length - 1]);
+            }
+            attendedOrCreated()
+        })
+            .catch(err => console.log(err));
     };
-
+    console.log("Current event3" , currentEvent)
     return (
         <div className={classes.rootProfile}>
             <UserInfo />
-            <HistorySection madeEvents={ madeEvents } attendedEvents={ attendedEvents } />
+            <HistorySection currentEvent={currentEvent} madeEvents={madeEvents} attendedEvents={attendedEvents} />
         </div>
     )
 }
