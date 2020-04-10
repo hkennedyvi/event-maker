@@ -24,14 +24,6 @@ export class CurrentLocation extends React.Component {
         };
     }
 
-    // grabLocatiion() {
-
-    //     const currentLat = this.state.currentLocation.lat;
-    //     const currentLng = this.state.currentLocation.lng;
-    //     console.log(currentLat);
-    //     console.log(currentLng);
-    //     }
-
     componentDidUpdate(prevProps, prevState) {
         if (prevProps.google !== this.props.google) {
             this.loadMap();
@@ -113,19 +105,26 @@ export class CurrentLocation extends React.Component {
         });
     }
 
+    handleLocationGrab() {
+        const currentLat = this.state.currentLocation.lat;
+        const currentLng = this.state.currentLocation.lng;
+        console.log(currentLat);
+        console.log(currentLng);
+    }
+
     render() {
         const style = Object.assign({}, mapStyles.map);
         return (
             <div>
+                <div>
+                <button id="mybtn" onClick={(event)=> this.props.handleLocationGrab(this.state.currentLocation)}><h1>click here</h1>
+                </button>
+            </div>
             <div className="map">
                 <div style={style} ref="map">
                     Loading map...
                 </div>
                 {this.renderChildren()}
-            </div>
-            <div>
-                <button id="mybtn" onClick={(event)=> this.props.handleLocationGrab(this.state.currentLocation)}><h1>click here</h1>
-                </button>
             </div>
             </div>
         );

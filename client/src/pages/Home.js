@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Geocode from "react-geocode";
 import MapContainer from "../components/MapContainer";
 import CarouselPage from "../components/Carousel";
 
@@ -14,6 +15,7 @@ function Home() {
     const [category, setCategory] = useState();
     const [participants, setParticipants] = useState();
     const [duration, setDuration] = useState();
+    const [userLocation, setUserLocation] = useState();
 
     useEffect(() => {
         API.isLoggedIn();
@@ -29,8 +31,28 @@ function Home() {
     }
 
     function handleLocationGrab(currentLocation) {
-    //    console.log(currentLocation);
-        }
+        let eventLat = currentLocation.lat;
+        let eventLng = currentLocation.lng;
+
+        Geocode.setApiKey("AIzaSyCRTz31ipS9i5nHfyWIs-mcSIQmWRxXTec");
+
+        Geocode.setLanguage("en");
+
+        Geocode.setRegion("es");
+
+        Geocode.enableDebug();
+        
+        Geocode.fromLatLng(eventLat, eventLng).then(
+            response => {
+                const address = response.results[0].formatted_address;
+                console.log(address);
+                setUserLocation(address);
+            },
+            error => {
+                console.error(error);
+            }
+        );
+    }
 
     function handleChange(event) {
         // console.log(event.target.value);
@@ -59,7 +81,7 @@ function Home() {
         // console.log("Hi from post handler");
         // console.log(this);
         console.log(newEvent);
-        console.log({ 
+        console.log({
             category: category,
             name: newEvent.name,
             location: newEvent.location,
@@ -68,28 +90,28 @@ function Home() {
             notes: newEvent.notes,
             creator: "email"
         });
-        
-        API.createEvent({ 
+
+        API.createEvent({
             category: category,
             name: newEvent.name,
-            location: newEvent.location,
+            location: userLocation,
             participants: participants,
             duration: duration,
             notes: newEvent.notes,
             creator: "email"
         })
-        .then(console.log("Event saved to database."))
-        .catch(err => console.log(err));
+            .then(console.log("Event saved to database."))
+            .catch(err => console.log(err));
         // console.log(event);
     };
 
     return (
-        <MapContainer 
-        handlePost={handlePost} 
-        handleChange={handleChange} 
-        handleLocationGrab={handleLocationGrab}
-        event={newEvent} 
-        allEvents={allEvents}/>
+        <MapContainer
+            handlePost={handlePost}
+            handleChange={handleChange}
+            handleLocationGrab={handleLocationGrab}
+            event={newEvent}
+            allEvents={allEvents} />
     )
 
 }
