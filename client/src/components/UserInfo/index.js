@@ -5,6 +5,7 @@ const useStyles = makeStyles({
     rootUserInfo: {
         backgroundColor: 'white',
         flexGrow: 1,
+        
     },
 
 });
@@ -13,7 +14,10 @@ function UserInfo() {
     const classes = useStyles();
     return (
         <div className={classes.rootUserInfo}>
-            User info
+            <p>User info</p>
+            <p>What is Lorem Ipsum?</p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                
         </div>
     )
 }

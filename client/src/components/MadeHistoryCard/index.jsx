@@ -11,7 +11,7 @@ const useStyles = makeStyles({
 
     },
 
-});
+}); 
 
 // #D3208B, 49316F, 007D56
 function MadeHistoryCard(props) {

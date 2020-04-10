@@ -5,17 +5,21 @@ import HistorySection from '../components/HistorySection';
 import UserInfo from '../components/UserInfo';
 
 
-const useStyles = makeStyles({
+const useStyles = makeStyles( (theme) => ({
     rootProfile: {
         flexGrow: 1,
         display: 'flex',
         flexDirection: 'row',
-        margin: '12% 2%',
+        margin: '2% 12%',
+        [theme.breakpoints.down('sm')]: {
+            flexWrap: 'wrap',
+        },
+        // flexWrap: 'wrap',
         // If we want the background to not be same height as events, uncomment align-items
         // alignItems: 'flex-start',
     },
 
-});
+}));
 
 function Profile() {
     const classes = useStyles();
