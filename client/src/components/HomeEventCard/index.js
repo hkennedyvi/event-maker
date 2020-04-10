@@ -21,7 +21,7 @@ function HomeEventCard(props) {
     const [event, setEvent] = useState({});
     const classes = useStyles();
     const [eventIndex, setEventIndex] = useState(0);
-    // const [participants, setParticipants] = useState(props.allEvents[eventIndex].participants);
+    const [participants, setParticipants] = useState(props.allEvents[eventIndex].participants);
 
     useEffect(() => {
         loadNewEvent();
@@ -39,26 +39,26 @@ function HomeEventCard(props) {
         setEventIndex( (eventIndex === props.allEvents.length-1) ? 0 : eventIndex+1 );
     }
 
-    // function joinCount() {
-    //     const participantCount = parseFloat(participants);
-    //     setParticipants( participantCount === 0 ? 0 : participantCount-1 );
-    //     if (participantCount <= 0) {
-    //         document.getElementById("join-btn").disabled = true;
-    //     }
-    // }
+    function joinCount() {
+        const participantCount = parseFloat(participants);
+        setParticipants( participantCount === 0 ? 0 : participantCount-1 );
+        if (participantCount <= 0) {
+            document.getElementById("join-btn").disabled = true;
+        }
+    }
 
     console.log(props.allEvents[0]);
 
     return (
         <div className="event-card">
-            {/* <DialogTitle id="simple-dialog-title">{props.allEvents[0].name} <i className="fas fa-futbol"></i></DialogTitle>
+            <DialogTitle id="simple-dialog-title">{props.allEvents[eventIndex].name} <i className="fas fa-futbol"></i></DialogTitle>
             <h4 id="dialog-location">{props.allEvents[eventIndex].location}</h4>
-            <h5 id="dialog-participants"># participants needed: {props.allEvents[eventIndex].participants}</h5>
+            <h5 id="dialog-participants"># participants needed: {participants}</h5>
             <h5 id="dialog-starts">starts NOW</h5>
             <h5 id="dialog-ends">ends in {props.allEvents[eventIndex].duration}</h5>
             <h5 id="dialog-notes">{props.allEvents[eventIndex].notes}</h5>
-            <Button id="join-btn" lassName={classes.root} >Join</Button>
-            <Button id="next-btn" className={classes.root} onClick={nextCard}>Next Event</Button> */}
+            <Button id="join-btn" lassName={classes.root} onClick={joinCount}>Join</Button>
+            <Button id="next-btn" className={classes.root} onClick={nextCard}>Next Event</Button>
         </div>
     )
 };
