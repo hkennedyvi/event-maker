@@ -8,7 +8,9 @@ const useStyles = makeStyles( theme => ({
         marginRight: '2%',
         [theme.breakpoints.down('sm')]: {
             flexWrap: 'wrap',
-            marginBottom: '2%'
+            marginBottom: '2%',
+            marginRight: '0%',
+            flexGrow: 1,
         },
         
     },
