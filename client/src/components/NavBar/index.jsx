@@ -65,7 +65,7 @@ function NavBar() {
             case "Logout":
                 // Need to add code for logging out. Maybe not here...?
                 return {
-                    "redirect": "/",
+                    "redirect": "/logout",
                     "icon": <ExitToAppIcon />
                 }
             default:

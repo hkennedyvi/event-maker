@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import API from '../utils/API';
 import HistorySection from '../components/HistorySection';
+import GeocodeTest from '../components/AGEOCODETEST';
 
 function Profile() {
 
@@ -9,6 +10,7 @@ function Profile() {
     const [user, setUser] = useState("hkenvi@yahoo.com");
 
     useEffect(() => {
+        API.isLoggedIn();
         loadSavedEvents()
     }, [])
 
@@ -29,6 +31,7 @@ function Profile() {
     return (
         <div>
             <HistorySection madeEvents={ madeEvents } attendedEvents={ attendedEvents } />
+            <GeocodeTest />
         </div>
     )
 }
