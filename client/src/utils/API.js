@@ -12,7 +12,10 @@ export default {
     },
     getEventsByAttendees: function (attendee) {
         return axios.get("/api/events?attendees=" + attendee);
-    },
+	},
+	updateParticipants: function (participants) {
+		return axios.put("/api/events?participants=" + participants);
+	},
     isLoggedIn : function(setLoading) {
         console.log("is logged in")
 	    axios.get('/api/auth/checkToken')
