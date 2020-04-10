@@ -6,8 +6,10 @@ import "./Wrapper.css";
 function Wrapper() {
 return (
 <div> 
-    <CarouselPage className= 'Carousel'></CarouselPage>
-    <NavBar className='NavBar'></NavBar>
+    <CarouselPage/>
+    <NavBar/>
+  
+    
 </div>
 )
 }

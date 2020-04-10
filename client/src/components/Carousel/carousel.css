@@ -13,6 +13,10 @@
     margin-right: 0px;
     /* position: relative; */
   }
+  #Carousel {
+    position: absolute;
+    z-index: 15;
+  }
 
   .carousel-inner {
     /* position: relative;  */

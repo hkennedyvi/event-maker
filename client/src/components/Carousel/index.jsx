@@ -9,7 +9,7 @@ const CarouselPage = () => {
     // <div class="container">
     //   <div class="content">
         <div className="MDBContainer" >
-          <MDBCarousel
+          <MDBCarousel id='Carousel'
             activeItem={1}
             length={3}
             showControls={false}
