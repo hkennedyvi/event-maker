@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import Geocode from "react-geocode";
 import MapContainer from "../components/MapContainer";
+import CarouselPage from "../components/Carousel";
+
+
+
 import API from '../utils/API';
+
+
 
 function Home() {
     const [allEvents, setAllEvents] = useState([]);
@@ -69,6 +75,7 @@ function Home() {
         });
     }
 
+
     function handlePost(event) {
         event.preventDefault();
         // console.log("Hi from post handler");
@@ -106,5 +113,8 @@ function Home() {
             event={newEvent}
             allEvents={allEvents} />
     )
+
 }
+
+
 export default Home;
