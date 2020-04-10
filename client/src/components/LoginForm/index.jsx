@@ -50,7 +50,7 @@ function LoginForm(props) {
             <Card className={classes.cardRoot}>
                 <CardContent>
                     <Typography variant="h5" component="h2">
-                        Sign In
+                        Log In
                     </Typography>
                     <CardActions>
             <form className={classes.formRoot} 
