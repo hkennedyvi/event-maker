@@ -13,7 +13,7 @@ const CarouselPage = () => {
             activeItem={1}
             length={3}
             showControls={false}
-            showIndicators={true}
+            showIndicators={false}
             className="Carousel"
           >
             <MDBCarouselInner>
