@@ -11,11 +11,11 @@
     height:100px;
     margin-left: 0px;
     margin-right: 0px;
-    position: relative;
+    /* position: relative; */
   }
 
   .carousel-inner {
-    position: relative; 
+    /* position: relative;  */
     width: 100%; 
     overflow: hidden;
   }

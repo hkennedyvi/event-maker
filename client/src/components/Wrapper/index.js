@@ -7,7 +7,7 @@ function Wrapper() {
 return (
 <div> 
     <CarouselPage className= 'Carousel'></CarouselPage>
-    <NavBar className='Navbar'></NavBar>
+    <NavBar className='NavBar'></NavBar>
 </div>
 )
 }

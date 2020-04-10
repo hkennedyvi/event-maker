@@ -1,17 +1,20 @@
 
+.NavBar {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  z-index: 99;
+ }
+
 .carousel-inner {
-    position: relative; 
+    position: absolute; 
     width: 100%; 
     overflow: hidden;
+    z-index: 98;
   }
 
 .Carousel {
-    position: relative;
+    position: absolute;
+    z-index: 98;
 }
 
-.Navbar {
- position: absolute;
- top: 0;
- left: 0;
- z-index: -1;
-}
