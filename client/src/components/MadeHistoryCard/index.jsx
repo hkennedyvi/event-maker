@@ -7,7 +7,7 @@ import "./style.css";
 const useStyles = makeStyles({
     cards: {
         marginBottom: '2%',
-        background: 'linear-gradient(to right top, #d3208b, #b8298c, #9d2f8b, #833286, #69337e, #513e87, #34468b, #004c8a, #005d90, #006b85, #007570, #007d56);',
+        background: 'linear-gradient(to right top, #051937, #00355b, #005264, #006c4a, #188205);',
 
     },
 

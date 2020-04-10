@@ -15,7 +15,6 @@ const useStyles = makeStyles( (theme) => ({
             flexWrap: 'wrap',
             margin: '2%'
         },
-        // flexWrap: 'wrap',
         // If we want the background to not be same height as events, uncomment align-items
         // alignItems: 'flex-start',
     },
