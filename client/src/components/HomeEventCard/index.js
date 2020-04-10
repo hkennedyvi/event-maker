@@ -57,7 +57,7 @@ function HomeEventCard(props) {
             <h5 id="dialog-starts">starts NOW</h5>
             <h5 id="dialog-ends">ends in {props.allEvents[eventIndex].duration}</h5>
             <h5 id="dialog-notes">{props.allEvents[eventIndex].notes}</h5>
-            <Button id="join-btn" lassName={classes.root} >Join</Button>
+            <Button id="join-btn" className={classes.root} onClick={props.handleEventJoin}>Join</Button>
             <Button id="next-btn" className={classes.root} onClick={nextCard}>Next Event</Button> */}
         </div>
     )
