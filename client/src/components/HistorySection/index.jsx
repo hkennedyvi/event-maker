@@ -52,7 +52,7 @@ const useStyles = makeStyles({
     //     // alignItems: 'space-around',
     // },
     tabPanel: {
-        backgroundColor: 'red',
+        // backgroundColor: 'red',
         
     },
 
