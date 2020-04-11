@@ -6,7 +6,7 @@ import "./Wrapper.css";
 function Wrapper() {
 return (
 <div> 
-    {/* <CarouselPage/> */}
+    <CarouselPage/>
     <NavBar/>
   
     

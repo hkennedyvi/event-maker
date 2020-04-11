@@ -28,8 +28,7 @@ function Profile() {
     const [currentEvent, setCurrentEvent] = useState([]);
     
     //This variable is a string value of the email for the logged in user
-    const loggedInUser = 'laurie@email.com';
-    // unescape(document.cookie.split("=")[1]);
+    const loggedInUser = unescape(document.cookie.split("=")[1]);
 
     console.log("loggedInUser", loggedInUser); 
 
