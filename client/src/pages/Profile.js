@@ -49,20 +49,20 @@ function Profile() {
             setAttendedEvents(res.data);
         });
 
-        // API.getPostedEvents(loggedInUser).then( res => {
-        //     console.log("got events");
-        //     console.log("res", res);
-        //     const attendedOrCreated = async () => {
-        //         let filteredArr = await res.data.filter( event => {
-        //             return event.creator === loggedInUser || event.attendees.includes(loggedInUser);
-        //         })
-        //         console.log('filteredArr', filteredArr);
-        //         console.log('last index', filteredArr[filteredArr.length - 1]);
-        //         setCurrentEvent(filteredArr[filteredArr.length - 1]);
-        //     }
-        //     attendedOrCreated()
-        // })
-        // .catch(err => console.log(err));
+        API.getPostedEvents(loggedInUser).then( res => {
+            console.log("got events");
+            console.log("res", res);
+            const attendedOrCreated = async () => {
+                let filteredArr = await res.data.filter( event => {
+                    return event.creator === loggedInUser || event.attendees.includes(loggedInUser);
+                })
+                console.log('filteredArr', filteredArr);
+                console.log('last index', filteredArr[filteredArr.length - 1]);
+                setCurrentEvent(filteredArr[filteredArr.length - 1]);
+            }
+            attendedOrCreated()
+        })
+        .catch(err => console.log(err));
     };
 
     return (
