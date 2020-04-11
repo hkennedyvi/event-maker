@@ -27,11 +27,6 @@ function Profile() {
     const [attendedEvents, setAttendedEvents] = useState([]);
     const [currentEvent, setCurrentEvent] = useState([]);
 
-    const [history, setHistory] = useState({
-        created: "",
-        attended: ""
-    });
-
     //This variable is a string value of the email for the logged in user
     const loggedInUser = "hkenvi@yahoo.com";
     // const loggedInUser = unescape(document.cookie.split("=")[1]);
@@ -43,20 +38,13 @@ function Profile() {
 
     function loadSavedEvents() {
 
-        API.getEventsByCreator(loggedInUser).then(res => {
-            
-            const createdCount = res.data.length;
-            
+        API.getEventsByCreator(loggedInUser).then(res => {    
             
             setMadeEvents(res.data);
-            setHistory({history, created: createdCount });
         })
             .catch(err => console.log(err));
 
         API.getEventsByAttendees(loggedInUser).then(res => {
-            
-            const attendedCount = res.data.length;
-            setHistory({history, attended: attendedCount });
 
             setAttendedEvents(res.data);
         });
@@ -79,8 +67,9 @@ function Profile() {
 
     return (
         <div className={classes.rootProfile}>
-            <UserInfo history={history}
-            madeEvents={madeEvents} />
+            <UserInfo 
+            madeEvents={madeEvents.length}
+            attendedEvents={attendedEvents.length} />
             <HistorySection currentEvent={currentEvent} madeEvents={madeEvents} attendedEvents={attendedEvents} />
         </div>
     )

@@ -44,10 +44,10 @@ function UserInfo(props) {
                 </Typography>
                 <br/>
                 <Typography >
-                    Created # Events {createdCount}
+                    Created # Events {props.madeEvents}
                 </Typography>
                 <Typography >
-                    Attended # Events {props.history.attended}
+                    Attended # Events {props.attendedEvents}
                 </Typography>
             </div>
         </div>
