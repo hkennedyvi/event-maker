@@ -12,16 +12,19 @@ const useStyles = makeStyles((theme) => ({
             // width: '25ch',
             display: 'flex',
             flexDirection: 'column',
-            
+
         },
-        
+
     },
     cardRoot: {
         textAlign: 'center',
         display: 'flex',
         flexDirection: 'column',
         flexWrap: 'wrap',
-        marginTop: '15%',
+        marginTop: '8%',
+        [theme.breakpoints.down('md')]: {
+            marginTop: '15%',
+        },
     },
 
     textfield: {
@@ -39,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
     },
 
 
-    
+
 }));
 
 function LoginForm(props) {
@@ -47,61 +50,61 @@ function LoginForm(props) {
     return (
         <div className={classes.root} >
             <Box display="flex" >
-            <Card className={classes.cardRoot}>
-                <CardContent>
-                    <Typography variant="h5" component="h2">
-                        Log In
+                <Card className={classes.cardRoot}>
+                    <CardContent>
+                        <Typography variant="h5" component="h2">
+                            Log In
                     </Typography>
-                    <CardActions>
-            <form className={classes.formRoot} 
-                onSubmit={(e) => { props.handleSubmit(e) }} action="POST"
-            >
-                
-                <TextField
-                    className={classes.textfield}
-                    required
-                    id="outlined-required"
-                    type="email"
-                    label="Email"
-                    name="email"
-                    variant="outlined"
-                    
-                />
-                <TextField
-                    className={classes.textfield}
-                    required
-                    id="outlined-password-input"
-                    label="Password"
-                    type="password"
-                    name="password"
-                    // autoComplete="current-password"
-                    variant="outlined"
-                />
-                <Button 
-                    className={classes.submitBtn}
-                    type="submit"
-                    variant="contained"
-                    color="#051937"
-                >Login
+                        <CardActions>
+                            <form className={classes.formRoot}
+                                onSubmit={(e) => { props.handleSubmit(e) }} action="POST"
+                            >
+
+                                <TextField
+                                    className={classes.textfield}
+                                    required
+                                    id="outlined-required"
+                                    type="email"
+                                    label="Email"
+                                    name="email"
+                                    variant="outlined"
+
+                                />
+                                <TextField
+                                    className={classes.textfield}
+                                    required
+                                    id="outlined-password-input"
+                                    label="Password"
+                                    type="password"
+                                    name="password"
+                                    // autoComplete="current-password"
+                                    variant="outlined"
+                                />
+                                <Button
+                                    className={classes.submitBtn}
+                                    type="submit"
+                                    variant="contained"
+                                    color="#051937"
+                                >Login
                 </Button>
 
-            </form>
-            </CardActions>
-            </CardContent>
-            <CardActions>
-                <Typography variant="p">
-                    Not a member?
+                            </form>
+                        </CardActions>
+                    </CardContent>
+                    <CardActions>
+                        <Typography variant="p">
+                            Not a member?
                 </Typography>
-            <Button 
-                    className={classes.submitBtn}
-                    type="submit"
-                    variant="contained"
-                    color="#051937"
-                    href="/"
-                >Sign Up
+                        <Button
+                            className={classes.submitBtn}
+                            type="submit"
+                            variant="contained"
+                            color="#051937"
+                            href="/"
+                        >Sign Up
                 </Button>
-      </CardActions>
-            </Card>
+                    </CardActions>
+                </Card>
             </Box>
             {/* <form className={classes.formRoot} onSubmit={(e) => { props.handleSubmit(e) }} action="POST">
                 <label htmlFor="email">EMAIL:</label><br />
