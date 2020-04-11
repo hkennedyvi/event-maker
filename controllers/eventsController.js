@@ -20,10 +20,11 @@ module.exports = {
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
-    findOneAndUpdate: function(req, res) {
+    findByIdAndUpdate: function(req, res) {
+        console.log(req.body);
         db
-        .findById({ _id: req.params._id })
-        .update( {$dec: { participants: 1 }})
+        .findById({ _id: req.body._id})
+        .update( {$inc: { participants: -1 }})
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err))
     }

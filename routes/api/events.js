@@ -8,7 +8,7 @@ router.route('/')
 router.route("/:creator")
     .get(eventsController.findByID);
 
-router.route("/:_id")
-    .put(eventsController.findOneAndUpdate);
+router.route("/")
+    .put(eventsController.findByIdAndUpdate);
 
 module.exports = router;

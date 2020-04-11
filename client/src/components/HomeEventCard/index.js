@@ -43,19 +43,14 @@ function HomeEventCard(props) {
     }
 
     function joinCount() {
-        // const participantCount = parseFloat(participants);
-        // setParticipants( participantCount === 0 ? 0 : participantCount-1 );
-        // if (participantCount <= 0) {
-        //     document.getElementById("join-btn").disabled = true;
-        // }
-        console.log(props.allEvents[eventIndex]._id)
-        API.updateParticipants(props.allEvents[eventIndex]._id).then(res => {
+        console.log(props.allEvents[eventIndex]._id);
+        API.updateParticipants({ _id: props.allEvents[eventIndex]._id }).then( res => {
             console.log('hi from joincount')
         })
-            .catch(err => console.log(err));
+        .catch(err => console.log(err));
     }
 
-    console.log(props.allEvents[0]);
+    // console.log(props.allEvents[0]);
 
     return (
         <div className="event-card">
@@ -67,7 +62,7 @@ function HomeEventCard(props) {
             <h5 id="dialog-starts">starts NOW</h5>
             <h5 id="dialog-ends">ends in {props.allEvents[eventIndex].duration}</h5>
             <h5 id="dialog-notes">{props.allEvents[eventIndex].notes}</h5>
-            <Button id="join-btn" lassName={classes.root} onClick={joinCount}>Join</Button>
+            <Button id="join-btn" className={classes.root} onClick={joinCount}>Join</Button>
             <Button id="next-btn" className={classes.root} onClick={nextCard}>Next Event</Button>
             </div>
             : "" 

@@ -53,11 +53,15 @@ const useStyles = makeStyles((theme) => ({
 
 export default function FormDialog(props) {
   const classes = useStyles();
-  const [age, setAge] = React.useState('');
+  const [input, setInput] = React.useState('');
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
+  };
+
+  const handleChange = (event) => {
+    setInput(event.target.value);
   };
 
   const handleClose = (event) => {
@@ -80,9 +84,9 @@ export default function FormDialog(props) {
                 <Select
                     labelId="demo-simple-select-outlined-label"
                     name="category"
-                    value={age}
-                    onChange={(event) => {props.handleChange(event)}}
-                    label="Age"
+                    value={input}
+                    onChange={handleChange, (event) => {props.handleChange(event)}}
+                    label="Category"
                 >
                     <MenuItem value="Sports">Sports</MenuItem>
                     <MenuItem value="Entertainment">Entertainment</MenuItem>
@@ -108,7 +112,7 @@ export default function FormDialog(props) {
           <TextField
             margin="dense"
             id="location"
-            label="Location"
+            label="Location (if same as current location leave blank)"
             type="text"
             fullWidth
             onChange={(event) => props.handleChange(event)}
@@ -118,9 +122,9 @@ export default function FormDialog(props) {
                 <Select
                     labelId="demo-simple-select-outlined-label"
                     name="participants"
-                    value={age}
-                    onChange={(event) => {props.handleChange(event)}}
-                    label="Age"
+                    value={input}
+                    onChange={handleChange, (event) => {props.handleChange(event)}}
+                    label="Participants"
                 >
                     <MenuItem value="Any">
                         <em>Any</em>
@@ -140,14 +144,15 @@ export default function FormDialog(props) {
                     <MenuItem value="12+">12+</MenuItem>
                 </Select>
             </FormControl>
-            <FormControl variant="outlined" id="select" className={classes.formControl}>
-                <InputLabel id="demo-simple-select-outlined-label">Duration</InputLabel>
+            <FormControl required variant="outlined" id="select" className={classes.formControl}>
+                <InputLabel id="demo-simple-select-required-label">Duration</InputLabel>
                 <Select
                     labelId="demo-simple-select-outlined-label"
+                    id="demo-simple-select-required"
                     name="duration"
-                    value={age}
-                    onChange={(event) => {props.handleChange(event)}}
-                    label="Age"
+                    value={input}
+                    onChange={handleChange, (event) => {props.handleChange(event)}}
+                    label="Duration"
                 >
                     <MenuItem value="Any">
                         <em>Any</em>
