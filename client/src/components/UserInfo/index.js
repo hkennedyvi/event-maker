@@ -25,10 +25,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function UserInfo(props) {
-    console.log("hi from user")
     
-    let createdCount = props.madeEvents.length
-    console.log(createdCount)
     const classes = useStyles();
     return (
         <div className={classes.rootUserInfo}>
