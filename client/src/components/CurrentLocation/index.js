@@ -115,18 +115,18 @@ export class CurrentLocation extends React.Component {
     render() {
         const style = Object.assign({}, mapStyles.map);
         return (
-            <div>
-                <div>
-                <button id="mybtn" onClick={(event)=> this.props.handleLocationGrab(this.state.currentLocation)}><h1>click here</h1>
-                </button>
-            </div>
+            // <div>
+            //     <div>
+            //     <button id="mybtn" onClick={(event)=> this.props.handleLocationGrab(this.state.currentLocation)}><h1>click here</h1>
+            //     </button>
+            // </div>
             <div className="map">
                 <div style={style} ref="map">
                     Loading map...
                 </div>
                 {this.renderChildren()}
             </div>
-            </div>
+            //</div>
         );
     }
 };
