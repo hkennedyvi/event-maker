@@ -17,12 +17,16 @@ export default {
 		return axios.put("/api/events?_id=" + _id);
 	},
     isLoggedIn : function(setLoading) {
-        console.log("is logged in")
+		console.log("is logged in")
+		
 	    axios.get('/api/auth/checkToken')
 	      .then(res => {
 	        if (res.status !== 200) {
 		        this.logout();
-	        }
+			}
+			if (res.status === 200) {
+				console.log(res);
+			}
 	      })
 	      .catch(err => {
 	        this.logout();

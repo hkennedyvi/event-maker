@@ -7,12 +7,13 @@ import Logout from './components/Logout/Logout';
 import Profile from './pages/Profile';
 import NavBar from './components/NavBar';
 import './App.css';
+import Wrapper from './components/Wrapper';
 
 function App() {
   return (
     <Router>
       <div>
-        <NavBar />
+        <Wrapper/>
         <Switch>
           <Route exact path="/">
             <Signup />
