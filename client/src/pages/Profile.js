@@ -40,8 +40,12 @@ function Profile() {
     function loadSavedEvents() {
 
         API.getEventsByCreator(loggedInUser).then(res => {
-
-            setMadeEvents(res.data);
+            console.log("res.data", res.data)
+            if (res.data.length === 0) {
+                setMadeEvents([]);
+            } else {
+                setMadeEvents(res.data);
+            }
         })
             .catch(err => console.log(err));
 
@@ -51,32 +55,16 @@ function Profile() {
         });
 
         API.getPostedEvents(loggedInUser).then( res => {
-            console.log("got events");
-            console.log("res", res);
             
             const attendedOrCreated = async () => {
                 let filteredArr = await res.data.filter( event => {
                     return event.creator === loggedInUser || event.attendees.includes(loggedInUser);
                 })
-                console.log('filteredArr', filteredArr);
-                console.log('last index', filteredArr[filteredArr.length - 1]);
-
+                
                 if (filteredArr.length === 0) {
-                    console.log("no events")
-                    setCurrentEvent([
-                        // {attendees: [],
-                        // _id: "",
-                        // category: "",
-                        // name: "",
-                        // participants: 0,
-                        // location: "",
-                        // duration: 0,
-                        // notes: "",
-                        // creator: ""
-                    // }
-                ])
+                    setCurrentEvent([])
                 } else {
-                setCurrentEvent(filteredArr[filteredArr.length - 1]);
+                    setCurrentEvent(filteredArr[filteredArr.length - 1]);
                 }
             }
             attendedOrCreated()

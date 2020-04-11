@@ -4,7 +4,7 @@ import { Card, CardContent, Typography, DialogTitle } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     cards: {
-        marginBottom: '2%',
+        marginBottom: theme.spacing(1),
         background: 'linear-gradient(to left top, #051937, #2b275a, #5d2e77, #972d88, #d3208b);',
 
     },

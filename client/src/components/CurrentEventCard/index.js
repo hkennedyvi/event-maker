@@ -5,25 +5,24 @@ import { Card, CardContent, Typography, DialogTitle } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     cards: {
-        marginBottom: '2%',
+        marginBottom: theme.spacing(1),
         background: 'linear-gradient(0.85turn,  rgba(19, 34, 119, 0.9), rgba(231, 51, 156, 0.9), rgba(253, 160, 0, 0.9))',
     },
     details: {
         marginLeft: theme.spacing(3),
         marginBottom: theme.spacing(1),
-    }
+    },
 }));
 
 function CurrentEventCard(props) {
     const classes = useStyles();
 
     const contentToggler = (props) => {
-        console.log("contentToggler props", props);
 
         if (props.currentEvent.length === 0) {
             return (
                 <div className="content">
-                    <Typography variant="h4">
+                    <Typography variant="h4" className="noEvents">
                         No current Events
                     </Typography>
                 </div>
