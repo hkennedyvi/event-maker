@@ -44,22 +44,3 @@ function MadeHistoryCard(props) {
 }
 
 export default MadeHistoryCard;
-
-{/* <div>
-            <Typography variant="h6">
-            {props.category.toUpperCase()}: {props.name.toUpperCase()}
-           </Typography>
-           <Typography variant="body1">
-           
-           </Typography>
-           <Typography variant="body2">
-                
-           </Typography>
-           <Typography variant="body2">
-                at {props.location}
-           </Typography>
-           <Typography variant="body2">
-                for {props.duration} hours
-           </Typography>
-           
-        </div> */}
