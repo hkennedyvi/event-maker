@@ -8,7 +8,7 @@ import { red } from '@material-ui/core/colors';
 const useStyles = makeStyles((theme) => ({
     root: {
         '& > *': {
-            marginTop: theme.spacing(-10),
+            marginTop: theme.spacing(1),
             // width: '25ch',
             display: 'flex',
             flexDirection: 'column',
