@@ -46,16 +46,17 @@ function Profile() {
         API.getEventsByCreator(loggedInUser).then(res => {
             
             const createdCount = res.data.length;
-            setHistory({...history, created: createdCount });
+            
             
             setMadeEvents(res.data);
+            setHistory({history, created: createdCount });
         })
             .catch(err => console.log(err));
 
         API.getEventsByAttendees(loggedInUser).then(res => {
             
             const attendedCount = res.data.length;
-            setHistory({...history, attended: attendedCount });
+            setHistory({history, attended: attendedCount });
 
             setAttendedEvents(res.data);
         });
@@ -78,7 +79,8 @@ function Profile() {
 
     return (
         <div className={classes.rootProfile}>
-            <UserInfo history={history} />
+            <UserInfo history={history}
+            madeEvents={madeEvents} />
             <HistorySection currentEvent={currentEvent} madeEvents={madeEvents} attendedEvents={attendedEvents} />
         </div>
     )

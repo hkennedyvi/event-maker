@@ -26,7 +26,9 @@ const useStyles = makeStyles(theme => ({
 
 function UserInfo(props) {
     console.log("hi from user")
-    console.log(props)
+    
+    let createdCount = props.madeEvents.length
+    console.log(createdCount)
     const classes = useStyles();
     return (
         <div className={classes.rootUserInfo}>
@@ -42,7 +44,7 @@ function UserInfo(props) {
                 </Typography>
                 <br/>
                 <Typography >
-                    Created # Events {props.history.created}
+                    Created # Events {createdCount}
                 </Typography>
                 <Typography >
                     Attended # Events {props.history.attended}
