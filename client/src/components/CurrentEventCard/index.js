@@ -6,6 +6,7 @@ import { Card, CardContent, Typography, DialogTitle } from '@material-ui/core';
 const useStyles = makeStyles({
     cards: {
         marginBottom: '2%',
+        background: 'linear-gradient(0.85turn,  rgba(19, 34, 119, 0.9), rgba(231, 51, 156, 0.9), rgba(253, 160, 0, 0.9))',
         
 
     },
