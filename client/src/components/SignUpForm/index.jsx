@@ -8,7 +8,7 @@ import './SignUpForm.css'
 const useStyles = makeStyles((theme) => ({
     root: {
         '& > *': {
-            margin: theme.spacing(1),
+            marginTop: theme.spacing(-10),
             // width: '25ch',
             display: 'flex',
             flexDirection: 'column',
