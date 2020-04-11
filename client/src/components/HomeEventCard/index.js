@@ -48,9 +48,11 @@ function HomeEventCard(props) {
         // if (participantCount <= 0) {
         //     document.getElementById("join-btn").disabled = true;
         // }
-        API.updateParticipants({
-            // participants: participants 
+        console.log(props.allEvents[eventIndex]._id)
+        API.updateParticipants(props.allEvents[eventIndex]._id).then(res => {
+            console.log('hi from joincount')
         })
+            .catch(err => console.log(err));
     }
 
     console.log(props.allEvents[0]);

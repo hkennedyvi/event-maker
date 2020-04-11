@@ -57,12 +57,12 @@ db.User
       attendees: ["jenni@email.com", "laurie@email.com"]
     },
     {
-      category: "sports",
-      name: "softball",
-      participants: 18,
-      location: "Laurelhurst",
-      duration: 2,
-      notes: "we have balls and bats",
+      category: "entertainment",
+      name: "jam sesh",
+      participants: 5,
+      location: "Raleigh Hills",
+      duration: 5,
+      notes: "bring the funk",
       creator: "different@yahoo.com",
       attendees: ["sarah@email.com", "hkenvi@yahoo.com"]
     }
