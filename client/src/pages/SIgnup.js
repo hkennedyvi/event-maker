@@ -3,7 +3,9 @@ import React, { useState } from 'react';
 import SignUpForm from '../components/SignUpForm';
 import axios from 'axios';
 
+
 function Signup() {
+
 
     const [user, setUser] = useState({});
 
@@ -37,7 +39,9 @@ function Signup() {
     };
 
     return (
-        <SignUpForm handleSubmit={handleSubmit} />
+       
+        <SignUpForm clhandleSubmit={handleSubmit} />
+       
     )
 }
 

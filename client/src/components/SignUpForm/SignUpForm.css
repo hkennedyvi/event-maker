@@ -1,12 +1,14 @@
 .MuiCard-root {
     
     align-self: center;
-
+   
 }
 
 .MuiCardContent-root{
-    justify-content: center;
+    justify-content: center; 
     align-items: center;
+
+    
 }
 
 .form {
@@ -22,3 +24,4 @@
 .MuiButton-label {
     color: #ffffff;
 }
+

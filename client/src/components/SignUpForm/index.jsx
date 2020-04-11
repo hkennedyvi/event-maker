@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
             // width: '25ch',
             display: 'flex',
             flexDirection: 'column',
-            
+    
         },
         
     },
