@@ -24,7 +24,9 @@ const useStyles = makeStyles(theme => ({
 
 }));
 
-function UserInfo() {
+function UserInfo(props) {
+    console.log("hi from user")
+    console.log(props)
     const classes = useStyles();
     return (
         <div className={classes.rootUserInfo}>
@@ -40,10 +42,10 @@ function UserInfo() {
                 </Typography>
                 <br/>
                 <Typography >
-                    Created # Events
+                    Created # Events {props.history.created}
                 </Typography>
                 <Typography >
-                    Attended # Events
+                    Attended # Events {props.history.attended}
                 </Typography>
             </div>
         </div>
