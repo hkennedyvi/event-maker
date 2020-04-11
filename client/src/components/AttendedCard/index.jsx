@@ -2,14 +2,18 @@ import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import { Card, CardContent, Typography, DialogTitle } from '@material-ui/core';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     cards: {
         marginBottom: '2%',
         background: 'linear-gradient(to left top, #051937, #2b275a, #5d2e77, #972d88, #d3208b);',
 
     },
+    details: {
+        marginLeft: theme.spacing(3),
+        marginBottom: theme.spacing(1),
+    }
 
-});
+}));
 
 function AttendedCard(props) {
     const classes = useStyles();
@@ -22,6 +26,7 @@ function AttendedCard(props) {
 
                     <div className="">
                         <DialogTitle id="simple-dialog-title">{props.name.toUpperCase()} <i className="fas fa-futbol"></i></DialogTitle>
+                        <div className={classes.details}>
                         <Typography variant="body1">
                             Category: {props.category.toUpperCase()}
                         </Typography>
@@ -33,6 +38,7 @@ function AttendedCard(props) {
                         </Typography>
 
                         {/* Future development: add attendees on the right side of the card */}
+                        </div>
                     </div>
                 </CardContent>
             </Card>
