@@ -26,9 +26,11 @@ function CurrentEventCard(props) {
             )
         } else {
             /* Future development: add attendees on the right side of the card */
+            const name = props.currentEvent.name;
+
             return (
                 <div className="content">
-                    <DialogTitle id="simple-dialog-title">{props.currentEvent.name} <i className="fas fa-futbol"></i></DialogTitle>
+                    <DialogTitle id="simple-dialog-title">{name.toUpperCase()} <i className="fas fa-futbol"></i></DialogTitle>
                     <Typography variant="body1">
                         Category: {props.currentEvent.category}
                     </Typography>
