@@ -5,6 +5,7 @@
   left: 0px;
   z-index: 99;
   margin-top: 100px;
+ 
  }
 
 .carousel-inner {
@@ -12,10 +13,13 @@
     width: 100%; 
     overflow: hidden;
     z-index: 98;
+    
+   
   }
 
 .Carousel {
     position: absolute;
     z-index: 98;
+    
 }
 

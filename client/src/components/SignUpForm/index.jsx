@@ -8,7 +8,7 @@ import './SignUpForm.css'
 const useStyles = makeStyles((theme) => ({
     root: {
         '& > *': {
-            margin: theme.spacing(1),
+            marginTop: theme.spacing(-12),
             // width: '25ch',
             display: 'flex',
             flexDirection: 'column',
@@ -21,7 +21,10 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         flexDirection: 'column',
         flexWrap: 'wrap',
-        marginTop: '15%',
+        marginTop: '5%',
+        [theme.breakpoints.down('md')]: {
+            marginTop: '15%',
+        },
     },
 
     textfield: {
@@ -50,7 +53,7 @@ function SignUpForm(props) {
             <Card className={classes.cardRoot}>
                 <CardContent>
                     <Typography variant="h5" component="h2">
-                        Sign In
+                        Sign Up
                     </Typography>
                     <CardActions>
             <form className={classes.formRoot} 

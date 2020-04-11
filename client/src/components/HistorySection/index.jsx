@@ -46,17 +46,6 @@ const useStyles = makeStyles({
         flexDirection: 'column',
         flexGrow: 1,
     },
-    // root: {
-    //     // marginTop: '2%',
-    //     // display: 'flex',
-    //     // flexDirection: 'row',
-    //     // alignItems: 'space-around',
-    // },
-    tabPanel: {
-        // backgroundColor: 'red',
-
-    },
-
 });
 
 function HistorySection(props) {

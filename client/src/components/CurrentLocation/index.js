@@ -114,16 +114,11 @@ export class CurrentLocation extends React.Component {
     render() {
         const style = Object.assign({}, mapStyles.map);
         return (
-            <div>
-                <div>
-                   
+            <div className="map">
+                <div style={style} ref="map">
+                    Loading map...
                 </div>
-                <div className="map">
-                    <div style={style} ref="map">
-                        Loading map...
-                </div>
-                    {this.renderChildren()}
-                </div>
+                {this.renderChildren()}
             </div>
         );
     }
