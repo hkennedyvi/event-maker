@@ -4,7 +4,7 @@ import API from '../utils/API';
 import HistorySection from '../components/HistorySection';
 import UserInfo from '../components/UserInfo';
 
-
+// Styles
 const useStyles = makeStyles((theme) => ({
     rootProfile: {
         flexGrow: 1,
@@ -21,49 +21,58 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
+// Main Function
 function Profile() {
+    // Styles
     const classes = useStyles();
+    // State
     const [madeEvents, setMadeEvents] = useState([]);
     const [attendedEvents, setAttendedEvents] = useState([]);
     const [currentEvent, setCurrentEvent] = useState([]);
 
-    //This variable is a string value of the email for the logged in user
-    const loggedInUser = "hkenvi@yahoo.com";
-    // const loggedInUser = unescape(document.cookie.split("=")[1]);
+    // This variable is a string value of the email for the logged in user
+    const loggedInUser = unescape(document.cookie.split("=")[1]);
 
+    // Upon load check if user is logged in then load saved events
     useEffect(() => {
         API.isLoggedIn();
         loadSavedEvents();
     }, [])
 
+    // Load events
     function loadSavedEvents() {
 
-        API.getEventsByCreator(loggedInUser).then(res => {    
-            
+        // Load events made by user
+        API.getEventsByCreator(loggedInUser).then(res => {
             setMadeEvents(res.data);
         })
             .catch(err => console.log(err));
 
+        // Load events attended by user
         API.getEventsByAttendees(loggedInUser).then(res => {
+            setAttendedEvents(res.data)
+        })
+            .catch(err => console.log(err));
 
-            setAttendedEvents(res.data);
-        });
-
-        API.getPostedEvents(loggedInUser).then( res => {
-            console.log("got events");
-            console.log("res", res);
+        // Load last event created or attended by user
+        // Filters all events by user into an array
+        // If no events created or attended by user, sets state to empty array
+        // Else, sets state to last event in the filtered event array
+        API.getPostedEvents(loggedInUser).then(res => {
             const attendedOrCreated = async () => {
-                let filteredArr = await res.data.filter( event => {
+                let filteredArr = await res.data.filter(event => {
                     return event.creator === loggedInUser || event.attendees.includes(loggedInUser);
                 })
-                console.log('filteredArr', filteredArr);
-                console.log('last index', filteredArr[filteredArr.length - 1]);
-                setCurrentEvent(filteredArr[filteredArr.length - 1]);
+                if (filteredArr.length === 0) {
+                    setCurrentEvent([])
+                } else {
+                    setCurrentEvent(filteredArr[filteredArr.length - 1]);
+                }
             }
             attendedOrCreated()
         })
-        .catch(err => console.log(err));
-    };
+            .catch(err => console.log(err));
+    }
 
     return (
         <div className={classes.rootProfile}>
