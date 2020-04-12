@@ -24,7 +24,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 // Main Function
-function UserInfo() {
+function UserInfo(props) {
     // Styles
     const classes = useStyles();
     
