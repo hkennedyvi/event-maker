@@ -2,7 +2,7 @@ import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import { Card, CardContent, Typography, DialogTitle } from '@material-ui/core';
 
-
+// Styles
 const useStyles = makeStyles((theme) => ({
     cards: {
         marginBottom: theme.spacing(1),
@@ -14,16 +14,19 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
+// Main function
 function CurrentEventCard(props) {
+    // Styles
     const classes = useStyles();
 
+    // Toggles content in case user has no events
     const contentToggler = (props) => {
 
         if (props.currentEvent.length === 0) {
             return (
                 <div className="content">
                     <Typography variant="h4" className="noEvents">
-                        No current Events
+                        No Current Events
                     </Typography>
                     <Typography variant="body1">
                         Return to the Dashboard to find or create an event!
@@ -42,9 +45,6 @@ function CurrentEventCard(props) {
                             Category: {props.currentEvent.category}
                         </Typography>
                         <Typography variant="body2">
-
-                        </Typography>
-                        <Typography variant="body2">
                             Location: {props.currentEvent.location}
                         </Typography>
                         <Typography variant="body2">
@@ -55,7 +55,6 @@ function CurrentEventCard(props) {
             )
         }
     }
-
 
     return (
         <div>

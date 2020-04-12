@@ -4,6 +4,7 @@ import { Card, CardContent, Typography } from '@material-ui/core';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import "./style.css";
 
+// Styles
 const useStyles = makeStyles((theme) => ({
     cards: {
         marginBottom: theme.spacing(1),
@@ -16,9 +17,11 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
+// Main Function
 function MadeHistoryCard(props) {
+    // Styles
     const classes = useStyles();
-    console.log("madehistorycard props", props)
+    
     return (
         <div>
             <Card className={classes.cards}>

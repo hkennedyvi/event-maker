@@ -69,12 +69,10 @@ function HistorySection(props) {
     // Toggles card content for Previously Created tab
     function madeEventsCardToggler(props) {
         if (props.madeEvents.length === 0) {
-            console.log("no made events");
             return <NoHistoryCard background="linear-gradient(to right bottom, #051937, #2b275a, #5d2e77, #972d88, #d3208b);" />
         } else {
             return (
                 props.madeEvents.map(event => {
-                    console.log("event", event);
                     return (
                         <MadeHistoryCard
                             category={event.category}
@@ -91,14 +89,11 @@ function HistorySection(props) {
 
     // Toggles card content for Previously Attended tab
     function attendedEventsCardToggler(props) {
-        console.log("toggler props", props);
         if (props.attendedEvents.length === 0) {
-            console.log("no attended events");
             return <NoHistoryCard background="linear-gradient(to left top, #051937, #2b275a, #5d2e77, #972d88, #d3208b);" />
         } else {
             return (
                 props.attendedEvents.map(event => {
-                    console.log("attended events cards")
                     return (
                         <AttendedCard
                             category={event.category}
@@ -131,7 +126,6 @@ function HistorySection(props) {
                 </Tabs>
             </Paper>
             <TabPanel className={classes.tabPanel} value={value} index={0}>
-                {console.log("props", props)}
                 <CurrentEventCard
                     currentEvent={props.currentEvent}
                 />
