@@ -54,13 +54,13 @@ export class CurrentLocation extends React.Component {
                 navigator.geolocation.getCurrentPosition(pos => {
                     this.props.handleLocationGrab({lat: pos.coords.latitude, lng: pos.coords.longitude});
 
-                    // const coords = pos.coords;
-                    // this.setState({
-                    //     currentLocation: {
-                    //         lat: coords.latitude,
-                    //         lng: coords.longitude
-                    //     }
-                    // });
+                    const coords = pos.coords;
+                    this.setState({
+                        currentLocation: {
+                            lat: coords.latitude,
+                            lng: coords.longitude
+                        }
+                    });
                 });
             }
         }
