@@ -25,6 +25,9 @@ function CurrentEventCard(props) {
                     <Typography variant="h4" className="noEvents">
                         No current Events
                     </Typography>
+                    <Typography variant="body1">
+                        Return to the Dashboard to find or create an event!
+                    </Typography>
                 </div>
             )
         } else {
