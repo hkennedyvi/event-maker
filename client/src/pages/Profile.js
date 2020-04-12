@@ -76,7 +76,9 @@ function Profile() {
 
     return (
         <div className={classes.rootProfile}>
-            <UserInfo />
+            <UserInfo 
+            madeEvents={madeEvents.length}
+            attendedEvents={attendedEvents.length} />
             <HistorySection currentEvent={currentEvent} madeEvents={madeEvents} attendedEvents={attendedEvents} />
         </div>
     )

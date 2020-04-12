@@ -42,10 +42,10 @@ function UserInfo() {
                 </Typography>
                 <br/>
                 <Typography >
-                    Created # Events
+                    Created # Events {props.madeEvents}
                 </Typography>
                 <Typography >
-                    Attended # Events
+                    Attended # Events {props.attendedEvents}
                 </Typography>
             </div>
         </div>
