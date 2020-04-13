@@ -21,19 +21,13 @@ function MapContainer(props) {
         }
     };
 
-    // const triggerCurrentLocation = () => {
-    //     this.refs.currentLocation.grabLocation();
-    // }
-
     return (
         <div>
             <CurrentLocation
-                // ref="currentLocation"
                 handleLocationGrab={props.handleLocationGrab}
                 centerAroundCurrentLocation
                 google={props.google}
             >
-                {/* <button onClick={triggerCurrentLocation}>Click</button> */}
                 <Marker name={'current location'} />
                 <InfoWindow
                     marker={mapSettings.activeMarker}

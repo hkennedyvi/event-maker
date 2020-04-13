@@ -7,7 +7,7 @@ function Logout(props) {
     }, [])
     return (
         <div>
-            test
+            Logout
         </div>
     );
 };
