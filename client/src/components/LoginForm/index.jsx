@@ -106,16 +106,6 @@ function LoginForm(props) {
                     </CardActions>
                 </Card>
             </Box>
-            {/* <form className={classes.formRoot} onSubmit={(e) => { props.handleSubmit(e) }} action="POST">
-                <label htmlFor="email">EMAIL:</label><br />
-                <input type="email" id="email" name="email" placeholder="Email here" /><br />
-                <label htmlFor="password">PASSWORD:</label><br />
-                <input type="password" id="password" name="password" placeholder="Password here" /><br />
-                <label htmlFor="password">CONFIRM PASSWORD:</label><br />
-                <input type="password" id="confirm" name="confirm" placeholder="Confirm password here" /><br /><br />
-                <input type="submit" value="Sign Up" />
-            </form> */}
-            {/* <FacebookBtn /> */}
         </div>
     )
 }
