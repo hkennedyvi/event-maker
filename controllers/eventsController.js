@@ -23,7 +23,7 @@ module.exports = {
     findByIdAndUpdate: function(req, res) {
         console.log(req.body);
         db
-        .findById({ _id: req.body._id})
+        .findById({ _id: req.body._id })
         .update( {$inc: { participants: -1 }})
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err))

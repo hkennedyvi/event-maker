@@ -5,7 +5,6 @@ import FormDialog from "../EventDialog";
 import HomeEventCard from "../HomeEventCard";
 
 function MapContainer(props) {
-
     const [mapSettings, setMapSettings] = useState({
         showingInfoWindow: false,
         activeMarker: {},

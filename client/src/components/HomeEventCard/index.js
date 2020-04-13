@@ -43,14 +43,43 @@ function HomeEventCard(props) {
     }
 
     function joinCount() {
+        // const participantCount = parseFloat(participants);
+        // setParticipants( participantCount === 0 ? 0 : participantCount-1 );
+        // if (participantCount <= 0) {
+        //     document.getElementById("join-btn").disabled = true;
+        // }
         console.log(props.allEvents[eventIndex]._id);
         API.updateParticipants({ _id: props.allEvents[eventIndex]._id }).then( res => {
-            console.log('hi from joincount')
+            console.log('Database updated.')
         })
-        .catch(err => console.log(err));
+            .catch(err => console.log(err));
     }
 
-    // console.log(props.allEvents[0]);
+    // function loadNewEvent() {
+    //     API.getPostedEvents().then(res => {
+    //         let events = res.data;
+    //         setEvent( events );
+    //         let participantCount = events[eventIndex].participants;
+    //     })
+    //     .catch(err => console.log(err));
+    // }
+
+    // function nextCard() {
+    //     setEventIndex( ( eventIndex === props.allEvents.length-1 ) ? 0 : eventIndex+1 );
+    //     loadNewEvent();
+    //     let participantCount = event[eventIndex].participants;
+    //     console.log('participant2', participantCount);
+    //     setParticipants( participantCount );
+    // }
+
+    // function joinCount() {
+    //     API.updateParticipants({ _id: props.allEvents[eventIndex]._id }).then( res => {
+    //             console.log('Database Updated!');
+    //             let participantCount = props.allEvents[eventIndex].participants;
+    //             setParticipants( participantCount );
+    //     })
+    //     .catch(err => console.log(err));
+    // }
 
     return (
         <div className="event-card">
