@@ -100,7 +100,6 @@ function Home() {
             handlePost={handlePost}
             handleChange={handleChange}
             handleLocationGrab={handleLocationGrab}
-            handleEventJoin={handleEventJoin}
             event={newEvent}
             allEvents={allEvents} />
     )

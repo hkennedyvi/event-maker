@@ -1,9 +1,7 @@
 import React from 'react';
-// import FacebookBtn from '../FacebookBtn';
 import { makeStyles } from '@material-ui/core/styles';
 import { TextField, FormHelperText, Card, CardActions, CardContent, Typography, Box, Button } from '@material-ui/core';
 import './SignUpForm.css'
-// import { red } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
     root: {
