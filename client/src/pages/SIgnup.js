@@ -18,7 +18,7 @@ function Signup() {
         setUser(userData);
        
         if (userData.password !== userData.confirmPassword) {
-            alert("passwords don't match");
+            alert("Passwords don't match");
         } else {
            
             axios
