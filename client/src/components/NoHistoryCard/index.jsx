@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
-import { Card, CardContent, Typography, DialogTitle } from '@material-ui/core';
+import { Card, CardContent, Typography } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     cards: props => ({
@@ -23,7 +23,7 @@ function NoHistoryCard(props) {
                 <CardContent>
                     <div className={classes.details}>
                         <Typography variant="h4">
-                            No Event History
+                            No {props.eventType}
                         </Typography>
                         <Typography variant="body1">
                             Return to the Dashboard to find or create an event!
