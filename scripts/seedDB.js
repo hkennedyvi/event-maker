@@ -30,41 +30,61 @@ db.User
       category: "sports",
       name: "tennis",
       participants: 4,
-      location: "Laurelhurst",
+      location: "Pioneer Park",
       duration: 2,
       notes: "bring your own racket",
-      creator: "hkenvi@yahoo.com",
+      creator: "cahootsguy@email.com",
       attendees: ["sarah@email.com", "howard@email.com", "jenni@email.com", "laurie@email.com"]
     },
     {
-      category: "trivia",
-      name: "history",
+      category: "entertainment",
+      name: "trivia",
       participants: 2,
       location: "Pizza Schmizza",
       duration: 2,
       notes: "theme tonight is harry potter!",
-      creator: "hkenvi@yahoo.com",
+      creator: "cahootsguy@email.com",
       attendees: ["sarah@email.com", "howard@email.com", "jenni@email.com", "laurie@email.com"]
     },
     {
       category: "sports",
       name: "softball",
       participants: 18,
-      location: "Laurelhurst",
+      location: "Hyland Forest Park",
       duration: 2,
       notes: "we have balls and bats",
-      creator: "hkenvi@yahoo.com",
+      creator: "cahootsguy@email.com",
       attendees: ["jenni@email.com", "laurie@email.com"]
     },
     {
       category: "sports",
-      name: "softball",
-      participants: 18,
-      location: "Laurelhurst",
+      name: "volleyball",
+      participants: 8,
+      location: "Garden Home Rec",
       duration: 2,
-      notes: "we have balls and bats",
+      notes: "playing indoors",
       creator: "different@yahoo.com",
-      attendees: ["sarah@email.com", "hkenvi@yahoo.com"]
+      attendees: ["sarah@email.com", "cahootsguy@email.com"]
+    },
+    {
+      category: "music",
+      name: "jam session",
+      participants: 4,
+      location: "4561 Allen Blvd",
+      duration: 2,
+      notes: "loud amps only",
+      creator: "different@yahoo.com",
+      attendees: ["jenni@email.com", "cahootsguy@email.com"]
+    },
+    {
+      category: "entertainment",
+      name: "block party",
+      participants: 4,
+      location: "3220 Scholls Ferry Rd",
+      duration: 2,
+      notes: "loud amps only",
+      creator: "different@yahoo.com",
+      attendees: ["jenni@email.com", "cahootsguy@email.com"]
     }
 
   ];

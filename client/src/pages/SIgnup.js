@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import { Route, Redirect } from "react-router-dom";
 import SignUpForm from '../components/SignUpForm';
 import axios from 'axios';
 
@@ -17,6 +16,7 @@ function Signup() {
         };
 
         setUser(userData);
+       
         if (userData.password !== userData.confirmPassword) {
             alert("passwords don't match");
         } else {
