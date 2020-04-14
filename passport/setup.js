@@ -13,8 +13,6 @@ passport.deserializeUser((id, done) => {
     });
 });
 
-//Do I need to have two seperate local strategies for login and signup? Most examples seem to have only one. 
-
 // Local Strategy
 passport.use(
     new LocalStrategy({ usernameField: "email" }, (email, password, done) => {
