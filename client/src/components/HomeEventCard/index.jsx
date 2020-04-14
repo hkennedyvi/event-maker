@@ -3,6 +3,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import API from "../../utils/API";
+import moment from "moment";
 import "./style.css";
 
 const useStyles = makeStyles({
@@ -21,7 +22,7 @@ function HomeEventCard(props) {
     const [event, setEvent] = useState({});
     const classes = useStyles();
     const [eventIndex, setEventIndex] = useState(0);
-    // const [participants, setParticipants] = useState(props.allEvents[eventIndex].participants);
+    const loggedInUser = unescape(document.cookie.split("=")[1]);
 
     useEffect(() => {
         loadNewEvent();
@@ -30,7 +31,7 @@ function HomeEventCard(props) {
     function loadNewEvent() {
         API.getPostedEvents().then(res => {
             console.log(res);
-            setEvent(res.data);
+            setEvent(res.data);  
         })
             .catch(err => console.log(err));
     }
@@ -39,26 +40,35 @@ function HomeEventCard(props) {
         setEventIndex( (eventIndex === props.allEvents.length-1) ? 0 : eventIndex+1 );
     }
 
-    // function joinCount() {
-    //     const participantCount = parseFloat(participants);
-    //     setParticipants( participantCount === 0 ? 0 : participantCount-1 );
-    //     if (participantCount <= 0) {
-    //         document.getElementById("join-btn").disabled = true;
-    //     }
-    // }
 
-    console.log(props.allEvents[0]);
+    function joinCount() {
+        if (window.confirm("Are you sure you would like to join this event?")) {
+            window.location.reload(false);
+          } else {
+            return;
+          }
+        API.updateParticipants({ _id: props.allEvents[eventIndex]._id , user: loggedInUser}).then( res => {
+            console.log('Database updated.')
+        })
+            .catch(err => console.log(err));
+    }
 
     return (
         <div className="event-card">
-            {/* <DialogTitle id="simple-dialog-title">{props.allEvents[0].name} <i className="fas fa-futbol"></i></DialogTitle>
-            <h4 id="dialog-location">{props.allEvents[eventIndex].location}</h4>
-            <h5 id="dialog-participants"># participants needed: {props.allEvents[eventIndex].participants}</h5>
-            <h5 id="dialog-starts">starts NOW</h5>
-            <h5 id="dialog-ends">ends in {props.allEvents[eventIndex].duration}</h5>
-            <h5 id="dialog-notes">{props.allEvents[eventIndex].notes}</h5>
-            <Button id="join-btn" className={classes.root} onClick={props.handleEventJoin}>Join</Button>
-            <Button id="next-btn" className={classes.root} onClick={nextCard}>Next Event</Button> */}
+            {props.allEvents && props.allEvents.length > 0 ? 
+            <div>
+            <DialogTitle><h3>{props.allEvents[eventIndex].name}</h3></DialogTitle>
+            <h6>{props.allEvents[eventIndex].location}</h6>
+            <h5><strong># participants needed:</strong> {props.allEvents[eventIndex].participants}</h5>
+            <h5><strong>started:</strong> {moment(props.allEvents[eventIndex].created_at).format('lll')}</h5>
+            <h5><strong>duration:</strong> {props.allEvents[eventIndex].duration}</h5>
+            <h6>{props.allEvents[eventIndex].notes}</h6>
+            <br></br>
+            <Button id="join-btn" className={classes.root} onClick={joinCount} disabled={ props.allEvents[eventIndex].participants <= 0 ? true : "" }>Join</Button>
+            <Button id="next-btn" className={classes.root} onClick={nextCard}>Next Event</Button>
+            </div>
+            : "" 
+        }
         </div>
     )
 };
