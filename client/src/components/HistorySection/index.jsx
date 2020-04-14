@@ -82,6 +82,7 @@ function HistorySection(props) {
                     name={props.currentEvent.name}
                     location={props.currentEvent.location}
                     duration={props.currentEvent.duration}
+                    created_at={props.currentEvent.created_at}
                 />
             )
         }
