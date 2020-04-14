@@ -96,7 +96,7 @@ export default function FormDialog(props) {
         <DialogTitle id="form-dialog-title">What's the haps?</DialogTitle>
         <DialogContent>
         <FormControl required variant="outlined" id="select" className={classes.formControl}>
-                <InputLabel id="demo-simple-select-required-label">Category</InputLabel>
+                <InputLabel id="demo-simple-select-required-label">Category*</InputLabel>
                 <Select
                     labelId="demo-simple-select-outlined-label"
                     id="demo-simple-select-required"
@@ -121,7 +121,7 @@ export default function FormDialog(props) {
             autoFocus
             margin="dense"
             id="name"
-            label="Event Name"
+            label="Event Name*"
             type="text"
             fullWidth
             onChange={(event) => props.handleChange(event)}
