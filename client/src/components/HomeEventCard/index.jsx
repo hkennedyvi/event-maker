@@ -67,8 +67,8 @@ function HomeEventCard(props) {
                         <DialogTitle><h3><strong>{props.allEvents[eventIndex].name.toUpperCase()}</strong></h3></DialogTitle>
                         <h6>{props.allEvents[eventIndex].location}</h6>
                         <h5><strong># participants needed:</strong> {props.allEvents[eventIndex].participants}</h5>
-                        <h5><strong>started:</strong> {moment(props.allEvents[eventIndex].created_at).startOf('day').fromNow()}</h5>
-                        <h5><strong>duration:</strong> {props.allEvents[eventIndex].duration}</h5>
+                        <h5><strong>Started:</strong> {moment(props.allEvents[eventIndex].created_at).startOf('day').fromNow()}</h5>
+                        <h5><strong>Duration:</strong> {props.allEvents[eventIndex].duration}</h5>
                         <h6>{props.allEvents[eventIndex].notes}</h6>
                         <br></br>
                         <div className={classes.btns}>
