@@ -16,7 +16,13 @@ const useStyles = makeStyles({
         color: 'rgba(46, 34, 68, 1)',
         height: 48,
         padding: '0 30px',
-    }
+    },
+    btns: {
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'none',
+        justifyContent: 'center',
+    },
 });
 
 function HomeEventCard(props) {
@@ -65,13 +71,15 @@ function HomeEventCard(props) {
                         <h5><strong>duration:</strong> {props.allEvents[eventIndex].duration}</h5>
                         <h6>{props.allEvents[eventIndex].notes}</h6>
                         <br></br>
-                        <JoinConfirm 
-                            id="alert"
-                            joinCount={joinCount}
-                            allEvents={props.allEvents}
-                            eventIndex={eventIndex}
-                        />
-                        <Button id="next-btn" className={classes.root} onClick={nextCard}>Next Event</Button>
+                        <div className={classes.btns}>
+                            <JoinConfirm
+                                id="alert"
+                                joinCount={joinCount}
+                                allEvents={props.allEvents}
+                                eventIndex={eventIndex}
+                            />
+                            <Button id="next-btn" className={classes.root} onClick={nextCard}>Next Event</Button>
+                        </div>
                     </div>
                     : ""
                 }
