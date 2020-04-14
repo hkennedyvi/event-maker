@@ -13,6 +13,9 @@ function Home() {
     const [duration, setDuration] = useState();
     const [userLocation, setUserLocation] = useState();
 
+    // This variable is a string value of the email for the logged in user
+    const loggedInUser = unescape(document.cookie.split("=")[1]);
+    
     useEffect(() => {
         API.isLoggedIn();
         loadNewEvent();
@@ -85,7 +88,7 @@ function Home() {
             participants: participants,
             duration: duration,
             notes: newEvent.notes,
-            creator: "email"
+            creator: loggedInUser
         })
             .then(console.log("Event saved to database."))
             .catch(err => console.log(err));
