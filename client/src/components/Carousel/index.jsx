@@ -41,6 +41,8 @@ const CarouselPage = () => {
                 </MDBView>
                 <MDBCarouselCaption>
 
+                  <h3 className="slide-2">Make your next get together a little more neighbourly!</h3>
+
                 </MDBCarouselCaption>
               </MDBCarouselItem>
               <MDBCarouselItem itemId="3">
