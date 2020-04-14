@@ -38,7 +38,7 @@ const CarouselPage = () => {
                   <MDBMask overlay="black-strong" />
                 </MDBView>
                 <MDBCarouselCaption>
-                  <h3 className="slide-2">Get together with your neighbors!</h3>
+                  <h3 className="slide-2">Make your next get together alittle more neighborly!</h3>
                 </MDBCarouselCaption>
               </MDBCarouselItem>
               <MDBCarouselItem itemId="3">
@@ -51,7 +51,7 @@ const CarouselPage = () => {
                   <MDBMask overlay="black-slight" />
                 </MDBView>
                 <MDBCarouselCaption>
-                  <h3 className="slide-3">Find a friend instantly with Cahoots! <br></br>
+                  <h3 className="slide-3">Find a friend instantly with Cahoots!<br></br>
               Making it easier to live in the momment!</h3>
                 </MDBCarouselCaption>
               </MDBCarouselItem>
