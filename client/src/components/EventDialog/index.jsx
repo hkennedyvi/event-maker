@@ -51,20 +51,38 @@ const useStyles = makeStyles((theme) => ({
 
 export default function FormDialog(props) {
   const classes = useStyles();
-  const [input, setInput] = React.useState('');
+  const [category, setCategory] = React.useState('');
+  const [participants, setParticipants] = React.useState('');
+  const [duration, setDuration] = React.useState('');
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
   };
 
+  const handleCategoryChange = (event) => {
+    setCategory(event.target.value);
+    props.handleChange(event);
+  };
+
+  const handleParticipantsChange = (event) => {
+    setParticipants(event.target.value);
+    props.handleChange(event);
+  };
+
+  const handleDurationChange = (event) => {
+    setDuration(event.target.value);
+    props.handleChange(event);
+  }
+
   const handleChange = (event) => {
-    setInput(event.target.value);
+    props.handleChange(event);
   };
 
   const handleClose = (event) => {
     setOpen(false);
     props.handlePost(event);
+    window.location.reload();
   };
 
   const handleCancel = () => {
@@ -82,8 +100,8 @@ export default function FormDialog(props) {
                 <Select
                     labelId="demo-simple-select-outlined-label"
                     name="category"
-                    value={input}
-                    onChange={handleChange, (event) => {props.handleChange(event)}}
+                    value={category}
+                    onChange={handleCategoryChange}
                     label="Category"
                 >
                     <MenuItem value="Sports">Sports</MenuItem>
@@ -120,8 +138,8 @@ export default function FormDialog(props) {
                 <Select
                     labelId="demo-simple-select-outlined-label"
                     name="participants"
-                    value={input}
-                    onChange={handleChange, (event) => {props.handleChange(event)}}
+                    value={participants}
+                    onChange={handleParticipantsChange}
                     label="Participants"
                 >
                     <MenuItem value="Any">
@@ -142,29 +160,30 @@ export default function FormDialog(props) {
                     <MenuItem value="12+">12+</MenuItem>
                 </Select>
             </FormControl>
+            <br></br>
             <FormControl required variant="outlined" id="select" className={classes.formControl}>
                 <InputLabel id="demo-simple-select-required-label">Duration</InputLabel>
                 <Select
                     labelId="demo-simple-select-outlined-label"
                     id="demo-simple-select-required"
                     name="duration"
-                    value={input}
-                    onChange={handleChange, (event) => {props.handleChange(event)}}
+                    value={duration}
+                    onChange={handleDurationChange}
                     label="Duration"
                 >
                     <MenuItem value="Any">
                         <em>Any</em>
                     </MenuItem>
-                    <MenuItem value={"30 minutes"}>30 min</MenuItem>
-                    <MenuItem value={"45 minutes"}>45 min</MenuItem>
+                    <MenuItem value={"30 min"}>30 min</MenuItem>
+                    <MenuItem value={"45 min"}>45 min</MenuItem>
                     <MenuItem value={"1 hour"}>1 hour</MenuItem>
-                    <MenuItem value={"1 1/2 hours"}>1.5 hours</MenuItem>
+                    <MenuItem value={"1.5 hours"}>1.5 hours</MenuItem>
                     <MenuItem value={"2 hours"}>2 hours</MenuItem>
-                    <MenuItem value={"2 1/2 hours"}>2.5 hours</MenuItem>
+                    <MenuItem value={"2.5 hours"}>2.5 hours</MenuItem>
                     <MenuItem value={"3 hours"}>3 hours</MenuItem>
-                    <MenuItem value={"3 1/2 hours"}>3.5 hours</MenuItem>
+                    <MenuItem value={"3.5 hours"}>3.5 hours</MenuItem>
                     <MenuItem value={"4 hours"}>4 hours</MenuItem>
-                    <MenuItem value={"4 1/2 hours"}>4.5 hours</MenuItem>
+                    <MenuItem value={"4.5 hours"}>4.5 hours</MenuItem>
                     <MenuItem value={"5 hours"}>5 hours</MenuItem>
                     <MenuItem value={"5+ hours"}>5 + hours</MenuItem>
                 </Select>

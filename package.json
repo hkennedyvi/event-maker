@@ -33,7 +33,6 @@
     "if-env": "^1.0.4",
     "jsonwebtoken": "^8.5.1",
     "material-auto-rotating-carousel": "^3.0.2",
-    "mdbreact": "^4.25.5",
     "moment": "^2.24.0",
     "mongoose": "^5.8.11",
     "passport": "^0.4.1",
