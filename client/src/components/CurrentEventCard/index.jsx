@@ -18,49 +18,26 @@ const useStyles = makeStyles((theme) => ({
 function CurrentEventCard(props) {
     // Styles
     const classes = useStyles();
-
-    // Toggles content in case user has no events
-    const contentToggler = (props) => {
-
-        if (props.currentEvent.length === 0) {
-            return (
-                <div className="content">
-                    <Typography variant="h4" className="noEvents">
-                        No Current Events
-                    </Typography>
-                    <Typography variant="body1">
-                        Return to the Dashboard to find or create an event!
-                    </Typography>
-                </div>
-            )
-        } else {
-            /* Future development: add attendees on the right side of the card */
-            const name = props.currentEvent.name;
-
-            return (
-                <div className="content">
-                    <DialogTitle id="simple-dialog-title">{name.toUpperCase()} <i className="fas fa-futbol"></i></DialogTitle>
-                    <div className={classes.details}>
-                        <Typography variant="body1">
-                            Category: {props.currentEvent.category}
-                        </Typography>
-                        <Typography variant="body2">
-                            Location: {props.currentEvent.location}
-                        </Typography>
-                        <Typography variant="body2">
-                            Length: {props.currentEvent.duration} hours
-                        </Typography>
-                    </div>
-                </div>
-            )
-        }
-    }
-
+    
     return (
         <div>
             <Card className={classes.cards}>
                 <CardContent>
-                    {contentToggler(props)}
+                    <div className="content">
+                        <DialogTitle id="simple-dialog-title">{props.name.toUpperCase()} <i className="fas fa-futbol"></i></DialogTitle>
+                        <div className={classes.details}>
+                            <Typography variant="body1">
+                                Category: {props.category}
+                            </Typography>
+                            <Typography variant="body2">
+                                Location: {props.location}
+                            </Typography>
+                            <Typography variant="body2">
+                                Length: {props.duration} hours
+                        </Typography>
+                        </div>
+                        {/* Future development: add attendees on the right side of the card */}
+                    </div>
                 </CardContent>
             </Card>
         </div>
