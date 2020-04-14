@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const db = require("../models");
-const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/cahoots";
+const MONGO_URI = process.env.MONGODB_URI || "mongodb://user1:password1@ds159328.mlab.com:59328/heroku_8c1n3d87";
 
 mongoose.connect(MONGO_URI, { useNewUrlParser: true })
 .then(console.log(`MongoDB connected at ${MONGO_URI}`));
