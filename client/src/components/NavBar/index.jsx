@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import './NavBar.css';
+import './style.css';
 import { Toolbar, Typography, IconButton, Drawer, List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import RoomOutlinedIcon from '@material-ui/icons/RoomOutlined';
