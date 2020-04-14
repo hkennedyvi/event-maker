@@ -38,7 +38,7 @@ const CarouselPage = () => {
                   <MDBMask overlay="black-strong" />
                 </MDBView>
                 <MDBCarouselCaption>
-                  <h3 className="slide-2">Someone can't make the game, show, or event? create a HOOT! </h3>
+                  <h3 className="slide-2">Get together with your neighbors!</h3>
                 </MDBCarouselCaption>
               </MDBCarouselItem>
               <MDBCarouselItem itemId="3">
