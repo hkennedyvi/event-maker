@@ -19,11 +19,14 @@ module.exports = {
         .create(req.body)
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
+    },
+    findByIdAndUpdate: function(req, res) {
+        console.log(req.body);
+        db
+        .findById({ _id: req.body._id })
+        .update( {$inc: { participants: -1 }})
+        .update( {$push: {attendees: req.body.user}} )
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err))
     }
-    // findOneEmail: function(req, res) {
-    //     db
-    //     .findById({ email: req.params.user })
-    //     .then(dbModel => res.json(dbModel))
-    //     .catch(err => res.status(422).json(err));
-    // }
 };

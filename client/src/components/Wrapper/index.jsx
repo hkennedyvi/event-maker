@@ -8,8 +8,6 @@ return (
 <div> 
     <CarouselPage/>
     <NavBar/>
-  
-    
 </div>
 )
 }

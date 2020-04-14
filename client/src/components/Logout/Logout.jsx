@@ -3,11 +3,12 @@ import API from '../../utils/API';
 
 function Logout(props) {
    useEffect(() => {
+       // logs the user out the login page
    		API.logout();
     }, [])
     return (
         <div>
-            test
+            Logout
         </div>
     );
 };

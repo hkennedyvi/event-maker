@@ -5,7 +5,6 @@ import FormDialog from "../EventDialog";
 import HomeEventCard from "../HomeEventCard";
 
 function MapContainer(props) {
-
     const [mapSettings, setMapSettings] = useState({
         showingInfoWindow: false,
         activeMarker: {},
@@ -21,19 +20,13 @@ function MapContainer(props) {
         }
     };
 
-    // const triggerCurrentLocation = () => {
-    //     this.refs.currentLocation.grabLocation();
-    // }
-
     return (
         <div>
             <CurrentLocation
-                // ref="currentLocation"
                 handleLocationGrab={props.handleLocationGrab}
                 centerAroundCurrentLocation
                 google={props.google}
             >
-                {/* <button onClick={triggerCurrentLocation}>Click</button> */}
                 <Marker name={'current location'} />
                 <InfoWindow
                     marker={mapSettings.activeMarker}
