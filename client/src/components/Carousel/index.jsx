@@ -1,15 +1,14 @@
 import React from "react";
-// import { MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask, MDBContainer } from
-//   "mdbreact";
+import { MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask, MDBContainer } from
+  "mdbreact";
 import "./carousel.css"
 
 
 const CarouselPage = () => {
   return (
-    <div class="container">
-      <div class="content">
+
         <div className="MDBContainer" >
-          {/* <MDBCarousel id='Carousel'
+          <MDBCarousel id='Carousel'
             activeItem={1}
             length={3}
             showControls={false}
@@ -27,10 +26,9 @@ const CarouselPage = () => {
                   <MDBMask overlay="black-light" />
                 </MDBView>
                 <MDBCarouselCaption>
-                  <h3 className="slide-1">You're in Cahoots!</h3> */}
-                  {/* <button className="button">Create A Hoot!</button> */}
-                  {/* <p>Live in the momment and find friends instantly!</p> */}
-                {/* </MDBCarouselCaption>
+                  <h3 className="slide-1">You're in Cahoots!</h3>
+
+                </MDBCarouselCaption>
               </MDBCarouselItem>
               <MDBCarouselItem itemId="2">
                 <MDBView>
@@ -42,9 +40,10 @@ const CarouselPage = () => {
                   <MDBMask overlay="black-strong" />
                 </MDBView>
                 <MDBCarouselCaption>
-                  <h3 className="slide-2">Someone can't make the game, show, or event? create a HOOT! </h3> */}
-                  {/* <p>Second text</p> */}
-                {/* </MDBCarouselCaption>
+
+                  <h3 className="slide-2">Make your next get together a little more neighbourly!</h3>
+
+                </MDBCarouselCaption>
               </MDBCarouselItem>
               <MDBCarouselItem itemId="3">
                 <MDBView>
@@ -56,15 +55,15 @@ const CarouselPage = () => {
                   <MDBMask overlay="black-slight" />
                 </MDBView>
                 <MDBCarouselCaption>
-                  <h3 className="slide-3">Find a friend instantly with Cahoots! <br></br>
-              Making it easier to live in the momment!</h3> */}
-                  {/* <p>Third text</p> */}
-                {/* </MDBCarouselCaption>
+
+                  <h3 className="slide-3">Spontaneously commit to something new!<br></br>
+              Click join!</h3>
+
+                </MDBCarouselCaption>
               </MDBCarouselItem>
             </MDBCarouselInner>
-          </MDBCarousel> */}
-        </div>
-        </div>
+          </MDBCarousel>
+
         </div>
   );
 }
