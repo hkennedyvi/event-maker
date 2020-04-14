@@ -1,13 +1,13 @@
 import React from "react";
-// import { MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask, MDBContainer } from
-//   "mdbreact";
+import { MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask, MDBContainer } from
+  "mdbreact";
 import "./carousel.css"
 
 
 const CarouselPage = () => {
   return (
         <div className="MDBContainer" >
-          {/* <MDBCarousel id='Carousel'
+          <MDBCarousel id='Carousel'
             activeItem={1}
             length={3}
             showControls={false}
@@ -56,7 +56,7 @@ const CarouselPage = () => {
                 </MDBCarouselCaption>
               </MDBCarouselItem>
             </MDBCarouselInner>
-          </MDBCarousel> */}
+          </MDBCarousel>
         </div>
   );
 }
