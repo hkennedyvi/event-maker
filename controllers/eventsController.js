@@ -25,6 +25,7 @@ module.exports = {
         db
         .findById({ _id: req.body._id })
         .update( {$inc: { participants: -1 }})
+        .update( {$push: {attendees: req.body.user}} )
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err))
     }

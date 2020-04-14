@@ -22,6 +22,7 @@ function HomeEventCard(props) {
     const classes = useStyles();
     const [eventIndex, setEventIndex] = useState(0);
     // const [participants, setParticipants] = useState(10);
+    const loggedInUser = unescape(document.cookie.split("=")[1]);
 
     useEffect(() => {
         loadNewEvent();
@@ -48,12 +49,56 @@ function HomeEventCard(props) {
         // if (participantCount <= 0) {
         //     document.getElementById("join-btn").disabled = true;
         // }
-        console.log(props.allEvents[eventIndex]._id);
-        API.updateParticipants({ _id: props.allEvents[eventIndex]._id }).then( res => {
+        // console.log(props.allEvents[eventIndex]._id);
+        console.log(loggedInUser);
+        if (window.confirm("Are you sure you would like to join this event?")) {
+            window.location.reload(false);
+          } else {
+            return;
+          }
+        API.updateParticipants({ _id: props.allEvents[eventIndex]._id , user: loggedInUser}).then( res => {
             console.log('Database updated.')
         })
             .catch(err => console.log(err));
     }
+
+    // useEffect(() => {
+    //     loadNewEvent();
+    //     // if (props.allEvents && props.allEvents.length > 0) {
+    //     // setParticipants(props.allEvents[eventIndex].participants)
+    //     // }
+    // }, [])
+
+    // function loadNewEvent() {
+    //     API.getPostedEvents().then(res => {
+    //         console.log(res);
+    //         let events = res.data;
+    //         setEvent(events);
+    //         let participantCount = event[eventIndex].participants;
+    //         setParticipants(participantCount);
+    //     })
+    //         .catch(err => console.log(err));
+    // }
+
+    // function nextCard() {
+    //     loadNewEvent();
+    //     setEventIndex( (eventIndex === props.allEvents.length-1) ? 0 : eventIndex+1 );
+    // }
+
+    // function joinCount() {
+    //     // const participantCount = parseFloat(participants);
+    //     // setParticipants( participantCount === 0 ? 0 : participantCount-1 );
+    //     // if (participantCount <= 0) {
+    //     //     document.getElementById("join-btn").disabled = true;
+    //     // }
+    //     let newParticipants = participants - 1;
+    //     setParticipants(newParticipants);
+    //     console.log(props.allEvents[eventIndex]._id);
+    //     API.updateParticipants({ _id: props.allEvents[eventIndex]._id }).then( res => {
+    //         console.log('Database updated.')
+    //     })
+    //         .catch(err => console.log(err));
+    // }
 
     // function loadNewEvent() {
     //     API.getPostedEvents().then(res => {
