@@ -1,13 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useReducer } from 'react';
 import Geocode from "react-geocode";
 import MapContainer from "../components/MapContainer";
 import CarouselPage from "../components/Carousel";
 
-
-
 import API from '../utils/API';
-
-
 
 function Home() {
     const [allEvents, setAllEvents] = useState([]);
@@ -106,5 +102,5 @@ function Home() {
 
 }
 
-
 export default Home;
+

@@ -12,7 +12,10 @@ export default {
     },
     getEventsByAttendees: function (attendee) {
         return axios.get("/api/events?attendees=" + attendee);
-    },
+	},
+	updateParticipants: function (eventId, attendee) {
+		return axios.put("/api/events", eventId, attendee);
+	},
     isLoggedIn : function(setLoading) {
 		console.log("is logged in")
 		
