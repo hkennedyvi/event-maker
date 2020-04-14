@@ -70,7 +70,6 @@ function HomeEventCard(props) {
                             joinCount={joinCount}
                             allEvents={props.allEvents}
                             eventIndex={eventIndex}
-                            Box spacingml={10}
                         />
                         <Button id="next-btn" className={classes.root} onClick={nextCard}>Next Event</Button>
                     </div>
