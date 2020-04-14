@@ -52,14 +52,12 @@ const CarouselPage = () => {
                 </MDBView>
                 <MDBCarouselCaption>
                   <h3 className="slide-3">Spontaneously commit to something new!<br></br>
-              Click the join button and make new memories!</h3>
+              Click join!</h3>
                 </MDBCarouselCaption>
               </MDBCarouselItem>
             </MDBCarouselInner>
           </MDBCarousel>
         </div>
-      /* </div>
-    </div> */
   );
 }
 
