@@ -53,7 +53,7 @@ db.User
       name: "Softball",
       participants: 18,
       location: "Pioneer Park",
-      duration: "2 1/2 hours",
+      duration: "2.5 hours",
       notes: "we have balls and bats",
       creator: "cahootsguy@email.com",
       attendees: ["jenni@email.com", "laurie@email.com"],

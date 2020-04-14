@@ -24,7 +24,7 @@ function CurrentEventCard(props) {
             <Card className={classes.cards}>
                 <CardContent>
                     <div className="content">
-                        <DialogTitle id="simple-dialog-title">{props.name.toUpperCase()} <i className="fas fa-futbol"></i></DialogTitle>
+                        <DialogTitle id="simple-dialog-title"><strong>{props.name.toUpperCase()}</strong></DialogTitle>
                         <div className={classes.details}>
                             <Typography variant="body1">
                                 Category: {props.category}
@@ -33,7 +33,7 @@ function CurrentEventCard(props) {
                                 Location: {props.location}
                             </Typography>
                             <Typography variant="body2">
-                                Length: {props.duration} hours
+                                Duration: {props.duration}
                         </Typography>
                         </div>
                         {/* Future development: add attendees on the right side of the card */}
