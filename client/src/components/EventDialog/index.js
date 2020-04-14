@@ -157,18 +157,18 @@ export default function FormDialog(props) {
                     <MenuItem value="Any">
                         <em>Any</em>
                     </MenuItem>
-                    <MenuItem value={30}>30 min</MenuItem>
-                    <MenuItem value={45}>45 min</MenuItem>
-                    <MenuItem value={60}>1 hour</MenuItem>
-                    <MenuItem value={90}>1.5 hours</MenuItem>
-                    <MenuItem value={120}>2 hours</MenuItem>
-                    <MenuItem value={150}>2.5 hours</MenuItem>
-                    <MenuItem value={180}>3 hours</MenuItem>
-                    <MenuItem value={210}>3.5 hours</MenuItem>
-                    <MenuItem value={240}>4 hours</MenuItem>
-                    <MenuItem value={270}>4.5 hours</MenuItem>
-                    <MenuItem value={300}>5 hours</MenuItem>
-                    <MenuItem value={300}>5 + hours</MenuItem>
+                    <MenuItem value={"30 minutes"}>30 min</MenuItem>
+                    <MenuItem value={"45 minutes"}>45 min</MenuItem>
+                    <MenuItem value={"1 hour"}>1 hour</MenuItem>
+                    <MenuItem value={"1 1/2 hours"}>1.5 hours</MenuItem>
+                    <MenuItem value={"2 hours"}>2 hours</MenuItem>
+                    <MenuItem value={"2 1/2 hours"}>2.5 hours</MenuItem>
+                    <MenuItem value={"3 hours"}>3 hours</MenuItem>
+                    <MenuItem value={"3 1/2 hours"}>3.5 hours</MenuItem>
+                    <MenuItem value={"4 hours"}>4 hours</MenuItem>
+                    <MenuItem value={"4 1/2 hours"}>4.5 hours</MenuItem>
+                    <MenuItem value={"5 hours"}>5 hours</MenuItem>
+                    <MenuItem value={"5+ hours"}>5 + hours</MenuItem>
                 </Select>
             </FormControl>
           <TextField

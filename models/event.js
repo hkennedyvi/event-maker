@@ -6,11 +6,11 @@ const eventSchema = new Schema({
   name: { type: String, required: false },
   location: {type: String, required: false},
   participants: { type: Number, required: false},
-  duration: {type: Number, required: false},
+  duration: {type: String, required: false},
   notes: {type: String, required: false},
   creator: {type: String, required: false},
-  attendees: {type: Array, required: false}
-});
+  attendees: {type: Array, required: false},
+}, {timestamps: true});
 
 const Event = mongoose.model("Event", eventSchema);
 
