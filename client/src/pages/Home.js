@@ -20,7 +20,7 @@ function Home() {
 
     function loadNewEvent() {
         API.getPostedEvents().then(res => {
-           
+
             setAllEvents(res.data);
         })
             .catch(err => console.log(err));
@@ -28,40 +28,33 @@ function Home() {
 
 
     function handleLocationGrab(currentLocation) {
-       
-            console.log(currentLocation);
-            let eventLat = currentLocation.lat;
-            let eventLng = currentLocation.lng;
+        // sets coordinates for user location
+        let eventLat = currentLocation.lat;
+        let eventLng = currentLocation.lng;
 
-            Geocode.setApiKey("AIzaSyCRTz31ipS9i5nHfyWIs-mcSIQmWRxXTec");
+        Geocode.setApiKey("AIzaSyCRTz31ipS9i5nHfyWIs-mcSIQmWRxXTec");
 
-            Geocode.setLanguage("en");
+        Geocode.setLanguage("en");
 
-            Geocode.setRegion("es");
+        Geocode.setRegion("es");
 
-            Geocode.enableDebug();
-
-            Geocode.fromLatLng(eventLat, eventLng).then(
-                response => {
-                    const address = response.results[0].formatted_address;
-                    console.log(address);
-                    setUserLocation(address);
-                },
-                error => {
-                    console.error(error);
-                }
-            );
- 
-    }
-
-    function handleEventJoin(event) {
-        console.log("EVENT JOINED")
-        console.log(event.target.value)
+        Geocode.enableDebug();
+        // converts latitude/longitude coordinates to street address
+        Geocode.fromLatLng(eventLat, eventLng).then(
+            response => {
+                const address = response.results[0].formatted_address;
+                console.log(address);
+                setUserLocation(address);
+            },
+            error => {
+                console.error(error);
+            }
+        );
 
     }
 
     function handleChange(event) {
-        // console.log(event.target.value);
+
         if (event.target.name == 'category') {
             setCategory(event.target.value);
         }
@@ -84,18 +77,6 @@ function Home() {
 
     function handlePost(event) {
         event.preventDefault();
-        // console.log("Hi from post handler");
-        // console.log(this);
-        console.log(newEvent);
-        console.log({
-            category: category,
-            name: newEvent.name,
-            location: newEvent.location,
-            participants: participants,
-            duration: duration,
-            notes: newEvent.notes,
-            creator: "email"
-        });
 
         API.createEvent({
             category: category,
@@ -108,7 +89,6 @@ function Home() {
         })
             .then(console.log("Event saved to database."))
             .catch(err => console.log(err));
-        // console.log(event);
     };
 
     return (
@@ -116,7 +96,6 @@ function Home() {
             handlePost={handlePost}
             handleChange={handleChange}
             handleLocationGrab={handleLocationGrab}
-            handleEventJoin={handleEventJoin}
             event={newEvent}
             allEvents={allEvents} />
     )

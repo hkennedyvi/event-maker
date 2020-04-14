@@ -1,14 +1,12 @@
 import React from 'react';
-// import FacebookBtn from '../FacebookBtn';
 import { makeStyles } from '@material-ui/core/styles';
 import { TextField, FormHelperText, Card, CardActions, CardContent, Typography, Box, Button } from '@material-ui/core';
 import './SignUpForm.css'
-// import { red } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
     root: {
         '& > *': {
-            marginTop: theme.spacing(-12),
+            marginTop: theme.spacing(5),
             // width: '25ch',
             display: 'flex',
             flexDirection: 'column',
@@ -21,10 +19,10 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         flexDirection: 'column',
         flexWrap: 'wrap',
-        marginTop: '5%',
-        [theme.breakpoints.down('md')]: {
-            marginTop: '15%',
-        },
+        // marginTop: '5%',
+        // [theme.breakpoints.down('md')]: {
+        //     marginTop: '15%',
+        // },
     },
 
     textfield: {
@@ -116,16 +114,6 @@ function SignUpForm(props) {
       </CardActions>
             </Card>
             </Box>
-            {/* <form className={classes.formRoot} onSubmit={(e) => { props.handleSubmit(e) }} action="POST">
-                <label htmlFor="email">EMAIL:</label><br />
-                <input type="email" id="email" name="email" placeholder="Email here" /><br />
-                <label htmlFor="password">PASSWORD:</label><br />
-                <input type="password" id="password" name="password" placeholder="Password here" /><br />
-                <label htmlFor="password">CONFIRM PASSWORD:</label><br />
-                <input type="password" id="confirm" name="confirm" placeholder="Confirm password here" /><br /><br />
-                <input type="submit" value="Sign Up" />
-            </form> */}
-            {/* <FacebookBtn /> */}
         </div>
     )
 }

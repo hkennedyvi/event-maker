@@ -1,15 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import { Tabs, Tab, Paper, Typography, Box, Grid } from '@material-ui/core';
+import { Tabs, Tab, Paper, Typography, Box } from '@material-ui/core';
 import EventAvailableIcon from '@material-ui/icons/EventAvailable';
 import HistoryIcon from '@material-ui/icons/History';
 import PeopleOutlineIcon from '@material-ui/icons/PeopleOutline';
 import MadeHistoryCard from '../MadeHistoryCard';
 import AttendedCard from '../AttendedCard';
 import CurrentEventCard from '../CurrentEventCard';
+import NoHistoryCard from '../NoHistoryCard';
 import './style.css';
 
+// Future Development: give TabPanel its own component
+// Then restructure the props drilling
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
 
@@ -27,12 +30,14 @@ function TabPanel(props) {
     );
 }
 
+// Props for the TabPanel functionality
 TabPanel.propTypes = {
     children: PropTypes.node,
     index: PropTypes.any.isRequired,
     value: PropTypes.any.isRequired,
 };
 
+// Assists TabPanel in matching indexes for Tabs/TabPanels
 function a11yProps(index) {
     return {
         id: `simple-tab-${index}`,
@@ -40,6 +45,7 @@ function a11yProps(index) {
     };
 }
 
+// Page Styling
 const useStyles = makeStyles({
     section: {
         display: 'flex',
@@ -48,22 +54,93 @@ const useStyles = makeStyles({
     },
 });
 
+//  Main function
 function HistorySection(props) {
+    // Styles
     const classes = useStyles();
+    // State
     const [value, setValue] = React.useState(0);
 
+    // Handle change of tabs
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
 
+    // Toggles card content for Current Events tab
+    const currentEventCardToggler = (props) => {
+        if (props.currentEvent.length === 0) {
+            return (
+                <NoHistoryCard
+                    eventType="Current Events"
+                    background="linear-gradient(0.85turn,  rgba(19, 34, 119, 0.9), rgba(231, 51, 156, 0.9), rgba(253, 160, 0, 0.9))"
+                />
+            )
+        } else {
+            return (
+                <CurrentEventCard
+                    category={props.currentEvent.category}
+                    name={props.currentEvent.name}
+                    location={props.currentEvent.location}
+                    duration={props.currentEvent.duration}
+                />
+            )
+        }
+    }
+
+    // Toggles card content for Previously Created tab
+    function madeEventsCardToggler(props) {
+        if (props.madeEvents.length === 0) {
+            return (
+                <NoHistoryCard
+                    eventType="Created Events"
+                    background="linear-gradient(to right bottom, #051937, #2b275a, #5d2e77, #972d88, #d3208b);"
+                />
+            )
+        } else {
+            return (
+                props.madeEvents.map(event => {
+                    return (
+                        <MadeHistoryCard
+                            category={event.category}
+                            name={event.name}
+                            location={event.location}
+                            duration={event.duration}
+                        />
+                    )
+
+                })
+            )
+        }
+    }
+
+    // Toggles card content for Previously Attended tab
+    function attendedEventsCardToggler(props) {
+        if (props.attendedEvents.length === 0) {
+            return <NoHistoryCard
+                eventType="Attended Events"
+                background="linear-gradient(to left top, #051937, #2b275a, #5d2e77, #972d88, #d3208b);"
+            />
+        } else {
+            return (
+                props.attendedEvents.map(event => {
+                    return (
+                        <AttendedCard
+                            category={event.category}
+                            name={event.name}
+                            location={event.location}
+                            duration={event.duration}
+                            creator={event.creator}
+                        />
+                    )
+                })
+            )
+        }
+    }
+
 
     return (
-        
         <div className={classes.section}>
-            {/* <Grid container spacing={5}> */}
-            <Paper square
-            // className={classes.root}
-            >
+            <Paper square>
                 <Tabs
                     value={value}
                     onChange={handleChange}
@@ -77,40 +154,15 @@ function HistorySection(props) {
                     <Tab icon={<PeopleOutlineIcon />} label="Previously Attended" {...a11yProps(0)} />
                 </Tabs>
             </Paper>
-            <TabPanel className={classes.tabPanel} value={value} index={0}>
-            {console.log("props", props)}
-                <CurrentEventCard
-                currentEvent={props.currentEvent}
-                />
+            <TabPanel className={classes.tabPanel} value={value} index={0} currentEvent={props.currentEvent}>
+                {currentEventCardToggler(props)}
             </TabPanel>
             <TabPanel className={classes.tabPanel} value={value} index={1} madeEvents={props.madeEvents} >
-                {props.madeEvents.map(event => {
-                    return (
-                        <MadeHistoryCard
-                            category={event.category}
-                            name={event.name}
-                            location={event.location}
-                            duration={event.duration}
-                        />
-                    )
-                })
-                }
+                {madeEventsCardToggler(props)}
             </TabPanel>
             <TabPanel className={classes.tabPanel} value={value} index={2} attendedEvents={props.attendedEvents}>
-                {props.attendedEvents.map(event => {
-                    return (
-                        <AttendedCard
-                            category={event.category}
-                            name={event.name}
-                            location={event.location}
-                            duration={event.duration}
-                            creator={event.creator}
-                        />
-                    )
-                })
-                }
+                {attendedEventsCardToggler(props)}
             </TabPanel>
-            {/* </Grid> */}
         </div>
     )
 }
