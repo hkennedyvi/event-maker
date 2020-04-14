@@ -25,7 +25,7 @@ function AttendedCard(props) {
             <Card className={classes.cards}>
                 <CardContent>
                     <div className="">
-                        <DialogTitle id="simple-dialog-title">{props.name.toUpperCase()} <i className="fas fa-futbol"></i></DialogTitle>
+                        <DialogTitle id="simple-dialog-title"><strong>{props.name.toUpperCase()}</strong></DialogTitle>
                         <div className={classes.details}>
                             <Typography variant="body1">
                                 Category: {props.category.toUpperCase()}
