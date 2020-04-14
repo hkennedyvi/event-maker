@@ -1,10 +1,11 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import API from "../../utils/API";
 import moment from "moment";
 import "./style.css";
+import JoinConfirm from '../JoinConfirm';
 
 const useStyles = makeStyles({
     root: {
@@ -31,44 +32,50 @@ function HomeEventCard(props) {
     function loadNewEvent() {
         API.getPostedEvents().then(res => {
             console.log(res);
-            setEvent(res.data);  
+            setEvent(res.data);
         })
             .catch(err => console.log(err));
     }
 
     function nextCard() {
-        setEventIndex( (eventIndex === props.allEvents.length-1) ? 0 : eventIndex+1 );
+        setEventIndex((eventIndex === props.allEvents.length - 1) ? 0 : eventIndex + 1);
     }
 
 
     function joinCount() {
-        if (window.confirm("Are you sure you would like to join this event?")) {
-            window.location.reload(false);
-          } else {
-            return;
-          }
-        API.updateParticipants({ _id: props.allEvents[eventIndex]._id , user: loggedInUser}).then( res => {
+        // when a join event is confirmed, the page reloads
+        window.location.reload(false);
+        // the user is added to the attendees list
+        API.updateParticipants({ _id: props.allEvents[eventIndex]._id, user: loggedInUser }).then(res => {
+
             console.log('Database updated.')
         })
             .catch(err => console.log(err));
     }
 
     return (
-        <div className="event-card">
-            {props.allEvents && props.allEvents.length > 0 ? 
-            <div>
-            <DialogTitle><h3>{props.allEvents[eventIndex].name}</h3></DialogTitle>
-            <h6>{props.allEvents[eventIndex].location}</h6>
-            <h5><strong># participants needed:</strong> {props.allEvents[eventIndex].participants}</h5>
-            <h5><strong>started:</strong> {moment(props.allEvents[eventIndex].created_at).format('lll')}</h5>
-            <h5><strong>duration:</strong> {props.allEvents[eventIndex].duration}</h5>
-            <h6>{props.allEvents[eventIndex].notes}</h6>
-            <br></br>
-            <Button id="join-btn" className={classes.root} onClick={joinCount} disabled={ props.allEvents[eventIndex].participants <= 0 ? true : "" }>Join</Button>
-            <Button id="next-btn" className={classes.root} onClick={nextCard}>Next Event</Button>
+        <div>
+            <div className="event-card">
+                {props.allEvents && props.allEvents.length > 0 ?
+                    <div>
+                        <DialogTitle><h3>{props.allEvents[eventIndex].name}</h3></DialogTitle>
+                        <h6>{props.allEvents[eventIndex].location}</h6>
+                        <h5><strong># participants needed:</strong> {props.allEvents[eventIndex].participants}</h5>
+                        <h5><strong>started:</strong> {moment(props.allEvents[eventIndex].created_at).startOf('day').fromNow()}</h5>
+                        <h5><strong>duration:</strong> {props.allEvents[eventIndex].duration}</h5>
+                        <h6>{props.allEvents[eventIndex].notes}</h6>
+                        <br></br>
+                        <JoinConfirm
+                            id="alert"
+                            joinCount={joinCount}
+                            allEvents={props.allEvents}
+                            eventIndex={eventIndex}
+                        />
+                        <Button id="next-btn" className={classes.root} onClick={nextCard}>Next Event</Button>
+                    </div>
+                    : ""
+                }
             </div>
-            : "" 
-        }
         </div>
     )
 };
