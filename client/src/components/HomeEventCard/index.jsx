@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import API from "../../utils/API";
 import moment from "moment";
 import "./style.css";
+import AlertDialog from '../ATEST';
 
 const useStyles = makeStyles({
     root: {
@@ -42,18 +43,20 @@ function HomeEventCard(props) {
 
 
     function joinCount() {
-        if (window.confirm("Are you sure you would like to join this event?")) {
+        // if (window.confirm("Are you sure you would like to join this event?")) {
             window.location.reload(false);
-          } else {
-            return;
-          }
+        //   } else {
+        //     return;
+        //   }
         API.updateParticipants({ _id: props.allEvents[eventIndex]._id , user: loggedInUser}).then( res => {
+          
             console.log('Database updated.')
         })
             .catch(err => console.log(err));
     }
 
     return (
+        <div>
         <div className="event-card">
             {props.allEvents && props.allEvents.length > 0 ? 
             <div>
@@ -64,11 +67,17 @@ function HomeEventCard(props) {
             <h5><strong>duration:</strong> {props.allEvents[eventIndex].duration}</h5>
             <h6>{props.allEvents[eventIndex].notes}</h6>
             <br></br>
-            <Button id="join-btn" className={classes.root} onClick={joinCount} disabled={ props.allEvents[eventIndex].participants <= 0 ? true : "" }>Join</Button>
+            <AlertDialog
+            id="alert"
+            joinCount={joinCount} 
+            allEvents={props.allEvents}
+            eventIndex={eventIndex}
+            >Join</AlertDialog>
             <Button id="next-btn" className={classes.root} onClick={nextCard}>Next Event</Button>
             </div>
             : "" 
         }
+        </div>
         </div>
     )
 };
