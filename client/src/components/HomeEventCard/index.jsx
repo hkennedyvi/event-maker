@@ -65,11 +65,12 @@ function HomeEventCard(props) {
                         <h5><strong>duration:</strong> {props.allEvents[eventIndex].duration}</h5>
                         <h6>{props.allEvents[eventIndex].notes}</h6>
                         <br></br>
-                        <JoinConfirm
+                        <JoinConfirm 
                             id="alert"
                             joinCount={joinCount}
                             allEvents={props.allEvents}
                             eventIndex={eventIndex}
+                            Box spacingml={10}
                         />
                         <Button id="next-btn" className={classes.root} onClick={nextCard}>Next Event</Button>
                     </div>
