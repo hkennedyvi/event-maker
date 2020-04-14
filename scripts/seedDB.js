@@ -30,10 +30,10 @@ db.User
       category: "sports",
       name: "Tennis",
       participants: 4,
-      location: "Laurelhurst",
+      location: "Tualitin Hills",
       duration: "2 hours",
       notes: "bring your own racket",
-      creator: "hkenvi@yahoo.com",
+      creator: "cahootsguy@email.com",
       attendees: ["sarah@email.com", "howard@email.com", "jenni@email.com", "laurie@email.com"],
       created_at: "2020-04-01 12:33:21"
     },
@@ -44,7 +44,7 @@ db.User
       location: "Pizza Schmizza",
       duration: "2 hours",
       notes: "theme tonight is harry potter!",
-      creator: "hkenvi@yahoo.com",
+      creator: "cahootsguy@email.com",
       attendees: ["sarah@email.com", "howard@email.com", "jenni@email.com", "laurie@email.com"],
       created_at: "2020-04-06 2:45:21"
     },
@@ -52,10 +52,10 @@ db.User
       category: "sports",
       name: "Softball",
       participants: 18,
-      location: "Laurelhurst",
+      location: "Pioneer Park",
       duration: "2 1/2 hours",
       notes: "we have balls and bats",
-      creator: "hkenvi@yahoo.com",
+      creator: "cahootsguy@email.com",
       attendees: ["jenni@email.com", "laurie@email.com"],
       created_at: "2020-04-12 2:00:21"
     },
@@ -67,7 +67,40 @@ db.User
       duration: "5 hours",
       notes: "bring the funk",
       creator: "different@yahoo.com",
-      attendees: ["sarah@email.com", "hkenvi@yahoo.com"],
+      attendees: ["sarah@email.com", "cahootsguy@email.com"],
+      created_at: "2020-04-14 5:19:21"
+    },
+    {
+      category: "entertainment",
+      name: "Block Party",
+      participants: 15,
+      location: "4789 SW Allen Blvd",
+      duration: "5 hours",
+      notes: "byob",
+      creator: "different@yahoo.com",
+      attendees: ["sarah@email.com", "cahootsguy@email.com"],
+      created_at: "2020-04-14 5:19:21"
+    },
+    {
+      category: "outdoors",
+      name: "Shakespeare in the park",
+      participants: 15,
+      location: "Barsotti Park",
+      duration: "3 hours",
+      notes: "come in costume",
+      creator: "different@yahoo.com",
+      attendees: ["sarah@email.com", "cahootsguy@email.com"],
+      created_at: "2020-04-14 5:19:21"
+    },
+    {
+      category: "music",
+      name: "Neighborhood Concert",
+      participants: 15,
+      location: "6711 Hall Blvd",
+      duration: "2 hours",
+      notes: "byob",
+      creator: "cahootsguy@email.com",
+      attendees: ["sarah@email.com", "jenni@email.com"],
       created_at: "2020-04-14 5:19:21"
     }
   ];
