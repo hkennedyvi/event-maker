@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useReducer } from 'react';
+import React, { useEffect, useState } from 'react';
 import Geocode from "react-geocode";
 import MapContainer from "../components/MapContainer";
 import CarouselPage from "../components/Carousel";
