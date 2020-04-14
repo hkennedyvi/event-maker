@@ -76,7 +76,6 @@ router.post("/login", (req, res, next) => {
 
 router.get("/logout", function (req, res) {
   res.clearCookie("emailaddress");
-  console.log(res.cookie("emailaddress", emailaddress));
   res.clearCookie('token').send('cookie has been deleted');
 });
 
