@@ -20,7 +20,7 @@ const useStyles = makeStyles({
     }
 });
 
-export default function AlertDialog(props) {
+export default function JoinConfirm(props) {
     const [open, setOpen] = React.useState(false);
     const classes = useStyles();
     
