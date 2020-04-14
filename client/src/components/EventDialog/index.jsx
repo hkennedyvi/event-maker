@@ -95,10 +95,11 @@ export default function FormDialog(props) {
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
         <DialogTitle id="form-dialog-title">What's the haps?</DialogTitle>
         <DialogContent>
-        <FormControl variant="outlined" id="select" className={classes.formControl}>
-                <InputLabel id="demo-simple-select-outlined-label">Category</InputLabel>
+        <FormControl required variant="outlined" id="select" className={classes.formControl}>
+                <InputLabel id="demo-simple-select-required-label">Category</InputLabel>
                 <Select
                     labelId="demo-simple-select-outlined-label"
+                    id="demo-simple-select-required"
                     name="category"
                     value={category}
                     onChange={handleCategoryChange}
@@ -133,10 +134,11 @@ export default function FormDialog(props) {
             fullWidth
             onChange={(event) => props.handleChange(event)}
           />
-           <FormControl variant="outlined" id="select" className={classes.formControl}>
-                <InputLabel id="demo-simple-select-outlined-label">Participants</InputLabel>
+           <FormControl required variant="outlined" id="select" className={classes.formControl}>
+                <InputLabel id="demo-simple-select-required-label">Participants</InputLabel>
                 <Select
                     labelId="demo-simple-select-outlined-label"
+                    id="demo-simple-select-required"
                     name="participants"
                     value={participants}
                     onChange={handleParticipantsChange}
