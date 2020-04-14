@@ -5,7 +5,6 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Logout from './components/Logout/Logout';
 import Profile from './pages/Profile';
-import NavBar from './components/NavBar';
 import './App.css';
 import Wrapper from './components/Wrapper';
 
