@@ -4,22 +4,14 @@
 
 .MuiSvgIcon-root,
 .MuiTypography-root {
-    /* color: rgba(11, 29, 65, 1) */
-    /* color: rgba(54, 53, 83, 1) */
     color: rgba(255, 255, 255, 1);
 }
 
 .MuiTypography-root {
     font-family: 'Comfortaa', cursive;
 }
-/* .MuiToolbar-root {
-    margin: 0;
-    background: linear-gradient(0.85turn, rgba(253, 160, 0, 1), rgba(241, 123, 65, 1),  rgba(211, 32, 139, 1));
-    
-} */
 
 #NavBar {
     position: relative;
     z-index: 99;
-    
 }
