@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Geocode from "react-geocode";
 import MapContainer from "../components/MapContainer";
-import CarouselPage from "../components/Carousel";
-
 import API from '../utils/API';
 
 function Home() {
