@@ -6,6 +6,7 @@ import "./carousel.css"
 
 const CarouselPage = () => {
   return (
+
         <div className="MDBContainer" >
           <MDBCarousel id='Carousel'
             activeItem={1}
@@ -26,6 +27,7 @@ const CarouselPage = () => {
                 </MDBView>
                 <MDBCarouselCaption>
                   <h3 className="slide-1">You're in Cahoots!</h3>
+
                 </MDBCarouselCaption>
               </MDBCarouselItem>
               <MDBCarouselItem itemId="2">
@@ -38,7 +40,9 @@ const CarouselPage = () => {
                   <MDBMask overlay="black-strong" />
                 </MDBView>
                 <MDBCarouselCaption>
-                  <h3 className="slide-2">Make your next get together alittle more neighborly!</h3>
+
+                  <h3 className="slide-2">Make your next get together a little more neighbourly!</h3>
+
                 </MDBCarouselCaption>
               </MDBCarouselItem>
               <MDBCarouselItem itemId="3">
@@ -51,12 +55,15 @@ const CarouselPage = () => {
                   <MDBMask overlay="black-slight" />
                 </MDBView>
                 <MDBCarouselCaption>
+
                   <h3 className="slide-3">Spontaneously commit to something new!<br></br>
               Click join!</h3>
+
                 </MDBCarouselCaption>
               </MDBCarouselItem>
             </MDBCarouselInner>
           </MDBCarousel>
+
         </div>
   );
 }
