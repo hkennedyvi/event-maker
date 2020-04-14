@@ -35,7 +35,7 @@ db.User
       notes: "bring your own racket",
       creator: "cahootsguy@email.com",
       attendees: ["sarah@email.com", "howard@email.com", "jenni@email.com", "laurie@email.com"],
-      created_at: "2020-04-01 12:33:21"
+      created_at: "2020-04-14 6:33:21"
     },
     {
       category: "trivia",
@@ -46,7 +46,7 @@ db.User
       notes: "theme tonight is harry potter!",
       creator: "cahootsguy@email.com",
       attendees: ["sarah@email.com", "howard@email.com", "jenni@email.com", "laurie@email.com"],
-      created_at: "2020-04-06 2:45:21"
+      created_at: "2020-04-14 2:45:21"
     },
     {
       category: "sports",
@@ -57,7 +57,7 @@ db.User
       notes: "we have balls and bats",
       creator: "cahootsguy@email.com",
       attendees: ["jenni@email.com", "laurie@email.com"],
-      created_at: "2020-04-12 2:00:21"
+      created_at: "2020-04-14 5:00:21"
     },
     {
       category: "entertainment",
@@ -68,7 +68,7 @@ db.User
       notes: "bring the funk",
       creator: "different@yahoo.com",
       attendees: ["sarah@email.com", "cahootsguy@email.com"],
-      created_at: "2020-04-14 5:19:21"
+      created_at: "2020-04-14 6:19:21"
     },
     {
       category: "entertainment",
@@ -79,7 +79,7 @@ db.User
       notes: "byob",
       creator: "different@yahoo.com",
       attendees: ["sarah@email.com", "cahootsguy@email.com"],
-      created_at: "2020-04-14 5:19:21"
+      created_at: "2020-04-14 6:19:21"
     },
     {
       category: "outdoors",
@@ -90,7 +90,7 @@ db.User
       notes: "come in costume",
       creator: "different@yahoo.com",
       attendees: ["sarah@email.com", "cahootsguy@email.com"],
-      created_at: "2020-04-14 5:19:21"
+      created_at: "2020-04-14 4:19:21"
     },
     {
       category: "music",
@@ -101,7 +101,7 @@ db.User
       notes: "byob",
       creator: "cahootsguy@email.com",
       attendees: ["sarah@email.com", "jenni@email.com"],
-      created_at: "2020-04-14 5:19:21"
+      created_at: "2020-04-14 3:19:21"
     }
   ];
   
