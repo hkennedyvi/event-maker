@@ -3,7 +3,8 @@ const session = require("express-session");
 
 const PORT = process.env.PORT || 3002;
 const app = express();
-const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/cahoots";
+
+const MONGO_URI = process.env.MONGODB_URI || "mongodb://user1:password1@ds159328.mlab.com:59328/heroku_8c1n3d87";
 const mongoose = require("mongoose");
 const MongoStore = require("connect-mongo")(session);
 const passport = require("./passport/setup");
