@@ -19,13 +19,14 @@ const CarouselPage = () => {
               <MDBCarouselItem itemId="1">
                 <MDBView>
                   <img
-                    className="Carousel"
+                    className="d-block w-100"
                     src="https://i.imgur.com/RV6evxq.png"
                     alt="First slide"
                   />
                   <MDBMask overlay="black-light" />
                 </MDBView>
                 <MDBCarouselCaption>
+
                   <h3 className="slide-1">You're in Cahoots!</h3>
 
                 </MDBCarouselCaption>
