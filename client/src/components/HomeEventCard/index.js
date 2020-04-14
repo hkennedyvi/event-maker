@@ -58,11 +58,11 @@ function HomeEventCard(props) {
             {props.allEvents && props.allEvents.length > 0 ? 
             <div>
             <DialogTitle id="simple-dialog-title">{props.allEvents[eventIndex].name}</DialogTitle>
-            <h4 id="dialog-location">{props.allEvents[eventIndex].location}</h4>
-            <h5 id="dialog-participants"># participants needed: {props.allEvents[eventIndex].participants}</h5>
-            <h5 id="dialog-starts">started: {moment(props.allEvents[eventIndex].created_at).format('lll')}</h5>
-            <h5 id="dialog-ends">duration: {props.allEvents[eventIndex].duration}</h5>
-            <h5 id="dialog-notes">{props.allEvents[eventIndex].notes}</h5>
+            <h4>{props.allEvents[eventIndex].location}</h4>
+            <h5># participants needed: {props.allEvents[eventIndex].participants}</h5>
+            <h5>started: {moment(props.allEvents[eventIndex].created_at).format('lll')}</h5>
+            <h5>duration: {props.allEvents[eventIndex].duration}</h5>
+            <h5>{props.allEvents[eventIndex].notes}</h5>
             <Button id="join-btn" className={classes.root} onClick={joinCount} disabled={ props.allEvents[eventIndex].participants <= 0 ? true : "" }>Join</Button>
             <Button id="next-btn" className={classes.root} onClick={nextCard}>Next Event</Button>
             </div>
