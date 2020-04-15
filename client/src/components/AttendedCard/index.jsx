@@ -34,7 +34,7 @@ function AttendedCard(props) {
                                 Location: {props.location}
                             </Typography>
                             <Typography variant="body2">
-                                Length: {props.duration} hours
+                                Length: {props.duration}
                             </Typography>
 
                             {/* Future development: add attendees on the right side of the card */}
