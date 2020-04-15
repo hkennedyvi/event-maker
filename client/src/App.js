@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from './pages/Home';
-import Signup from './pages/SIgnup';
+import SIgnup from './pages/SIgnup';
 import Login from './pages/Login';
 import Logout from './components/Logout/Logout';
 import Profile from './pages/Profile';
@@ -15,7 +15,7 @@ function App() {
         <Wrapper/>
         <Switch>
           <Route exact path="/">
-            <Signup />
+            <SIgnup />
           </Route>
           <Route exact path="/login">
             <Login />
