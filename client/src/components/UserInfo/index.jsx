@@ -7,7 +7,8 @@ import UserImg from './assets/user-image-temporary.png';
 const useStyles = makeStyles(theme => ({
     rootUserInfo: {
         display: 'flex',
-        background: 'linear-gradient(to top, #f17b41, #f4624f, #f14861, #e62f75, #d3208b);',
+        // background: 'linear-gradient(to top, #f17b41, #f4624f, #f14861, #e62f75, #d3208b);',
+        background: 'linear-gradient(to top left, #f17b41, #f68338, #fa8c2c, #fc961d, #fda000);',
         flexGrow: .5,
         marginRight: theme.spacing(3),
         [theme.breakpoints.down('md')]: {
@@ -15,7 +16,7 @@ const useStyles = makeStyles(theme => ({
             marginBottom: theme.spacing(3),
             marginRight: 0,
             display: 'flex',
-            flexDirection: 'column',
+            flexDirection: 'row',
             flexWrap: 'wrap',
             flexGrow: 1,
             justifyContent: 'center',
@@ -44,6 +45,7 @@ const useStyles = makeStyles(theme => ({
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            justifyContent: 'center',
             flexGrow: 1,  
         },
         [theme.breakpoints.down('sm')]: {
