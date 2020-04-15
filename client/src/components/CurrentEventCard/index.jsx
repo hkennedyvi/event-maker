@@ -32,9 +32,9 @@ function CurrentEventCard(props) {
                             <Typography variant="body2">
                                 Location: {props.location}
                             </Typography>
-                            <Typography variant="body2">
+                            {/* <Typography variant="body2">
                                 Started: {props.created_at}
-                            </Typography>
+                            </Typography> */}
                             <Typography variant="body2">
                                 Duration: {props.duration}
                         </Typography>
