@@ -6,7 +6,7 @@ Live in the Moment with Cahoots.
 
 ![Dashboard](https://media.giphy.com/media/W5ZWHQSfmTgOnupLtx/giphy.gif)
 
-#### [Deployed App](#)
+#### [Deployed App](https://u-incahoots.herokuapp.com/)
 
 ## Concept
 As a community member,
