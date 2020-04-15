@@ -1,34 +1,26 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { TextField,  Card, CardActions, CardContent, Typography, Box, Button } from '@material-ui/core';
+import { TextField, Card, CardActions, CardContent, Typography, Box, Button } from '@material-ui/core';
 import './LoginForm.css'
 
+// Styles
 const useStyles = makeStyles((theme) => ({
     root: {
         '& > *': {
             marginTop: theme.spacing(7),
-            // width: '25ch',
             display: 'flex',
             flexDirection: 'column',
-
         },
-
     },
     cardRoot: {
         textAlign: 'center',
         display: 'flex',
         flexDirection: 'column',
         flexWrap: 'wrap',
-        // marginTop: '8%',
-        // [theme.breakpoints.down('md')]: {
-        //     marginTop: '15%',
-        // },
     },
-
     textfield: {
         marginBottom: 15,
     },
-
     formRoot: {
         display: 'flex',
         flexDirection: 'column',
@@ -38,11 +30,9 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: '#051937',
         color: 'ffffff',
     },
-
-
-
 }));
 
+// Main Function
 function LoginForm(props) {
     const classes = useStyles();
     return (
@@ -52,12 +42,11 @@ function LoginForm(props) {
                     <CardContent>
                         <Typography variant="h5" component="h2">
                             Log In
-                    </Typography>
+                        </Typography>
                         <CardActions>
                             <form className={classes.formRoot}
                                 onSubmit={(e) => { props.handleSubmit(e) }} action="POST"
                             >
-
                                 <TextField
                                     className={classes.textfield}
                                     required
@@ -66,7 +55,6 @@ function LoginForm(props) {
                                     label="Email"
                                     name="email"
                                     variant="outlined"
-
                                 />
                                 <TextField
                                     className={classes.textfield}
@@ -75,7 +63,6 @@ function LoginForm(props) {
                                     label="Password"
                                     type="password"
                                     name="password"
-                                    // autoComplete="current-password"
                                     variant="outlined"
                                 />
                                 <Button
@@ -83,29 +70,30 @@ function LoginForm(props) {
                                     type="submit"
                                     variant="contained"
                                     color="#051937"
-                                >Login
-                </Button>
-
+                                >
+                                    Login
+                                </Button>
                             </form>
                         </CardActions>
                     </CardContent>
                     <CardActions>
                         <Typography variant="p">
                             Not a member?
-                </Typography>
+                        </Typography>
                         <Button
                             className={classes.submitBtn}
                             type="submit"
                             variant="contained"
                             color="#051937"
                             href="/"
-                        >Sign Up
-                </Button>
+                        >
+                            Sign Up
+                        </Button>
                     </CardActions>
                 </Card>
             </Box>
         </div>
-    )
-}
+    );
+};
 
 export default LoginForm;
