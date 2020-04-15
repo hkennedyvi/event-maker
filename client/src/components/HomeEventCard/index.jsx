@@ -64,7 +64,7 @@ function HomeEventCard(props) {
             <div className="event-card">
                 {props.allEvents && props.allEvents.length > 0 ?
                     <div>
-                        <DialogTitle><h3 strong>{props.allEvents[eventIndex].name}</h3></DialogTitle>
+                        <DialogTitle><h3>{props.allEvents[eventIndex].name}</h3></DialogTitle>
                         <h6>{props.allEvents[eventIndex].location}</h6>
                         <h5><strong># participants needed:</strong> {props.allEvents[eventIndex].participants}</h5>
                         <h5><strong>started:</strong> {moment(props.allEvents[eventIndex].created_at).startOf('day').fromNow()}</h5>
