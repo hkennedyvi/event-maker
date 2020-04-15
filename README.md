@@ -23,7 +23,7 @@ So that I can continue to enjoy special moments without hesitation.
 
 
 ## Usage
-<img src="./readme-assets/sign-up" alt="Sign Up Page" width="400"/>  <img src="./readme-assets/login" alt="Login Page" width="400"/>
+<img src="./readme-assets/sign-up.png" alt="Sign Up Page" width="400"/>  <img src="./readme-assets/login.png" alt="Login Page" width="400"/>
 
 Sign up by adding a unique email and password. Password will be encrypted by bcrypt. If you've already signed up, click the login button to be redirect to the login page.
 
