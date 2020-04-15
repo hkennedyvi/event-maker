@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const db = require("../models");
-const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/cahoots";
+const MONGO_URI = process.env.MONGODB_URI || "mongodb://user1:password1@ds159328.mlab.com:59328/heroku_8c1n3d87";
 
 mongoose.connect(MONGO_URI, { useNewUrlParser: true })
 .then(console.log(`MongoDB connected at ${MONGO_URI}`));
@@ -35,7 +35,7 @@ db.User
       notes: "bring your own racket",
       creator: "cahootsguy@email.com",
       attendees: ["sarah@email.com", "howard@email.com", "jenni@email.com", "laurie@email.com"],
-      created_at: "2020-04-01 12:33:21"
+      created_at: "2020-04-14 6:33:21"
     },
     {
       category: "trivia",
@@ -46,18 +46,18 @@ db.User
       notes: "theme tonight is harry potter!",
       creator: "cahootsguy@email.com",
       attendees: ["sarah@email.com", "howard@email.com", "jenni@email.com", "laurie@email.com"],
-      created_at: "2020-04-06 2:45:21"
+      created_at: "2020-04-14 2:45:21"
     },
     {
       category: "sports",
       name: "Softball",
       participants: 18,
       location: "Pioneer Park",
-      duration: "2 1/2 hours",
+      duration: "2.5 hours",
       notes: "we have balls and bats",
       creator: "cahootsguy@email.com",
       attendees: ["jenni@email.com", "laurie@email.com"],
-      created_at: "2020-04-12 2:00:21"
+      created_at: "2020-04-14 5:00:21"
     },
     {
       category: "entertainment",
@@ -68,7 +68,7 @@ db.User
       notes: "bring the funk",
       creator: "different@yahoo.com",
       attendees: ["sarah@email.com", "cahootsguy@email.com"],
-      created_at: "2020-04-14 5:19:21"
+      created_at: "2020-04-14 6:19:21"
     },
     {
       category: "entertainment",
@@ -79,7 +79,7 @@ db.User
       notes: "byob",
       creator: "different@yahoo.com",
       attendees: ["sarah@email.com", "cahootsguy@email.com"],
-      created_at: "2020-04-14 5:19:21"
+      created_at: "2020-04-14 6:19:21"
     },
     {
       category: "outdoors",
@@ -90,7 +90,7 @@ db.User
       notes: "come in costume",
       creator: "different@yahoo.com",
       attendees: ["sarah@email.com", "cahootsguy@email.com"],
-      created_at: "2020-04-14 5:19:21"
+      created_at: "2020-04-14 4:19:21"
     },
     {
       category: "music",
@@ -101,7 +101,7 @@ db.User
       notes: "byob",
       creator: "cahootsguy@email.com",
       attendees: ["sarah@email.com", "jenni@email.com"],
-      created_at: "2020-04-14 5:19:21"
+      created_at: "2020-04-14 3:19:21"
     }
   ];
   

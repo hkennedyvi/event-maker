@@ -37,7 +37,7 @@ export default function JoinConfirm(props) {
     return (
         <div>
             <Button id="join-btn" className={classes.root} variant="outlined" color="primary" onClick={handleClickOpen} disabled={ props.allEvents[props.eventIndex].participants <= 0 ? true : "" }>
-                Join
+                <strong>Join</strong>
       </Button>
             <Dialog
                 open={open}
