@@ -11,6 +11,7 @@ const MongoStore = require("connect-mongo")(session);
 const passport = require("./passport/setup");
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const path = require("path");
 
 mongoose.connect(MONGO_URI, { useNewUrlParser: true })
 .then(console.log(`MongoDB connected at ${MONGO_URI}`));
