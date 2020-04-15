@@ -84,7 +84,7 @@ db.User
     {
       category: "outdoors",
       name: "Shakespeare in the park",
-      participants: 15,
+      participants: 20,
       location: "Barsotti Park",
       duration: "3 hours",
       notes: "come in costume",
@@ -95,7 +95,7 @@ db.User
     {
       category: "music",
       name: "Neighborhood Concert",
-      participants: 15,
+      participants: 1,
       location: "6711 Hall Blvd",
       duration: "2 hours",
       notes: "byob",
