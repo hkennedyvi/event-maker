@@ -6,7 +6,7 @@ import './LoginForm.css'
 const useStyles = makeStyles((theme) => ({
     root: {
         '& > *': {
-            marginTop: theme.spacing(1),
+            marginTop: theme.spacing(7),
             // width: '25ch',
             display: 'flex',
             flexDirection: 'column',
@@ -19,10 +19,10 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         flexDirection: 'column',
         flexWrap: 'wrap',
-        marginTop: '8%',
-        [theme.breakpoints.down('md')]: {
-            marginTop: '15%',
-        },
+        // marginTop: '8%',
+        // [theme.breakpoints.down('md')]: {
+        //     marginTop: '15%',
+        // },
     },
 
     textfield: {
