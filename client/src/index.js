@@ -4,6 +4,14 @@ import App from './App';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core';
 
 const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#051937',
+    },
+    secondary: {
+      main: '#49316f',
+    }
+  },
   typography: {
     fontFamily: [
       'Comfortaa' , 
